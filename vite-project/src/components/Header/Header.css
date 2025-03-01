@@ -5,9 +5,12 @@
     font-weight: bold;
     overflow: hidden;
     display: inline-block;
-    padding: px 0; /* thêm padding để dễ nhìn hơn */
+    padding: px 0;
+    
 }
-
+.header {
+    background-color: #FEFBF4;
+}
 .header a::after {
     content: "";
     position: absolute;

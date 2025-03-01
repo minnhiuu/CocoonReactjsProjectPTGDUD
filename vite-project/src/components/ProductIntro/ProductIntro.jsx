@@ -2,6 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./ProductIntro.css";
+import ProductList from "../ProductList/ProductList";
 
 function ProductIntro() {
   return (
@@ -105,10 +106,12 @@ function ProductIntro() {
           </p>
         </div>
       </div>
-      <div className="section-3">
+      <div className="section-3 mb-3">
         <div className="row m-0 mb-3 p-3">
           <div className="col-12 ">
-            <h3 className="text-center fw-bold">CHỨNG NHẬN BỞI CÁC TỔ CHỨC QUỐC TẾ</h3>
+            <h3 className="text-center fw-bold">
+              CHỨNG NHẬN BỞI CÁC TỔ CHỨC QUỐC TẾ
+            </h3>
           </div>
         </div>
         <div className="row m-0">
@@ -153,6 +156,45 @@ function ProductIntro() {
               International được xem là "tiêu chuẩn vàng" toàn cầu cho các sản
               phẩm không thử nghiệm trên động vật. "
             </h5>
+          </div>
+        </div>
+      </div>
+      <div className="section-4 text-left mt-5">
+        <div className="row align-items-end">
+          <div className="col-3 h-100">
+            <h1 className="fst-italic p-0 m-0 mb-1">Sản Phẩm</h1>
+            <h1 className="fw-bold p-0 m-0 mb-2">BÁN CHẠY</h1>
+            <p className="text-gray fw-300">
+              Cocoon tự hào khi các sản phẩm mà chúng tôi tạo ra mang đến những
+              thay đổi tuyệt vời trên làn da, mái tóc của bạn.
+            </p>
+          </div>
+          <div className="col-9 h-100 pe-5">
+            <div
+              id="productListCarousel"
+              className="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div className="carousel-inner">
+                <ProductList />
+              </div>
+              <button
+                className="carousel-control-prev"
+                type="button"
+                data-bs-target="#productListCarousel"
+                data-bs-slide="prev"
+              >
+                <span className="carousel-control-prev-icon"></span>
+              </button>
+              <button
+                className="carousel-control-next"
+                type="button"
+                data-bs-target="#productListCarousel"
+                data-bs-slide="next"
+              >
+                <span className="carousel-control-next-icon"></span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
