@@ -1,0 +1,51 @@
+.input-group-text {
+    background-color: transparent;
+    border-right: none;
+   
+  }
+  input::placeholder {
+    color: #FFC107 !important; 
+    
+  }
+  
+ .input-group input {
+    border: none !important; /* Xóa viền xung quanh */
+    border-bottom: 1px solid #FFC107 !important; /* Viền dưới màu vàng */
+    outline: none !important; /* Xóa viền khi focus */
+    padding: 8px 0 !important;
+    background: transparent !important;
+    display: flex !important;
+    width: 450px !important;
+  }
+  
+  
+  .form-control {
+    border-left: none;
+  }
+  
+  
+  .btn-outline-secondary {
+    border: none;
+    background: none;
+  }
+  
+  .btn-outline-secondary:hover {
+    background: none;
+    color: #000;
+  }
+  
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  
+  .btn-close {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .btn-close:hover {
+    transform: rotate(90deg);
+    
+  }
+  
+
+  
