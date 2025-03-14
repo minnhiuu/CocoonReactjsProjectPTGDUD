@@ -26,6 +26,10 @@
 }
 .search-wrapper:hover .search-input {
     opacity: 1;
+    font-family: Vollkorn;
+    font-weight: 400;
+    line-height: 1;
+    font-size: 18px;
 }
 .search-input:focus {
     outline: none;

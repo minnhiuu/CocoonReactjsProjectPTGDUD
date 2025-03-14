@@ -1,12 +1,12 @@
 import './App.css'
-import Home2 from './pages/Article/Home2'
-import Home from './pages/Home/Home'
-
+import useRouteElements from './routes/useRouteElements'
 function App() {
+
+  const element = useRouteElements();
 
   return (
     <>
-      <Home/>
+      {element}
     </>
   )
 }

@@ -1,0 +1,23 @@
+.title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+    color: #8c6239;
+    margin-bottom: 10px; 
+    font-family: serif;
+}
+.story{
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.italic-text {
+    font-style: italic;
+    font-size: 17px;
+  }
+.large-text{
+    font-weight: bold;
+}
+.story-brand{
+    margin-left: 20px;
+    text-align: justify;
+}

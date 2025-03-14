@@ -1,0 +1,28 @@
+.core-values-title {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: serif;
+    text-align: center;
+    color: #8c6239;
+   
+}
+.core-values-label{
+    font-weight: bold;
+}
+.core-values-content{
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    margin-left: 20px;
+}
+.core-values-bold{
+    font-weight: bold;
+}
+.core-values-sound{
+    
+    font-style: italic;
+    font-size: 17px;
+    text-align: center;
+    margin-top: 40px;
+}

@@ -7,33 +7,30 @@ function Article2() {
     return (
         <div className="main">
             <div className="container mt-0">
-                {/* Row tiêu đề "Làm đẹp" và nút "Tất cả bài viết" */}
                 <div className="row">
                     <div className="col-4 p-3 d-flex flex-column justify-content-between">
                         <br />
                         <h5 className="baiviet">BÀI VIẾT / LÀM ĐẸP</h5>
                     </div>
                 </div>
-
-                {/* Row 3 bài viết */}
                 <div className="row mt-1">
                     {[
                         {
-                            img: "./images/hinh1.jpg",
+                            img: "/images/hinh1.jpg",
                             category: "Làm đẹp",
                             date: "01.10.21",
                             title: "Vài “tip” giúp bạn tận hưởng trọn vẹn từng giây phút làm sạch da chết trên cơ thể cùng Cà phê Đắk Lắk",
                             desc: "Hãy thử áp dụng một vài tip sau để gia tăng thêm những trải nghiệm thật “chill” với sản phẩm Cà phê Đắk Lắk làm sạch da chết cơ thể."
                         },
                         {
-                            img: "./images/hinh2.jpg",
+                            img: "/images/hinh2.jpg",
                             category: "Làm đẹp",
                             date: "22.09.21",
                             title: "3 bước tẩy da chết hiệu quả dành cho mặt từ cà phê Đắk Lắk",
                             desc: "Việc tẩy da chết tuy chỉ mất từ 10 – 15s nhưng nó sẽ giúp bạn loại bỏ các tế bào da chết trên bề mặt da một cách dễ dàng, giảm nguy cơ tắc nghẽn lỗ chân lông và..."
                         },
                         {
-                            img: "./images/hinh3.jpg",
+                            img: "/images/hinh3.jpg",
                             category: "Làm đẹp",
                             date: "22.09.21",
                             title: "Da dầu, mụn sẽ “ăn chay” như thế nào?",
@@ -52,11 +49,10 @@ function Article2() {
                         </div>
                     ))}
                 </div>
-                {/* Row 1 bài viết */}
                 <div className="row mt-1">
                     {[
                         {
-                            img: "./images/hinh7.jpg",
+                            img: "/images/hinh7.jpg",
                             category: "Làm đẹp",
                             date: "14.09.21",
                             title: "Thực hành sống xanh cùng túi refill cà phê Đắk Lắk",
