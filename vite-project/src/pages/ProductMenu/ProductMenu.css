@@ -1,0 +1,24 @@
+.categories {
+    border: 1px solid #ddd;
+    background-color: white!important;
+    margin-top: 105px!important;
+    margin-left: auto;
+    margin-right: auto;
+   border-radius: 20px;
+}
+
+.no-product {
+    background-position: center!important;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    background-repeat: no-repeat;
+}
+.box-img {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px!important;
+    height: auto;
+}

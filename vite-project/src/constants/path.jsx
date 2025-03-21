@@ -1,4 +1,17 @@
 export const path = {
+
+    home: "/", 
+    cocoon: "/cocoon",
+    coreValue:'/cocoon/gia-tri-cot-loi',
+    storyBrand:'/cocoon/cau-chuyen-thuong-hieu',
+    communityResponsibility:'/cocoon/trach-nhiem-cong-dong',
+    article:'/cocoon/bai-viet',
+    beauty:"/cocoon/bai-viet/lam-dep",
+    charity:"/cocoon/bai-viet/chuong-trinh",
+    product:"/cocoon/san-pham",
+    productInfo:"/cocoon/san-pham/:id"
+}
+
   home: "/",
   cocoon: "/cocoon",
   coreValue: "/cocoon/gia-tri-cot-loi",
@@ -9,3 +22,4 @@ export const path = {
   charity: "/cocoon/bai-viet/chuong-trinh",
   promotion: "/cocoon/khuyen-mai",
 };
+

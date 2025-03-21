@@ -1,14 +1,16 @@
 .header a {
     position: relative;
     text-decoration: none;
-    font-family: Vollkorn;
     font-weight: 500;
     line-height: 1;
     color: black;
-    font-size: 18px;
+    font-size: 16px;
     overflow: hidden;
     display: inline-block;
-    padding: px 0;
+    /* padding: px 0; */
+    padding: 5px;
+    margin-right: 2px;
+    
     
 }
 .banner {
@@ -40,11 +42,12 @@
     left: 0;
     width: 100%;
     z-index: 1000;
+    padding: 20px!important;
 }
 
 
 .content-placeholder {
-    margin-top: 100px; /* 40px banner + 60px header */
+    margin-top: 105px; /* 40px banner + 60px header */
 }
 
 .header-left {

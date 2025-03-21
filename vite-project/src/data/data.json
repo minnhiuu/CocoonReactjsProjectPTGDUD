@@ -1,0 +1,1712 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Serum Dưỡng Da Vitamin C",
+      "category": "Tinh Chất",
+      "description": "Dưỡng sáng da, làm đều màu và giảm thâm nám hiệu quả.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chứa 10% Vitamin C tinh khiết",
+        "Cấp ẩm nhanh, làm sáng da",
+        "Hỗ trợ giảm thâm mụn và tàn nhang"
+      ],
+      "ingredients": ["Vitamin C", "Niacinamide", "Hyaluronic Acid"],
+      "usage": [
+        "Lấy 2-3 giọt sau khi làm sạch da.",
+        "Thoa đều và vỗ nhẹ để thẩm thấu.",
+        "Sử dụng sáng và tối."
+      ],
+      "suitableFor": ["Da xỉn màu", "Da thâm nám", "Da không đều màu"],
+      "texture": "Dạng lỏng, thẩm thấu nhanh",
+      "fragrance": "Hương cam quýt dịu nhẹ",
+      "dosage": "Dùng 2 lần/ngày",
+      "caution": "Tránh ánh nắng sau khi sử dụng",
+      "origin": "Hàn Quốc",
+      "price": "259.000 đ",
+      "discount": "20%",
+      "reviews": [
+        {
+          "stars": 5,
+          "comment": "Da sáng rõ sau 2 tuần, rất hài lòng!",
+          "user": "Trần Phương Linh",
+          "date": "2024-03-05"
+        },
+        {
+          "stars": 3,
+          "comment": "Hiệu quả ổn nhưng da hơi khô, cần dưỡng thêm.",
+          "user": "Hoàng Tuấn",
+          "date": "2024-02-20"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Kem Chống Nắng Dưỡng Ẩm SPF50+ PA++++",
+      "category": "Chống Nắng",
+      "description": "Bảo vệ da khỏi tia UV, cấp ẩm suốt cả ngày.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chống nắng phổ rộng SPF50+ PA++++",
+        "Kết cấu mỏng nhẹ, không gây bí",
+        "Dưỡng ẩm với chiết xuất nha đam"
+      ],
+      "ingredients": ["Zinc Oxide", "Vitamin E", "Aloe Vera"],
+      "usage": [
+        "Thoa đều lượng vừa đủ lên mặt.",
+        "Sử dụng trước khi ra nắng 15-20 phút.",
+        "Thoa lại sau 2 giờ nếu cần."
+      ],
+      "suitableFor": ["Mọi loại da", "Da nhạy cảm"],
+      "texture": "Kem nhẹ, thấm nhanh",
+      "fragrance": "Hương nha đam dịu nhẹ",
+      "dosage": "Dùng mỗi sáng",
+      "caution": "Thoa lại sau khi đổ mồ hôi hoặc tiếp xúc nước",
+      "origin": "Việt Nam",
+      "price": "189.000 đ",
+      "discount": "15%",
+      "reviews": [
+        {
+          "stars": 5,
+          "comment": "Không nhờn, bảo vệ tốt, giá hợp lý!",
+          "user": "Nguyễn Thảo My",
+          "date": "2024-03-10"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Mặt Nạ Đất Sét Tràm Trà",
+      "category": "Mặt Nạ",
+      "description": "Thải độc da, làm sạch sâu và kiểm soát dầu thừa.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất tràm trà tự nhiên",
+        "Làm sạch bã nhờn, se khít lỗ chân lông",
+        "Cân bằng dầu và độ ẩm"
+      ],
+      "ingredients": ["Đất sét", "Tràm trà", "Chiết xuất hoa cúc"],
+      "usage": [
+        "Thoa lớp mỏng lên da sạch.",
+        "Để khô 10-15 phút rồi rửa sạch.",
+        "Dùng 2-3 lần/tuần."
+      ],
+      "suitableFor": ["Da dầu", "Da mụn", "Da hỗn hợp thiên dầu"],
+      "texture": "Kem đặc, dễ thoa",
+      "fragrance": "Hương tràm trà tự nhiên",
+      "dosage": "Dùng 2-3 lần/tuần",
+      "caution": "Không để mặt nạ khô hoàn toàn",
+      "origin": "Việt Nam",
+      "price": "129.000 đ",
+      "discount": "10%",
+      "reviews": [
+        {
+          "stars": 4,
+          "comment": "Da sạch tốt nhưng cần rửa kỹ.",
+          "user": "Vũ Hoàng Anh",
+          "date": "2024-03-08"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Sữa Rửa Mặt Tinh Chất Nghệ",
+      "category": "Sữa Rửa Mặt",
+      "description": "Làm sạch sâu, giảm mụn và dưỡng sáng da tự nhiên.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất nghệ kháng khuẩn",
+        "Bọt mịn làm sạch nhẹ nhàng",
+        "Không gây khô da sau khi dùng"
+      ],
+      "ingredients": ["Nghệ", "Niacinamide", "Tinh chất lô hội"],
+      "usage": [
+        "Làm ướt mặt, lấy lượng vừa đủ tạo bọt.",
+        "Massage nhẹ nhàng rồi rửa sạch.",
+        "Dùng sáng và tối."
+      ],
+      "suitableFor": ["Da dầu", "Da mụn", "Da hỗn hợp"],
+      "texture": "Gel lỏng, bọt mịn",
+      "fragrance": "Hương nghệ dịu nhẹ",
+      "dosage": "Dùng 2 lần/ngày",
+      "caution": "Tránh để sản phẩm vào mắt",
+      "origin": "Việt Nam",
+      "price": "149.000 đ",
+      "discount": "25%",
+      "reviews": [
+        {
+          "stars": 4,
+          "comment": "Sạch tốt, nhưng cần cẩn thận kẻo cay mắt.",
+          "user": "Phạm Quang Minh",
+          "date": "2024-03-15"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Nước Tẩy Trang Bí Đao Cocoon",
+      "category": "Tẩy Trang",
+      "description": "Làm sạch lớp trang điểm và bụi bẩn, kiểm soát dầu hiệu quả.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất bí đao tự nhiên",
+        "Kháng khuẩn, làm dịu da mụn",
+        "Không gây khô da sau khi dùng"
+      ],
+      "ingredients": ["Bí đao", "Rau má", "Tràm trà"],
+      "usage": [
+        "Thấm sản phẩm lên bông tẩy trang.",
+        "Lau nhẹ nhàng khắp mặt.",
+        "Không cần rửa lại bằng nước."
+      ],
+      "suitableFor": ["Da dầu", "Da mụn", "Da nhạy cảm"],
+      "texture": "Dạng nước trong suốt",
+      "fragrance": "Không mùi",
+      "dosage": "Dùng mỗi tối hoặc khi cần làm sạch",
+      "caution": "Tránh để sản phẩm vào mắt",
+      "origin": "Việt Nam",
+      "price": "159.000 đ",
+      "discount": "15%",
+      "reviews": [
+        {
+          "stars": 5,
+          "comment": "Tẩy sạch, da thoáng mát, rất thích!",
+          "user": "Lê Thị Hồng Nhung",
+          "date": "2025-03-01"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Tẩy Da Chết Mặt Cà Phê Đắk Lắk Cocoon",
+      "category": "Tẩy Da Chết Mặt",
+      "description": "Loại bỏ tế bào chết, làm sáng da với hạt cà phê mịn.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Hạt cà phê Đắk Lắk xay nhuyễn",
+        "Dưỡng ẩm với bơ cacao tự nhiên",
+        "Làm đều màu da hiệu quả"
+      ],
+      "ingredients": ["Cà phê Đắk Lắk", "Bơ cacao", "Đường nâu"],
+      "usage": [
+        "Thoa lượng nhỏ lên da ướt.",
+        "Massage nhẹ nhàng 1-2 phút.",
+        "Rửa sạch bằng nước ấm."
+      ],
+      "suitableFor": ["Mọi loại da", "Da xỉn màu"],
+      "texture": "Dạng kem hạt mịn",
+      "fragrance": "Hương cà phê tự nhiên",
+      "dosage": "Dùng 1-2 lần/tuần",
+      "caution": "Không chà xát quá mạnh",
+      "origin": "Việt Nam",
+      "price": "139.000 đ",
+      "discount": "10%",
+      "reviews": [
+        {
+          "stars": 4,
+          "comment": "Da mịn hơn, mùi cà phê rất thơm!",
+          "user": "Ngô Minh Châu",
+          "date": "2025-02-28"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Nước Cân Bằng Hoa Hồng Cocoon",
+      "category": "Nước Cân Bằng",
+      "description": "Cân bằng độ pH, cấp ẩm và làm dịu da sau khi rửa mặt.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất hoa hồng hữu cơ",
+        "Làm mềm da, se khít lỗ chân lông",
+        "Không chứa cồn gây khô da"
+      ],
+      "ingredients": ["Hoa hồng", "Hyaluronic Acid", "Niacinamide"],
+      "usage": [
+        "Thấm vào bông tẩy trang sau rửa mặt.",
+        "Lau nhẹ hoặc vỗ đều lên da.",
+        "Dùng sáng và tối."
+      ],
+      "suitableFor": ["Mọi loại da", "Da khô", "Da nhạy cảm"],
+      "texture": "Dạng nước lỏng nhẹ",
+      "fragrance": "Hương hoa hồng dịu nhẹ",
+      "dosage": "Dùng 2 lần/ngày",
+      "caution": "Bảo quản nơi khô ráo, tránh nắng",
+      "origin": "Việt Nam",
+      "price": "169.000 đ",
+      "discount": "20%",
+      "reviews": [
+        {
+          "stars": 5,
+          "comment": "Da mềm mịn, không khô sau khi dùng!",
+          "user": "Đỗ Thu Hà",
+          "date": "2025-03-10"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Kem Dưỡng Ẩm Thạch Hoa Hồng Cocoon",
+      "category": "Kem Dưỡng",
+      "description": "Dưỡng ẩm sâu, làm mềm da với kết cấu thạch độc đáo.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất hoa hồng tự nhiên",
+        "Cấp nước tức thì, khóa ẩm lâu dài",
+        "Không gây nhờn rít"
+      ],
+      "ingredients": ["Hoa hồng", "Pentavitin", "Hyaluronic Acid"],
+      "usage": [
+        "Thoa lượng vừa đủ lên mặt.",
+        "Massage nhẹ để thẩm thấu.",
+        "Dùng sáng và tối."
+      ],
+      "suitableFor": ["Da khô", "Da thiếu nước", "Da nhạy cảm"],
+      "texture": "Dạng thạch mềm mịn",
+      "fragrance": "Hương hoa hồng dịu nhẹ",
+      "dosage": "Dùng 2 lần/ngày",
+      "caution": "Tránh dùng quá nhiều gây bí da",
+      "origin": "Việt Nam",
+      "price": "199.000 đ",
+      "discount": "25%",
+      "reviews": [
+        {
+          "stars": 5,
+          "comment": "Kết cấu mát lạnh, da ẩm mịn cả ngày!",
+          "user": "Trương Ngọc Ánh",
+          "date": "2025-03-15"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Xịt Khoáng Bí Đao Cocoon",
+      "category": "Xịt Khoáng",
+      "description": "Cấp ẩm tức thì, làm dịu da và kiểm soát dầu thừa.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất bí đao và rau má",
+        "Phun sương mịn, thấm nhanh",
+        "Làm mát da ngay lập tức"
+      ],
+      "ingredients": ["Bí đao", "Rau má", "Nước khoáng"],
+      "usage": [
+        "Xịt đều cách mặt 20-30cm.",
+        "Vỗ nhẹ để dưỡng chất thẩm thấu.",
+        "Dùng bất cứ lúc nào trong ngày."
+      ],
+      "suitableFor": ["Da dầu", "Da mụn", "Da nhạy cảm"],
+      "texture": "Dạng sương mịn",
+      "fragrance": "Không mùi",
+      "dosage": "Dùng khi cần cấp ẩm",
+      "caution": "Lắc đều trước khi sử dụng",
+      "origin": "Việt Nam",
+      "price": "149.000 đ",
+      "discount": "15%",
+      "reviews": [
+        {
+          "stars": 4,
+          "comment": "Da mát, bớt dầu, rất tiện mang theo!",
+          "user": "Phan Thị Mai",
+          "date": "2025-03-12"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Serum Bí Đao Cocoon",
+      "category": "Tinh Chất",
+      "description": "Giảm mụn, làm dịu da và kiểm soát dầu thừa hiệu quả.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất bí đao và tràm trà",
+        "Kháng viêm, giảm mụn nhanh",
+        "Làm sáng da nhẹ nhàng"
+      ],
+      "ingredients": ["Bí đao", "Tràm trà", "Niacinamide"],
+      "usage": [
+        "Lấy 2-3 giọt thoa lên da cần trị.",
+        "Vỗ nhẹ để thẩm thấu.",
+        "Dùng sáng hoặc tối sau toner."
+      ],
+      "suitableFor": ["Da dầu", "Da mụn", "Da nhạy cảm"],
+      "texture": "Lỏng nhẹ, không nhờn",
+      "fragrance": "Hương tràm trà tự nhiên",
+      "dosage": "Dùng 1-2 lần/ngày",
+      "caution": "Thử trước trên vùng da nhỏ",
+      "origin": "Việt Nam",
+      "price": "229.000 đ",
+      "discount": "20%",
+      "reviews": [
+        {
+          "stars": 5,
+          "comment": "Mụn giảm rõ sau 1 tháng, da bớt dầu!",
+          "user": "Nguyễn Minh Thư",
+          "date": "2025-03-18"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Kem Chống Nắng Rau Má SPF50+ Cocoon",
+      "category": "Chống Nắng",
+      "description": "Bảo vệ da khỏi tia UV, làm dịu da nhạy cảm với rau má.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "SPF50+ PA++++ chống nắng tối ưu",
+        "Chiết xuất rau má làm dịu da",
+        "Không gây kích ứng"
+      ],
+      "ingredients": ["Rau má", "Zinc Oxide", "Hyaluronic Acid"],
+      "usage": [
+        "Thoa đều trước khi ra nắng 15 phút.",
+        "Dùng lại sau 2-3 giờ nếu cần.",
+        "Lấy lượng đủ cho mặt và cổ."
+      ],
+      "suitableFor": ["Da nhạy cảm", "Da dầu", "Da mụn"],
+      "texture": "Kem mỏng, thẩm thấu nhanh",
+      "fragrance": "Không mùi",
+      "dosage": "Dùng mỗi sáng",
+      "caution": "Tránh để sản phẩm vào mắt",
+      "origin": "Việt Nam",
+      "price": "179.000 đ",
+      "discount": "10%",
+      "reviews": [
+        {
+          "stars": 4,
+          "comment": "Nhẹ mặt, không kích ứng, rất ổn!",
+          "user": "Trần Ngọc Hân",
+          "date": "2025-03-20"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Kem Chống Nắng Hoa Cúc SPF45 Cocoon",
+      "category": "Chống Nắng",
+      "description": "Chống nắng nhẹ nhàng, làm dịu da với hoa cúc tự nhiên.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "SPF45 PA+++ bảo vệ vừa đủ",
+        "Chiết xuất hoa cúc dịu nhẹ",
+        "Cấp ẩm nhẹ cho da"
+      ],
+      "ingredients": ["Hoa cúc", "Titanium Dioxide", "Glycerin"],
+      "usage": [
+        "Thoa đều trước khi ra nắng 15 phút.",
+        "Dùng lại sau 2 giờ nếu cần.",
+        "Lấy lượng vừa đủ cho mặt."
+      ],
+      "suitableFor": ["Da khô", "Da nhạy cảm", "Da thường"],
+      "texture": "Kem lỏng, thấm nhanh",
+      "fragrance": "Hương hoa cúc dịu",
+      "dosage": "Dùng mỗi sáng",
+      "caution": "Thoa lại khi ra mồ hôi nhiều",
+      "origin": "Việt Nam",
+      "price": "169.000 đ",
+      "discount": "15%",
+      "reviews": [
+        {
+          "stars": 5,
+          "comment": "Da mềm, không khô, mùi dễ chịu!",
+          "user": "Lê Thị Hương",
+          "date": "2025-03-19"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Kem Chống Nắng Nghệ SPF50+ Cocoon",
+      "category": "Chống Nắng",
+      "description": "Chống nắng hiệu quả, làm sáng da với nghệ tươi.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "SPF50+ PA++++ bảo vệ toàn diện",
+        "Nghệ tươi làm sáng da",
+        "Không gây bít tắc lỗ chân lông"
+      ],
+      "ingredients": ["Nghệ", "Zinc Oxide", "Niacinamide"],
+      "usage": [
+        "Thoa đều trước khi ra ngoài 15 phút.",
+        "Dùng lại sau 2-3 giờ nếu cần.",
+        "Lấy lượng đủ cho mặt và cổ."
+      ],
+      "suitableFor": ["Da xỉn màu", "Da thâm", "Da hỗn hợp"],
+      "texture": "Kem nhẹ, không nhờn",
+      "fragrance": "Hương nghệ nhẹ",
+      "dosage": "Dùng mỗi sáng",
+      "caution": "Tránh để sản phẩm vào mắt",
+      "origin": "Việt Nam",
+      "price": "189.000 đ",
+      "discount": "20%",
+      "reviews": [
+        {
+          "stars": 4,
+          "comment": "Da sáng hơn, không bị bóng dầu!",
+          "user": "Nguyễn Văn Anh",
+          "date": "2025-03-18"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Kem Chống Nắng Dừa SPF50+ Cocoon",
+      "category": "Chống Nắng",
+      "description": "Bảo vệ da, dưỡng ẩm sâu với chiết xuất dừa tự nhiên.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "SPF50+ PA++++ chống nắng mạnh mẽ",
+        "Dừa tươi cấp ẩm lâu dài",
+        "Không gây khô da"
+      ],
+      "ingredients": ["Dừa", "Titanium Dioxide", "Vitamin E"],
+      "usage": [
+        "Thoa đều trước khi ra nắng 15 phút.",
+        "Dùng lại sau 2 giờ nếu cần.",
+        "Lấy lượng đủ cho mặt và cổ."
+      ],
+      "suitableFor": ["Da khô", "Da thường", "Da thiếu nước"],
+      "texture": "Kem mềm, thấm nhanh",
+      "fragrance": "Hương dừa dịu nhẹ",
+      "dosage": "Dùng mỗi sáng",
+      "caution": "Thoa lại sau khi tiếp xúc nước",
+      "origin": "Việt Nam",
+      "price": "199.000 đ",
+      "discount": "25%",
+      "reviews": [
+        {
+          "stars": 5,
+          "comment": "Da ẩm mịn, chống nắng tốt!",
+          "user": "Phạm Thị Lan",
+          "date": "2025-03-17"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Nước Tẩy Trang Hoa Hồng Cocoon",
+      "category": "Tẩy Trang",
+      "description": "Làm sạch nhẹ nhàng, dưỡng ẩm với hoa hồng tự nhiên.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất hoa hồng hữu cơ",
+        "Loại bỏ bụi bẩn và trang điểm nhẹ",
+        "Giữ da mềm mịn"
+      ],
+      "ingredients": ["Hoa hồng", "Glycerin", "Niacinamide"],
+      "usage": [
+        "Thấm lên bông tẩy trang.",
+        "Lau nhẹ nhàng khắp mặt.",
+        "Không cần rửa lại."
+      ],
+      "suitableFor": ["Da khô", "Da thường", "Da nhạy cảm"],
+      "texture": "Dạng nước lỏng nhẹ",
+      "fragrance": "Hương hoa hồng dịu",
+      "dosage": "Dùng mỗi tối",
+      "caution": "Tránh để vào mắt",
+      "origin": "Việt Nam",
+      "price": "149.000 đ",
+      "discount": "10%",
+      "reviews": [
+        {
+          "stars": 5,
+          "comment": "Da sạch, mềm, mùi thơm dễ chịu!",
+          "user": "Trần Thị Ngọc",
+          "date": "2025-03-16"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Dầu Tẩy Trang Tràm Trà Cocoon",
+      "category": "Tẩy Trang",
+      "description": "Tẩy sạch sâu, kháng khuẩn với tràm trà tự nhiên.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất tràm trà kháng viêm",
+        "Loại bỏ lớp trang điểm cứng đầu",
+        "Không gây nhờn rít"
+      ],
+      "ingredients": ["Tràm trà", "Dầu jojoba", "Vitamin E"],
+      "usage": [
+        "Lấy 2-3 pump ra tay khô.",
+        "Massage lên mặt, nhũ hóa với nước.",
+        "Rửa sạch bằng nước ấm."
+      ],
+      "suitableFor": ["Da dầu", "Da mụn", "Da hỗn hợp"],
+      "texture": "Dầu nhẹ, nhũ hóa tốt",
+      "fragrance": "Hương tràm trà tự nhiên",
+      "dosage": "Dùng mỗi tối",
+      "caution": "Tránh để dầu vào mắt",
+      "origin": "Việt Nam",
+      "price": "189.000 đ",
+      "discount": "20%",
+      "reviews": [
+        {
+          "stars": 4,
+          "comment": "Tẩy sạch tốt, da thoáng hơn!",
+          "user": "Nguyễn Thị Hạnh",
+          "date": "2025-03-15"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Nước Tẩy Trang Nghệ Cocoon",
+      "category": "Tẩy Trang",
+      "description": "Làm sạch da, dưỡng sáng với nghệ tươi hữu cơ.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất nghệ làm sáng da",
+        "Loại bỏ bụi bẩn và dầu thừa",
+        "Không gây khô da"
+      ],
+      "ingredients": ["Nghệ", "Rau má", "Panthenol"],
+      "usage": [
+        "Thấm lên bông tẩy trang.",
+        "Lau nhẹ nhàng khắp mặt.",
+        "Không cần rửa lại."
+      ],
+      "suitableFor": ["Da xỉn màu", "Da thâm", "Da hỗn hợp"],
+      "texture": "Dạng nước trong suốt",
+      "fragrance": "Hương nghệ nhẹ",
+      "dosage": "Dùng mỗi tối",
+      "caution": "Tránh để vào mắt",
+      "origin": "Việt Nam",
+      "price": "159.000 đ",
+      "discount": "15%",
+      "reviews": [
+        {
+          "stars": 5,
+          "comment": "Da sáng hơn sau khi dùng, rất thích!",
+          "user": "Lê Thị Mai",
+          "date": "2025-03-14"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "title": "Sữa Tẩy Trang Dừa Cocoon",
+      "category": "Tẩy Trang",
+      "description": "Làm sạch dịu nhẹ, dưỡng ẩm với dừa tự nhiên.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất dừa cấp ẩm",
+        "Loại bỏ trang điểm nhẹ nhàng",
+        "Giữ da mềm mịn"
+      ],
+      "ingredients": ["Dừa", "Glycerin", "Vitamin E"],
+      "usage": [
+        "Lấy lượng vừa đủ ra tay hoặc bông.",
+        "Massage nhẹ rồi rửa sạch bằng nước.",
+        "Dùng mỗi tối."
+      ],
+      "suitableFor": ["Da khô", "Da thường", "Da thiếu nước"],
+      "texture": "Dạng sữa mềm mại",
+      "fragrance": "Hương dừa dịu nhẹ",
+      "dosage": "Dùng mỗi tối",
+      "caution": "Rửa kỹ sau khi dùng",
+      "origin": "Việt Nam",
+      "price": "169.000 đ",
+      "discount": "10%",
+      "reviews": [
+        {
+          "stars": 4,
+          "comment": "Da sạch, ẩm, mùi dừa rất thơm!",
+          "user": "Phạm Thị Thủy",
+          "date": "2025-03-13"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "title": "Sữa Rửa Mặt Rau Má Cocoon",
+      "category": "Sữa Rửa Mặt",
+      "description": "Làm sạch dịu nhẹ, làm dịu da nhạy cảm với rau má.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất rau má tự nhiên",
+        "Không gây khô da",
+        "Hỗ trợ giảm kích ứng"
+      ],
+      "ingredients": ["Rau má", "Panthenol", "Glycerin"],
+      "usage": [
+        "Làm ướt mặt, tạo bọt với sản phẩm.",
+        "Massage nhẹ rồi rửa sạch.",
+        "Dùng sáng và tối."
+      ],
+      "suitableFor": ["Da nhạy cảm", "Da mụn", "Da kích ứng"],
+      "texture": "Gel mềm, bọt nhẹ",
+      "fragrance": "Không mùi",
+      "dosage": "Dùng 2 lần/ngày",
+      "caution": "Tránh để bọt vào mắt",
+      "origin": "Việt Nam",
+      "price": "139.000 đ",
+      "discount": "0%",
+      "reviews": [
+        {
+          "stars": 5,
+          "comment": "Da sạch, dịu hẳn, không bị đỏ!",
+          "user": "Nguyễn Thị Lan",
+          "date": "2025-03-12"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "title": "Sữa Rửa Mặt Hoa Hồng Cocoon",
+      "category": "Sữa Rửa Mặt",
+      "description": "Làm sạch nhẹ nhàng, cấp ẩm với hoa hồng hữu cơ.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất hoa hồng tự nhiên",
+        "Làm mềm da sau khi rửa",
+        "Không gây căng khô"
+      ],
+      "ingredients": ["Hoa hồng", "Hyaluronic Acid", "Niacinamide"],
+      "usage": [
+        "Làm ướt mặt, tạo bọt với sản phẩm.",
+        "Massage nhẹ rồi rửa sạch.",
+        "Dùng sáng và tối."
+      ],
+      "suitableFor": ["Da khô", "Da thường", "Da nhạy cảm"],
+      "texture": "Gel lỏng, bọt mịn",
+      "fragrance": "Hương hoa hồng dịu",
+      "dosage": "Dùng 2 lần/ngày",
+      "caution": "Tránh để bọt vào mắt",
+      "origin": "Việt Nam",
+      "price": "149.000 đ",
+      "discount": "0%",
+      "reviews": [
+        {
+          "stars": 4,
+          "comment": "Da mềm, sạch, mùi thơm nhẹ!",
+          "user": "Trần Thị Hương",
+          "date": "2025-03-11"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "title": "Sữa Rửa Mặt Than Tre Cocoon",
+      "category": "Sữa Rửa Mặt",
+      "description": "Làm sạch sâu, thải độc da với than tre tự nhiên.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Than tre hút bã nhờn",
+        "Làm sạch lỗ chân lông",
+        "Không gây khô da"
+      ],
+      "ingredients": ["Than tre", "Tràm trà", "Glycerin"],
+      "usage": [
+        "Làm ướt mặt, tạo bọt với sản phẩm.",
+        "Massage nhẹ rồi rửa sạch.",
+        "Dùng sáng và tối."
+      ],
+      "suitableFor": ["Da dầu", "Da hỗn hợp", "Da mụn"],
+      "texture": "Gel đen, bọt mịn",
+      "fragrance": "Không mùi",
+      "dosage": "Dùng 2 lần/ngày",
+      "caution": "Tránh để bọt vào mắt",
+      "origin": "Việt Nam",
+      "price": "159.000 đ",
+      "discount": "0%",
+      "reviews": [
+        {
+          "stars": 5,
+          "comment": "Da sạch sâu, lỗ chân lông thoáng!",
+          "user": "Phạm Thị Ngọc",
+          "date": "2025-03-10"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "title": "Sữa Rửa Mặt Dừa Cocoon",
+      "category": "Sữa Rửa Mặt",
+      "description": "Làm sạch dịu nhẹ, dưỡng ẩm sâu với dừa tự nhiên.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất dừa cấp ẩm",
+        "Làm sạch nhẹ nhàng",
+        "Giữ da mềm mịn"
+      ],
+      "ingredients": ["Dừa", "Vitamin E", "Panthenol"],
+      "usage": [
+        "Làm ướt mặt, tạo bọt với sản phẩm.",
+        "Massage nhẹ rồi rửa sạch.",
+        "Dùng sáng và tối."
+      ],
+      "suitableFor": ["Da khô", "Da thường", "Da thiếu nước"],
+      "texture": "Sữa mềm, bọt nhẹ",
+      "fragrance": "Hương dừa dịu nhẹ",
+      "dosage": "Dùng 2 lần/ngày",
+      "caution": "Tránh để bọt vào mắt",
+      "origin": "Việt Nam",
+      "price": "139.000 đ",
+      "discount": "0%",
+      "reviews": [
+        {
+          "stars": 4,
+          "comment": "Da sạch, ẩm, mùi dừa dễ chịu!",
+          "user": "Lê Thị Thảo",
+          "date": "2025-03-09"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "title": "Tẩy Da Chết Mặt Rau Má Cocoon",
+      "category": "Tẩy Da Chết Mặt",
+      "description": "Loại bỏ tế bào chết, làm dịu da với rau má tự nhiên.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất rau má làm dịu",
+        "Hạt jojoba làm sạch nhẹ",
+        "Hỗ trợ phục hồi da"
+      ],
+      "ingredients": ["Rau má", "Hạt jojoba", "Glycerin"],
+      "usage": [
+        "Thoa lên da ướt, massage 1-2 phút.",
+        "Rửa sạch bằng nước ấm.",
+        "Dùng 1-2 lần/tuần."
+      ],
+      "suitableFor": ["Da nhạy cảm", "Da mụn", "Da kích ứng"],
+      "texture": "Kem hạt mịn",
+      "fragrance": "Không mùi",
+      "dosage": "Dùng 1-2 lần/tuần",
+      "caution": "Không dùng trên da tổn thương",
+      "origin": "Việt Nam",
+      "price": "149.000 đ",
+      "discount": "0%",
+      "reviews": [
+        {
+          "stars": 5,
+          "comment": "Da mịn, không bị đỏ, rất dịu!",
+          "user": "Nguyễn Thị Mai",
+          "date": "2025-03-08"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "title": "Tẩy Da Chết Mặt Hoa Hồng Cocoon",
+      "category": "Tẩy Da Chết Mặt",
+      "description": "Loại bỏ tế bào chết, làm mềm da với hoa hồng hữu cơ.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất hoa hồng cấp ẩm",
+        "Hạt đường nâu làm sạch dịu nhẹ",
+        "Làm sáng da tự nhiên"
+      ],
+      "ingredients": ["Hoa hồng", "Đường nâu", "Dầu dừa"],
+      "usage": [
+        "Thoa lên da ướt, massage 1-2 phút.",
+        "Rửa sạch bằng nước ấm.",
+        "Dùng 1-2 lần/tuần."
+      ],
+      "suitableFor": ["Da khô", "Da thường", "Da xỉn màu"],
+      "texture": "Kem hạt mịn",
+      "fragrance": "Hương hoa hồng dịu",
+      "dosage": "Dùng 1-2 lần/tuần",
+      "caution": "Không chà xát quá mạnh",
+      "origin": "Việt Nam",
+      "price": "139.000 đ",
+      "discount": "0%",
+      "reviews": [
+        {
+          "stars": 4,
+          "comment": "Da mềm, sáng hơn, mùi thơm nhẹ!",
+          "user": "Trần Thị Lan",
+          "date": "2025-03-07"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "title": "Tẩy Da Chết Mặt Than Tre Cocoon",
+      "category": "Tẩy Da Chết Mặt",
+      "description": "Thải độc da, làm sạch sâu với than tre tự nhiên.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Than tre hút bã nhờn",
+        "Loại bỏ tế bào chết hiệu quả",
+        "Cân bằng dầu trên da"
+      ],
+      "ingredients": ["Than tre", "Hạt jojoba", "Tràm trà"],
+      "usage": [
+        "Thoa lên da ướt, massage 1-2 phút.",
+        "Rửa sạch bằng nước ấm.",
+        "Dùng 1-2 lần/tuần."
+      ],
+      "suitableFor": ["Da dầu", "Da hỗn hợp", "Da mụn"],
+      "texture": "Kem hạt mịn, màu đen",
+      "fragrance": "Không mùi",
+      "dosage": "Dùng 1-2 lần/tuần",
+      "caution": "Không dùng trên da tổn thương",
+      "origin": "Việt Nam",
+      "price": "159.000 đ",
+      "discount": "0%",
+      "reviews": [
+        {
+          "stars": 5,
+          "comment": "Da sạch sâu, thoáng mát hơn!",
+          "user": "Phạm Thị Hương",
+          "date": "2025-03-06"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "title": "Tẩy Da Chết Mặt Bí Đao Cocoon",
+      "category": "Tẩy Da Chết Mặt",
+      "description": "Làm sạch tế bào chết, kiểm soát dầu với bí đao.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất bí đao tự nhiên",
+        "Làm sạch dịu nhẹ",
+        "Hỗ trợ giảm dầu thừa"
+      ],
+      "ingredients": ["Bí đao", "Hạt đường nâu", "Rau má"],
+      "usage": [
+        "Thoa lên da ướt, massage 1-2 phút.",
+        "Rửa sạch bằng nước ấm.",
+        "Dùng 1-2 lần/tuần."
+      ],
+      "suitableFor": ["Da dầu", "Da mụn", "Da hỗn hợp"],
+      "texture": "Kem hạt mịn",
+      "fragrance": "Hương bí đao nhẹ",
+      "dosage": "Dùng 1-2 lần/tuần",
+      "caution": "Không chà xát mạnh",
+      "origin": "Việt Nam",
+      "price": "139.000 đ",
+      "discount": "0%",
+      "reviews": [
+        {
+          "stars": 4,
+          "comment": "Da sạch, bớt dầu, rất ổn!",
+          "user": "Lê Thị Ngọc",
+          "date": "2025-03-05"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "title": "Mặt Nạ Rau Má Cocoon",
+      "category": "Mặt Nạ",
+      "description": "Làm dịu da, phục hồi da tổn thương với rau má.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất rau má tự nhiên",
+        "Giảm kích ứng, làm dịu da",
+        "Cấp ẩm nhẹ nhàng"
+      ],
+      "ingredients": ["Rau má", "Hyaluronic Acid", "Panthenol"],
+      "usage": [
+        "Thoa lớp mỏng lên da sạch.",
+        "Để 10-15 phút rồi rửa sạch.",
+        "Dùng 2-3 lần/tuần."
+      ],
+      "suitableFor": ["Da nhạy cảm", "Da mụn", "Da kích ứng"],
+      "texture": "Gel mịn, thấm nhanh",
+      "fragrance": "Không mùi",
+      "dosage": "Dùng 2-3 lần/tuần",
+      "caution": "Không dùng trên da viêm nặng",
+      "origin": "Việt Nam",
+      "price": "149.000 đ",
+      "discount": "0%",
+      "reviews": [
+        {
+          "stars": 5,
+          "comment": "Da dịu hẳn, vết đỏ giảm nhanh!",
+          "user": "Nguyễn Thị Thủy",
+          "date": "2025-03-04"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "title": "Mặt Nạ Hoa Hồng Cocoon",
+      "category": "Mặt Nạ",
+      "description": "Dưỡng ẩm sâu, làm mềm da với hoa hồng hữu cơ.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất hoa hồng tự nhiên",
+        "Cấp nước tức thì",
+        "Làm sáng da nhẹ nhàng"
+      ],
+      "ingredients": ["Hoa hồng", "Hyaluronic Acid", "Vitamin E"],
+      "usage": [
+        "Thoa lớp mỏng lên da sạch.",
+        "Để 10-15 phút rồi rửa sạch.",
+        "Dùng 2-3 lần/tuần."
+      ],
+      "suitableFor": ["Da khô", "Da thường", "Da thiếu nước"],
+      "texture": "Gel mềm, thấm nhanh",
+      "fragrance": "Hương hoa hồng dịu",
+      "dosage": "Dùng 2-3 lần/tuần",
+      "caution": "Không để quá khô trên da",
+      "origin": "Việt Nam",
+      "price": "139.000 đ",
+      "discount": "10%",
+      "reviews": [
+        {
+          "stars": 4,
+          "comment": "Da mềm, sáng hơn, mùi dễ chịu!",
+          "user": "Trần Thị Mai",
+          "date": "2025-03-03"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "title": "Mặt Nạ Nghệ Cocoon",
+      "category": "Mặt Nạ",
+      "description": "Làm sáng da, giảm thâm với nghệ tươi hữu cơ.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Nghệ tươi kháng viêm",
+        "Làm mờ thâm mụn",
+        "Cân bằng độ ẩm da"
+      ],
+      "ingredients": ["Nghệ", "Đất sét", "Niacinamide"],
+      "usage": [
+        "Thoa lớp mỏng lên da sạch.",
+        "Để 10-15 phút rồi rửa sạch.",
+        "Dùng 2-3 lần/tuần."
+      ],
+      "suitableFor": ["Da xỉn màu", "Da thâm", "Da hỗn hợp"],
+      "texture": "Kem mịn, dễ thoa",
+      "fragrance": "Hương nghệ nhẹ",
+      "dosage": "Dùng 2-3 lần/tuần",
+      "caution": "Không dùng trên da tổn thương",
+      "origin": "Việt Nam",
+      "price": "149.000 đ",
+      "discount": "0%",
+      "reviews": [
+        {
+          "stars": 5,
+          "comment": "Da sáng, thâm mờ hẳn, rất thích!",
+          "user": "Phạm Thị Lan",
+          "date": "2025-03-02"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "title": "Mặt Nạ Dừa Cocoon",
+      "category": "Mặt Nạ",
+      "description": "Dưỡng ẩm sâu, làm mềm da với dừa tự nhiên.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất dừa cấp ẩm",
+        "Làm mềm da tức thì",
+        "Không gây bí da"
+      ],
+      "ingredients": ["Dừa", "Hyaluronic Acid", "Vitamin E"],
+      "usage": [
+        "Thoa lớp mỏng lên da sạch.",
+        "Để 10-15 phút rồi rửa sạch.",
+        "Dùng 2-3 lần/tuần."
+      ],
+      "suitableFor": ["Da khô", "Da thường", "Da thiếu nước"],
+      "texture": "Gel mềm, thấm nhanh",
+      "fragrance": "Hương dừa dịu nhẹ",
+      "dosage": "Dùng 2-3 lần/tuần",
+      "caution": "Không để quá khô",
+      "origin": "Việt Nam",
+      "price": "139.000 đ",
+      "discount": "5%",
+      "reviews": [
+        {
+          "stars": 4,
+          "comment": "Da ẩm mịn, mùi dừa thơm lắm!",
+          "user": "Lê Thị Hương",
+          "date": "2025-03-01"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "title": "Mặt Nạ Than Tre Cocoon",
+      "category": "Mặt Nạ",
+      "description": "Thải độc sâu, làm sạch lỗ chân lông với than tre.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Than tre hút độc tố",
+        "Làm sạch bã nhờn hiệu quả",
+        "Cân bằng độ ẩm da"
+      ],
+      "ingredients": ["Than tre", "Đất sét", "Tràm trà"],
+      "usage": [
+        "Thoa lớp mỏng lên da sạch.",
+        "Để 10-15 phút rồi rửa sạch.",
+        "Dùng 2-3 lần/tuần."
+      ],
+      "suitableFor": ["Da dầu", "Da hỗn hợp", "Da mụn"],
+      "texture": "Kem đặc, màu đen",
+      "fragrance": "Không mùi",
+      "dosage": "Dùng 2-3 lần/tuần",
+      "caution": "Không để khô hoàn toàn",
+      "origin": "Việt Nam",
+      "price": "149.000 đ",
+      "discount": "0%",
+      "reviews": [
+        {
+          "stars": 5,
+          "comment": "Da sạch sâu, lỗ chân lông thoáng!",
+          "user": "Nguyễn Thị Ngọc",
+          "date": "2025-03-20"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "title": "Nước Cân Bằng Rau Má Cocoon",
+      "category": "Nước Cân Bằng",
+      "description": "Làm dịu da, phục hồi sau rửa mặt với rau má.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất rau má tự nhiên",
+        "Cân bằng độ pH",
+        "Hỗ trợ giảm kích ứng"
+      ],
+      "ingredients": ["Rau má", "Panthenol", "Niacinamide"],
+      "usage": [
+        "Thấm vào bông, lau nhẹ sau rửa mặt.",
+        "Dùng sáng và tối.",
+        "Vỗ nhẹ để thấm."
+      ],
+      "suitableFor": ["Da nhạy cảm", "Da mụn", "Da kích ứng"],
+      "texture": "Dạng nước lỏng",
+      "fragrance": "Không mùi",
+      "dosage": "Dùng 2 lần/ngày",
+      "caution": "Tránh dùng trên da viêm nặng",
+      "origin": "Việt Nam",
+      "price": "159.000 đ",
+      "discount": "0%",
+      "reviews": [
+        {
+          "stars": 5,
+          "comment": "Da dịu, không còn đỏ sau rửa mặt!",
+          "user": "Trần Thị Thủy",
+          "date": "2025-03-19"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "title": "Nước Cân Bằng Nghệ Cocoon",
+      "category": "Nước Cân Bằng",
+      "description": "Làm sáng da, giảm thâm với nghệ tươi hữu cơ.",
+      "img": "/images/Main_banner_1.png",
+      "details": ["Nghệ tươi làm sáng da", "Cân bằng độ pH", "Không chứa cồn"],
+      "ingredients": ["Nghệ", "Niacinamide", "Rau má"],
+      "usage": [
+        "Thấm vào bông, lau nhẹ sau rửa mặt.",
+        "Dùng sáng và tối.",
+        "Vỗ nhẹ để thấm."
+      ],
+      "suitableFor": ["Da xỉn màu", "Da thâm", "Da hỗn hợp"],
+      "texture": "Dạng nước lỏng",
+      "fragrance": "Hương nghệ nhẹ",
+      "dosage": "Dùng 2 lần/ngày",
+      "caution": "Tránh dùng trên da tổn thương",
+      "origin": "Việt Nam",
+      "price": "149.000 đ",
+      "discount": "0%",
+      "reviews": [
+        {
+          "stars": 4,
+          "comment": "Da sáng hơn, thâm mờ dần!",
+          "user": "Phạm Thị Hương",
+          "date": "2025-03-18"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "title": "Nước Cân Bằng Tràm Trà Cocoon",
+      "category": "Nước Cân Bằng",
+      "description": "Kiểm soát dầu, làm sạch sâu với tràm trà.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất tràm trà kháng khuẩn",
+        "Se khít lỗ chân lông",
+        "Không chứa cồn"
+      ],
+      "ingredients": ["Tràm trà", "Niacinamide", "Rau má"],
+      "usage": [
+        "Thấm vào bông, lau nhẹ sau rửa mặt.",
+        "Dùng sáng và tối.",
+        "Vỗ nhẹ để thấm."
+      ],
+      "suitableFor": ["Da dầu", "Da mụn", "Da hỗn hợp"],
+      "texture": "Dạng nước lỏng",
+      "fragrance": "Hương tràm trà tự nhiên",
+      "dosage": "Dùng 2 lần/ngày",
+      "caution": "Thử trước nếu da nhạy cảm",
+      "origin": "Việt Nam",
+      "price": "159.000 đ",
+      "discount": "15%",
+      "reviews": [
+        {
+          "stars": 4,
+          "comment": "Da bớt dầu, lỗ chân lông nhỏ hơn!",
+          "user": "Lê Thị Ngọc",
+          "date": "2025-03-17"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "title": "Nước Cân Bằng Dừa Cocoon",
+      "category": "Nước Cân Bằng",
+      "description": "Cấp ẩm, làm mềm da với dừa tự nhiên.",
+      "img": "/images/Main_banner_1.png",
+      "details": ["Chiết xuất dừa cấp ẩm", "Cân bằng độ pH", "Không gây bí da"],
+      "ingredients": ["Dừa", "Hyaluronic Acid", "Vitamin E"],
+      "usage": [
+        "Thấm vào bông, lau nhẹ sau rửa mặt.",
+        "Dùng sáng và tối.",
+        "Vỗ nhẹ để thấm."
+      ],
+      "suitableFor": ["Da khô", "Da thường", "Da thiếu nước"],
+      "texture": "Dạng nước lỏng",
+      "fragrance": "Hương dừa dịu nhẹ",
+      "dosage": "Dùng 2 lần/ngày",
+      "caution": "Bảo quản nơi thoáng mát",
+      "origin": "Việt Nam",
+      "price": "149.000 đ",
+      "discount": "0%",
+      "reviews": [
+        {
+          "stars": 5,
+          "comment": "Da mềm, ẩm, rất dễ chịu!",
+          "user": "Nguyễn Thị Lan",
+          "date": "2025-03-16"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "title": "Kem Dưỡng Rau Má Cocoon",
+      "category": "Kem Dưỡng",
+      "description": "Làm dịu da, phục hồi da tổn thương với rau má.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất rau má tự nhiên",
+        "Giảm kích ứng, cấp ẩm",
+        "Không gây nhờn rít"
+      ],
+      "ingredients": ["Rau má", "Panthenol", "Hyaluronic Acid"],
+      "usage": [
+        "Thoa đều sau bước serum.",
+        "Dùng sáng hoặc tối.",
+        "Massage nhẹ để thấm."
+      ],
+      "suitableFor": ["Da nhạy cảm", "Da mụn", "Da kích ứng"],
+      "texture": "Kem mềm, thấm nhanh",
+      "fragrance": "Không mùi",
+      "dosage": "Dùng 1-2 lần/ngày",
+      "caution": "Tránh dùng trên da viêm nặng",
+      "origin": "Việt Nam",
+      "price": "179.000 đ",
+      "discount": "0%",
+      "reviews": [
+        {
+          "stars": 5,
+          "comment": "Da dịu, vết đỏ giảm hẳn!",
+          "user": "Trần Thị Thủy",
+          "date": "2025-03-15"
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "title": "Kem Dưỡng Nghệ Cocoon",
+      "category": "Kem Dưỡng",
+      "description": "Dưỡng sáng da, giảm thâm với nghệ tươi hữu cơ.",
+      "img": "/images/Main_banner_1.png",
+      "details": ["Nghệ tươi kháng viêm", "Làm mờ thâm mụn", "Cấp ẩm sâu"],
+      "ingredients": ["Nghệ", "Bơ hạt mỡ", "Niacinamide"],
+      "usage": [
+        "Thoa đều sau bước serum.",
+        "Dùng sáng hoặc tối.",
+        "Massage nhẹ để thấm."
+      ],
+      "suitableFor": ["Da xỉn màu", "Da thâm", "Da hỗn hợp"],
+      "texture": "Kem mềm, thấm nhanh",
+      "fragrance": "Hương nghệ nhẹ",
+      "dosage": "Dùng 1-2 lần/ngày",
+      "caution": "Tránh dùng trên da tổn thương",
+      "origin": "Việt Nam",
+      "price": "179.000 đ",
+      "discount": "10%",
+      "reviews": [
+        {
+          "stars": 5,
+          "comment": "Da sáng, thâm mờ rõ rệt!",
+          "user": "Phạm Thị Ngọc",
+          "date": "2025-03-14"
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "title": "Kem Dưỡng Dừa Cocoon",
+      "category": "Kem Dưỡng",
+      "description": "Dưỡng ẩm sâu, làm mềm da với dừa tự nhiên.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất dừa cấp ẩm",
+        "Khóa ẩm lâu dài",
+        "Không gây bí da"
+      ],
+      "ingredients": ["Dừa", "Bơ hạt mỡ", "Vitamin E"],
+      "usage": [
+        "Thoa đều sau bước serum.",
+        "Dùng sáng hoặc tối.",
+        "Massage nhẹ để thấm."
+      ],
+      "suitableFor": ["Da khô", "Da thường", "Da thiếu nước"],
+      "texture": "Kem mềm, thấm nhanh",
+      "fragrance": "Hương dừa dịu nhẹ",
+      "dosage": "Dùng 1-2 lần/ngày",
+      "caution": "Tránh dùng quá nhiều",
+      "origin": "Việt Nam",
+      "price": "169.000 đ",
+      "discount": "0%",
+      "reviews": [
+        {
+          "stars": 4,
+          "comment": "Da ẩm mịn, mùi dừa dễ chịu!",
+          "user": "Lê Thị Hương",
+          "date": "2025-03-13"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "title": "Kem Dưỡng Tràm Trà Cocoon",
+      "category": "Kem Dưỡng",
+      "description": "Kiểm soát dầu, làm dịu da mụn với tràm trà.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất tràm trà kháng khuẩn",
+        "Giảm dầu thừa",
+        "Cấp ẩm nhẹ"
+      ],
+      "ingredients": ["Tràm trà", "Niacinamide", "Hyaluronic Acid"],
+      "usage": [
+        "Thoa đều sau bước serum.",
+        "Dùng sáng hoặc tối.",
+        "Massage nhẹ để thấm."
+      ],
+      "suitableFor": ["Da dầu", "Da mụn", "Da hỗn hợp"],
+      "texture": "Kem nhẹ, thấm nhanh",
+      "fragrance": "Hương tràm trà tự nhiên",
+      "dosage": "Dùng 1-2 lần/ngày",
+      "caution": "Thử trước nếu da nhạy cảm",
+      "origin": "Việt Nam",
+      "price": "189.000 đ",
+      "discount": "0%",
+      "reviews": [
+        {
+          "stars": 5,
+          "comment": "Da bớt dầu, mụn dịu hẳn!",
+          "user": "Nguyễn Thị Lan",
+          "date": "2025-03-12"
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "title": "Kem Dưỡng Ban Ngày Bí Đao Cocoon",
+      "category": "Kem Dưỡng",
+      "description": "Kiểm soát dầu, bảo vệ da ban ngày với bí đao.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất bí đao tự nhiên",
+        "Cấp ẩm nhẹ, giảm dầu",
+        "Không gây bóng nhờn"
+      ],
+      "ingredients": ["Bí đao", "Vitamin E", "Hyaluronic Acid"],
+      "usage": [
+        "Thoa đều sau serum vào buổi sáng.",
+        "Massage nhẹ để thấm.",
+        "Dùng trước kem chống nắng."
+      ],
+      "suitableFor": ["Da dầu", "Da hỗn hợp", "Da mụn"],
+      "texture": "Kem lỏng, thấm nhanh",
+      "fragrance": "Hương bí đao nhẹ",
+      "dosage": "Dùng mỗi sáng",
+      "caution": "Kết hợp chống nắng để bảo vệ tốt hơn",
+      "origin": "Việt Nam",
+      "price": "179.000 đ",
+      "discount": "10%",
+      "reviews": [
+        {
+          "stars": 4,
+          "comment": "Da mềm, bớt dầu cả ngày!",
+          "user": "Trần Thị Mai",
+          "date": "2025-03-11"
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "title": "Xịt Khoáng Rau Má Cocoon",
+      "category": "Xịt Khoáng",
+      "description": "Làm dịu da, cấp ẩm tức thì với rau má tự nhiên.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất rau má làm dịu",
+        "Phun sương mịn, thấm nhanh",
+        "Hỗ trợ giảm kích ứng"
+      ],
+      "ingredients": ["Rau má", "Nước khoáng", "Panthenol"],
+      "usage": [
+        "Xịt cách mặt 20-30cm.",
+        "Dùng bất cứ lúc nào trong ngày.",
+        "Vỗ nhẹ để thấm."
+      ],
+      "suitableFor": ["Da nhạy cảm", "Da mụn", "Da kích ứng"],
+      "texture": "Sương mịn nhẹ",
+      "fragrance": "Không mùi",
+      "dosage": "Dùng khi cần",
+      "caution": "Lắc đều trước khi dùng",
+      "origin": "Việt Nam",
+      "price": "139.000 đ",
+      "discount": "0%",
+      "reviews": [
+        {
+          "stars": 5,
+          "comment": "Da mát, dịu hẳn, rất tiện!",
+          "user": "Nguyễn Thị Thủy",
+          "date": "2025-03-10"
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "title": "Xịt Khoáng Hoa Hồng Cocoon",
+      "category": "Xịt Khoáng",
+      "description": "Cấp ẩm, làm mềm da với hoa hồng hữu cơ.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất hoa hồng tự nhiên",
+        "Làm dịu da tức thì",
+        "Phun sương mịn đều"
+      ],
+      "ingredients": ["Hoa hồng", "Nước khoáng", "Glycerin"],
+      "usage": [
+        "Xịt cách mặt 20-30cm.",
+        "Dùng bất cứ lúc nào trong ngày.",
+        "Vỗ nhẹ để thấm."
+      ],
+      "suitableFor": ["Da khô", "Da thường", "Da thiếu nước"],
+      "texture": "Sương mịn nhẹ",
+      "fragrance": "Hương hoa hồng dịu",
+      "dosage": "Dùng khi cần",
+      "caution": "Lắc đều trước khi dùng",
+      "origin": "Việt Nam",
+      "price": "139.000 đ",
+      "discount": "0%",
+      "reviews": [
+        {
+          "stars": 4,
+          "comment": "Da mềm, mùi thơm dễ chịu!",
+          "user": "Trần Thị Lan",
+          "date": "2025-03-09"
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "title": "Xịt Khoáng Nghệ Cocoon",
+      "category": "Xịt Khoáng",
+      "description": "Làm sáng da, cấp ẩm nhẹ với nghệ tươi.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất nghệ làm sáng",
+        "Phun sương mịn, làm mát da",
+        "Hỗ trợ giảm thâm"
+      ],
+      "ingredients": ["Nghệ", "Nước khoáng", "Niacinamide"],
+      "usage": [
+        "Xịt cách mặt 20-30cm.",
+        "Dùng bất cứ lúc nào trong ngày.",
+        "Vỗ nhẹ để thấm."
+      ],
+      "suitableFor": ["Da xỉn màu", "Da thâm", "Da hỗn hợp"],
+      "texture": "Sương mịn nhẹ",
+      "fragrance": "Hương nghệ nhẹ",
+      "dosage": "Dùng khi cần",
+      "caution": "Lắc đều trước khi dùng",
+      "origin": "Việt Nam",
+      "price": "149.000 đ",
+      "discount": "0%",
+      "reviews": [
+        {
+          "stars": 5,
+          "comment": "Da sáng, mát, rất thích!",
+          "user": "Phạm Thị Ngọc",
+          "date": "2025-03-08"
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "title": "Xịt Khoáng Dừa Cocoon",
+      "category": "Xịt Khoáng",
+      "description": "Cấp ẩm sâu, làm mềm da với dừa tự nhiên.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất dừa cấp ẩm",
+        "Phun sương mịn, làm mát da",
+        "Không gây bí da"
+      ],
+      "ingredients": ["Dừa", "Nước khoáng", "Vitamin E"],
+      "usage": [
+        "Xịt cách mặt 20-30cm.",
+        "Dùng bất cứ lúc nào trong ngày.",
+        "Vỗ nhẹ để thấm."
+      ],
+      "suitableFor": ["Da khô", "Da thường", "Da thiếu nước"],
+      "texture": "Sương mịn nhẹ",
+      "fragrance": "Hương dừa dịu nhẹ",
+      "dosage": "Dùng khi cần",
+      "caution": "Lắc đều trước khi dùng",
+      "origin": "Việt Nam",
+      "price": "139.000 đ",
+      "discount": "20%",
+      "reviews": [
+        {
+          "stars": 4,
+          "comment": "Da ẩm, mùi dừa thơm lắm!",
+          "user": "Lê Thị Hương",
+          "date": "2025-03-07"
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "title": "Serum Rau Má Cocoon",
+      "category": "Tinh Chất",
+      "description": "Làm dịu da, phục hồi da tổn thương với rau má.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất rau má tự nhiên",
+        "Tăng cường bảo vệ da",
+        "Hỗ trợ sau mụn"
+      ],
+      "ingredients": ["Rau má", "Panthenol", "Hyaluronic Acid"],
+      "usage": [
+        "Lấy 2-3 giọt, thoa sau toner.",
+        "Dùng sáng và tối.",
+        "Vỗ nhẹ để thấm."
+      ],
+      "suitableFor": ["Da nhạy cảm", "Da mụn", "Da tổn thương"],
+      "texture": "Lỏng nhẹ, không nhờn",
+      "fragrance": "Không mùi",
+      "dosage": "Dùng 2 lần/ngày",
+      "caution": "Tránh dùng trên da viêm nặng",
+      "origin": "Việt Nam",
+      "price": "239.000 đ",
+      "discount": "30%",
+      "reviews": [
+        {
+          "stars": 5,
+          "comment": "Da dịu, vết đỏ giảm nhanh!",
+          "user": "Nguyễn Thị Thủy",
+          "date": "2025-03-06"
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "title": "Serum Hoa Hồng Cocoon",
+      "category": "Tinh Chất",
+      "description": "Dưỡng ẩm, tăng độ đàn hồi với hoa hồng hữu cơ.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất hoa hồng tự nhiên",
+        "Cấp nước sâu, làm sáng da",
+        "Hỗ trợ chống lão hóa"
+      ],
+      "ingredients": ["Hoa hồng", "Hyaluronic Acid", "Peptide"],
+      "usage": [
+        "Lấy 2-3 giọt, thoa sau toner.",
+        "Dùng sáng và tối.",
+        "Vỗ nhẹ để thấm."
+      ],
+      "suitableFor": ["Da khô", "Da lão hóa", "Da thiếu nước"],
+      "texture": "Lỏng nhẹ, thấm nhanh",
+      "fragrance": "Hương hoa hồng dịu",
+      "dosage": "Dùng 2 lần/ngày",
+      "caution": "Bảo quản nơi thoáng mát",
+      "origin": "Việt Nam",
+      "price": "249.000 đ",
+      "discount": "0%",
+      "reviews": [
+        {
+          "stars": 5,
+          "comment": "Da căng bóng, mềm mịn hơn!",
+          "user": "Trần Thị Lan",
+          "date": "2025-03-05"
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "title": "Serum Nghệ Cocoon",
+      "category": "Tinh Chất",
+      "description": "Làm sáng da, giảm thâm nám với nghệ tươi.",
+      "img": "/images/Main_banner_1.png",
+      "details": ["Nghệ tươi kháng viêm", "Làm mờ thâm mụn", "Thẩm thấu sâu"],
+      "ingredients": ["Nghệ", "Niacinamide", "Vitamin C"],
+      "usage": [
+        "Lấy 2-3 giọt, thoa sau toner.",
+        "Dùng sáng hoặc tối.",
+        "Vỗ nhẹ để thấm."
+      ],
+      "suitableFor": ["Da xỉn màu", "Da thâm", "Da không đều màu"],
+      "texture": "Lỏng nhẹ, không vàng da",
+      "fragrance": "Hương nghệ nhẹ",
+      "dosage": "Dùng 1-2 lần/ngày",
+      "caution": "Dùng chống nắng khi ra ngoài",
+      "origin": "Việt Nam",
+      "price": "259.000 đ",
+      "discount": "0%",
+      "reviews": [
+        {
+          "stars": 5,
+          "comment": "Da sáng, thâm mờ rõ rệt!",
+          "user": "Phạm Thị Ngọc",
+          "date": "2025-03-04"
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "title": "Serum Tràm Trà Cocoon",
+      "category": "Tinh Chất",
+      "description": "Giảm mụn, kiểm soát dầu với tràm trà tự nhiên.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất tràm trà kháng khuẩn",
+        "Giảm viêm, làm dịu mụn",
+        "Kiểm soát dầu thừa"
+      ],
+      "ingredients": ["Tràm trà", "Niacinamide", "Rau má"],
+      "usage": [
+        "Lấy 2-3 giọt, thoa sau toner.",
+        "Dùng sáng hoặc tối.",
+        "Vỗ nhẹ để thấm."
+      ],
+      "suitableFor": ["Da dầu", "Da mụn", "Da hỗn hợp"],
+      "texture": "Lỏng nhẹ, không nhờn",
+      "fragrance": "Hương tràm trà tự nhiên",
+      "dosage": "Dùng 1-2 lần/ngày",
+      "caution": "Thử trước nếu da nhạy cảm",
+      "origin": "Việt Nam",
+      "price": "229.000 đ",
+      "discount": "0%",
+      "reviews": [
+        {
+          "stars": 4,
+          "comment": "Mụn giảm, da bớt dầu, rất ổn!",
+          "user": "Lê Thị Hương",
+          "date": "2025-03-03"
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "title": "Serum Dừa Cocoon",
+      "category": "Tinh Chất",
+      "description": "Dưỡng ẩm sâu, làm mềm da với dừa tự nhiên.",
+      "img": "/images/Main_banner_1.png",
+      "details": [
+        "Chiết xuất dừa cấp ẩm",
+        "Làm mềm da tức thì",
+        "Thẩm thấu nhanh"
+      ],
+      "ingredients": ["Dừa", "Hyaluronic Acid", "Vitamin E"],
+      "usage": [
+        "Lấy 2-3 giọt, thoa sau toner.",
+        "Dùng sáng và tối.",
+        "Vỗ nhẹ để thấm."
+      ],
+      "suitableFor": ["Da khô", "Da thường", "Da thiếu nước"],
+      "texture": "Lỏng nhẹ, thấm nhanh",
+      "fragrance": "Hương dừa dịu nhẹ",
+      "dosage": "Dùng 2 lần/ngày",
+      "caution": "Bảo quản nơi thoáng mát",
+      "origin": "Việt Nam",
+      "price": "219.000 đ",
+      "discount": "30%",
+      "reviews": [
+        {
+          "stars": 5,
+          "comment": "Da mềm, ẩm mịn, mùi dễ chịu!",
+          "user": "Nguyễn Thị Mai",
+          "date": "2025-03-02"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+        "id": 1,
+        "name": "Tất Cả",
+        "icon": "/images/all.png"
+      },
+      {
+        "id": 2,
+        "name": "Tẩy Trang",
+        "icon": "/images/nuoc-tay-trang.png"
+      },
+      {
+        "id": 3,
+        "name": "Sữa Rửa Mặt",
+        "icon": "/images/suaruamat.webp"
+      },
+      {
+        "id": 4,
+        "name": "Tẩy Da Chết Mặt",
+        "icon": "/images/taytebaochet.webp"
+      },
+      {
+        "id": 5,
+        "name": "Mặt Nạ",
+        "icon": "/images/mask.webp"
+      },
+      {
+        "id": 6,
+        "name": "Nước Cân Bằng",
+        "icon": "/images/toner.webp"
+      },
+      {
+        "id": 7,
+        "name": "Kem Dưỡng",
+        "icon": "/images/kemduong.jpg"
+      },
+      {
+        "id": 8,
+        "name": "Xịt Khoáng",
+        "icon": "/images/xitkhoang.webp"
+      },
+      {
+        "id": 9,
+        "name": "Tinh Chất",
+        "icon": "/images/serum.webp"
+      },
+      {
+        "id": 10,
+        "name": "Chống Nắng",
+        "icon": "/images/kemchongnang.webp"
+      }
+  ]
+}
