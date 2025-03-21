@@ -8,23 +8,44 @@ function ProductIntro() {
   return (
     <div className="main">
       <section
-        className="product-intro carousel slide"
-        id="productCarousel"
+        className="intro-carousel carousel slide carousel-fade"
+        id="introCarousel"
         data-bs-ride="carousel"
       >
+        <div className="carousel-indicators intro-indicators">
+          <button
+            type="button"
+            data-bs-target="#introCarousel"
+            data-bs-slide-to="0"
+            className="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#introCarousel"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#introCarousel"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
         <div className="carousel-inner">
-          {/* Slide 1 */}
           <div className="carousel-item active">
-            <div className="d-flex w-100 h-100 ">
-              <div className="product-image">
+            <div className="d-flex w-100 h-100">
+              <div className="intro-image">
                 <img
                   src="/images/Main_banner_1.png"
                   alt="Sữa rửa mặt Sen Hậu Giang"
                 />
               </div>
-              <div className="product-info p-5 text-left">
+              <div className="intro-info p-5 text-left">
                 <h4 className="fw-bold mb-3 p-0">SẢN PHẨM MỚI</h4>
-                <h1 className="fw-bold p-0 m-0 text-font">Sữa rửa mặt </h1>
+                <h1 className="fw-bold p-0 m-0 text-font">Sữa rửa mặt</h1>
                 <h1 className="fw-bold mb-5 text-font">Sen Hậu Giang</h1>
                 <p>
                   Với công trình nghiên cứu kỹ lưỡng, kết hợp sự hiểu biết về
@@ -35,19 +56,17 @@ function ProductIntro() {
               </div>
             </div>
           </div>
-
-          {/* Slide 2 */}
           <div className="carousel-item">
             <div className="d-flex w-100 h-100">
-              <div className="product-image">
+              <div className="intro-image">
                 <video autoPlay loop muted playsInline>
                   <source src="/images/video_banner_2.mp4" type="video/mp4" />
                 </video>
               </div>
-              <div className="product-info bg-2 p-5">
+              <div className="intro-info bg-2 p-5">
                 <h4 className="fw-bold mb-4 p-0">SẢN PHẨM NỔI BẬT</h4>
-                <h1 className="fw-bold p-0 mt-2 text-font">Dầu Tẩy Trang </h1>
-                <h1 className="fw-bold p-0 mb-5 text-font">Hoa Hồng </h1>
+                <h1 className="fw-bold p-0 mt-2 text-font">Dầu Tẩy Trang</h1>
+                <h1 className="fw-bold p-0 mb-5 text-font">Hoa Hồng</h1>
                 <p>
                   Với công trình nghiên cứu kỹ lưỡng, kết hợp sự hiểu biết về
                   cấu trúc sinh học của da và sự kiểm nghiệm khắt khe qua bài
@@ -57,14 +76,12 @@ function ProductIntro() {
               </div>
             </div>
           </div>
-
-          {/* Slide 3 */}
           <div className="carousel-item">
             <div className="d-flex w-100 h-100">
-              <div className="product-image">
+              <div className="intro-image">
                 <img src="/images/Main_banner_3.jpg" alt="Gel dưỡng Bí Đao" />
               </div>
-              <div className="product-info bg-3 p-5">
+              <div className="intro-info bg-3 p-5">
                 <h4 className="fw-bold mb-3 p-0">CHƯƠNG TRÌNH</h4>
                 <h1 className="fw-bold p-0 mt-2 text-font">Đổi Vỏ Chai Cũ</h1>
                 <h1 className="fw-bold p-0 mb-5 text-font">Nhận Sản Phẩm Mới</h1>
@@ -78,20 +95,20 @@ function ProductIntro() {
           </div>
         </div>
         <button
-          className="carousel-control-prev"
+          className="carousel-control-prev intro-control-prev"
           type="button"
-          data-bs-target="#productCarousel"
+          data-bs-target="#introCarousel"
           data-bs-slide="prev"
         >
-          <span className="carousel-control-prev-icon"></span>
+          <span className="carousel-control-prev-icon intro-control-prev-icon"></span>
         </button>
         <button
-          className="carousel-control-next"
+          className="carousel-control-next intro-control-next"
           type="button"
-          data-bs-target="#productCarousel"
+          data-bs-target="#introCarousel"
           data-bs-slide="next"
         >
-          <span className="carousel-control-next-icon"></span>
+          <span className="carousel-control-next-icon intro-control-next-icon"></span>
         </button>
       </section>
       <div className="container-fluid section-2 mb-3">
@@ -106,7 +123,7 @@ function ProductIntro() {
       </div>
       <div className="section-3 mb-5">
         <div className="row m-0 mb-3 p-3">
-          <div className="col-12 ">
+          <div className="col-12">
             <h3 className="text-center fw-bold text-font mt-3">
               CHỨNG NHẬN BỞI CÁC TỔ CHỨC QUỐC TẾ
             </h3>
@@ -170,27 +187,27 @@ function ProductIntro() {
           <div className="col-9 h-100 pe-5">
             <div
               id="productListCarousel"
-              className="carousel slide"
+              className="carousel slide product-list-carousel"
               data-bs-ride="carousel"
             >
               <div className="carousel-inner">
                 <ProductList />
               </div>
               <button
-                className="carousel-control-prev"
+                className="carousel-control-prev product-list-control-prev"
                 type="button"
                 data-bs-target="#productListCarousel"
                 data-bs-slide="prev"
               >
-                <span className="carousel-control-prev-icon"></span>
+                <span className="carousel-control-prev-icon product-list-control-prev-icon"></span>
               </button>
               <button
-                className="carousel-control-next"
+                className="carousel-control-next product-list-control-next"
                 type="button"
                 data-bs-target="#productListCarousel"
                 data-bs-slide="next"
               >
-                <span className="carousel-control-next-icon"></span>
+                <span className="carousel-control-next-icon product-list-control-next-icon"></span>
               </button>
             </div>
           </div>

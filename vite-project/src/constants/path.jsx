@@ -7,4 +7,6 @@ export const path = {
     article:'/cocoon/bai-viet',
     beauty:"/cocoon/bai-viet/lam-dep",
     charity:"/cocoon/bai-viet/chuong-trinh",
+    product:"/cocoon/san-pham",
+    productInfo:"/cocoon/san-pham/:id"
 }

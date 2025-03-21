@@ -9,6 +9,8 @@ import CocoonResponsibility from "../pages/Cocoon/CocoonResponsibility";
 import Article from "../components/Article/Article";
 import Article2 from "../components/ArticleExtra/Article2";
 import Article3 from "../components/ArticleExtra/Article3";
+import ProductMenu from "../pages/ProductMenu/ProductMenu";
+import ProductInfo from "../components/ProductInfo/ProductInfo";
 
 export default function useRouteElements() {
   let element = useRoutes([
@@ -48,6 +50,14 @@ export default function useRouteElements() {
           path: path.charity, 
           element: <Article3/>
         },
+        { 
+          path: path.product, 
+          element: <ProductMenu/>
+        },
+        {
+          path: path.productInfo,
+          element: <ProductInfo/>
+        }
       ],
     },
   ]);
