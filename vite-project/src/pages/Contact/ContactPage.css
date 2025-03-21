@@ -1,0 +1,212 @@
+.contact-page {
+    background-color: #FEFBF4;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.contact-page .container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.contact-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-header h1 {
+    font-size: 2.8rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contact-header p {
+    color: #777;
+    font-size: 1.1rem;
+}
+
+/* Main Content */
+.contact-main {
+    display: flex;
+    gap: 30px;
+}
+
+/* Map */
+.contact-map {
+    width: 35%; /* Đã giảm chiều rộng bản đồ */
+}
+
+.contact-map h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 300px; /* Đã đặt chiều cao cố định cho bản đồ */
+}
+
+/* Details (Info + Form) */
+.contact-details {
+    width: 65%; /* Tăng chiều rộng phần thông tin liên hệ */
+}
+
+/* Thông tin liên hệ */
+.contact-info {
+    margin-bottom: 40px;
+}
+
+.contact-info h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Hiển thị theo cột */
+    gap: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+}
+
+.info-item .icon {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-right: 15px;
+}
+
+.info-item a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Form liên hệ */
+.contact-form h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 18px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 6px;
+    color: #555;
+    font-weight: 600;
+}
+
+.contact-form .form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #555;
+    box-sizing: border-box;
+}
+
+.contact-form .form-control::placeholder {
+    color: #bbb;
+}
+
+.contact-form .btn-primary {
+    background-color: #28a745;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.2s;
+}
+
+.contact-form .btn-primary:hover {
+    background-color: #218838;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-page .container {
+        padding: 15px;
+    }
+
+    .contact-main {
+        flex-direction: column; /* Stack map and details */
+    }
+
+    .contact-map {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .contact-details {
+        width: 100%;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Map Section Container */
+.contact-map-section {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Khoảng cách giữa ảnh và bản đồ */
+}
+
+.company-image {
+    text-align: center;
+    margin-bottom: 20px; /* Thêm khoảng cách bên dưới ảnh */
+    margin-top: 7px;
+}
+
+.company-image img {
+    width: 100%; /* Chiều rộng bằng bản đồ */
+    height: 600px; /* Điều chỉnh chiều cao theo pixel */
+    /* height: 30vh; Chiều cao theo phần trăm viewport height */
+    object-fit: cover; /* Cắt ảnh để vừa khung */
+    border-radius: 40px;
+}
+
+/* Map */
+.contact-map {
+    width: 100%; /* Bản đồ lấp đầy container */
+}
+
+.contact-map h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px; /* Giảm khoảng cách với bản đồ */
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 300px;
+}
