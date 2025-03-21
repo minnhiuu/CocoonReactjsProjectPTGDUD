@@ -3,6 +3,7 @@ import MainLayout from "../layouts/MainLayout";
 import { path } from "../constants/path";
 import Home from "../pages/Home/Home";
 import CocoonValues from "../pages/Cocoon/CocoonValues";
+import Promotion from "../pages/Promotion/Promotion";
 import { useRoutes } from "react-router-dom";
 import CocoonStory from "../pages/Cocoon/CocoonStory";
 import CocoonResponsibility from "../pages/Cocoon/CocoonResponsibility";
@@ -15,38 +16,43 @@ export default function useRouteElements() {
     {
       path: "/",
       element: <MainLayout />,
+
       children: [
         {
-            path: path.cocoon,
-            element: <Home />,
+          path: path.cocoon,
+          element: <Home />,
         },
         {
           path: path.home,
           element: <Home />,
         },
-        { 
-          path: path.coreValue, 
-          element: <CocoonValues /> 
+        {
+          path: path.coreValue,
+          element: <CocoonValues />,
         },
-        { 
-            path: path.storyBrand, 
-            element: <CocoonStory/> 
+        {
+          path: path.storyBrand,
+          element: <CocoonStory />,
         },
-        { 
-            path: path.communityResponsibility, 
-            element: <CocoonResponsibility/> 
+        {
+          path: path.communityResponsibility,
+          element: <CocoonResponsibility />,
         },
-        { 
-            path: path.article, 
-            element: <Article/> 
+        {
+          path: path.article,
+          element: <Article />,
         },
-        { 
-          path: path.beauty, 
-          element: <Article2/> 
+        {
+          path: path.beauty,
+          element: <Article2 />,
         },
-        { 
-          path: path.charity, 
-          element: <Article3/>
+        {
+          path: path.charity,
+          element: <Article3 />,
+        },
+        {
+          path: path.promotion,
+          element: <Promotion />,
         },
       ],
     },

@@ -7,7 +7,7 @@ import Banner from "../components/Banner/Banner";
 export default function MainLayout() {
   return (
     <>
-        <Banner/>
+      <Banner />
       <Header />
       <Outlet />
       <Footer />
