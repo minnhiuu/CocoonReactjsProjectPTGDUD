@@ -1,14 +1,9 @@
-import './App.css'
-import useRouteElements from './routes/useRouteElements'
+import "./App.css";
+import useRouteElements from "./routes/useRouteElements";
 function App() {
-
   const element = useRouteElements();
 
-  return (
-    <>
-      {element}
-    </>
-  )
+  return <>{element}</>;
 }
 
-export default App
+export default App;
