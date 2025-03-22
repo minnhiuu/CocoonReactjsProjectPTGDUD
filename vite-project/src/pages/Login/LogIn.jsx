@@ -13,13 +13,15 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./LogIn.css";
 import SignUpForm from "./SignUp";
 
-export default function LoginForm({ setShowLogin }) {
+export default function LoginForm({ setShowLogin, setUser }) {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [remember, setRemember] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState({ phone: "", password: "" });
   const [showSignUp, setShowSignUp] = useState(false);
+ 
+
   const validatePhone = (phone) => {
     return /^\d{10,11}$/.test(phone); // Chỉ nhận số, từ 10-11 chữ số
   };
@@ -46,12 +48,39 @@ export default function LoginForm({ setShowLogin }) {
   
     setErrors(newErrors);
   
-    if (!newErrors.phone && !newErrors.password) {
-      console.log("Phone:", phone, "Password:", password, "Remember:", remember);
-      alert("Đăng nhập thành công!"); 
-      setShowLogin(false); 
+    // Nếu có lỗi thì dừng lại
+    if (newErrors.phone || newErrors.password) return;
+  
+    // Danh sách người dùng giả lập
+    const users = [
+      { phone: "0338858196", name: "Nguyễn Văn A", email: "a@example.com", password: "123456" },
+      { phone: "0987654321", name: "Trần Thị B", email: "b@example.com", password: "abcdef" },
+      { phone: "0912345678", name: "Lê Văn C", email: "c@example.com", password: "qwerty" },
+    ];
+  
+    const foundUser = users.find((u) => u.phone === phone);
+  
+    if (!foundUser) {
+      console.log("Số điện thoại không tồn tại!");
+      setErrors({ ...newErrors, phone: "Số điện thoại không tồn tại!" });
+      return;
     }
+  
+    if (foundUser.password !== password) {
+      console.log("Mật khẩu không đúng!");
+      setErrors({ ...newErrors, password: "Mật khẩu không đúng!" });
+      return;
+    }
+  
+    console.log("Đăng nhập thành công!"); // Kiểm tra xem có chạy đến đây không
+    alert("Đăng nhập thành công!");
+    setUser(foundUser);
+    localStorage.setItem("user", JSON.stringify(foundUser));
+    setShowLogin(false);
   };
+  
+   
+  
   
   if (showSignUp) {
     return <SignUpForm setShowSignUp={setShowSignUp} />;

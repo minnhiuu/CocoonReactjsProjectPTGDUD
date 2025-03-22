@@ -1,12 +1,26 @@
 import SearchButton from '../SearchButton/SearchButton';
 import './Header.css'
 import LoginForm from "../../pages/Login/LogIn";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import SidebarCocoon from "../Sidebar/SidebarCocoon";
 import { Link } from 'react-router-dom';
+import UserProfile from '../profile/userProfile'; // Đảm bảo rằng đường dẫn là chính xác
+
+import { FaUser } from "react-icons/fa";
 function Header() {
   const [showLogin, setShowLogin] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
+  const [user, setUser] = useState(null);
+  const [showProfile, setShowProfile] = useState(false);
+  useEffect(() => {
+    const savedUser = localStorage.getItem("user");
+    if (savedUser) {
+      setUser(JSON.parse(savedUser));
+    }
+  }, []);
+  useEffect(() => {
+    console.log("User updated:", user);
+  }, [user]);
     return (
       <>
       <header className="header d-flex justify-content-between align-items-center p-3 ">
@@ -25,16 +39,33 @@ function Header() {
                 </Link>
         </div>
         <div className="header-right d-flex align-items-center gap-3">
-          <a href="#" className="text-dark " onClick={() => {setShowLogin(true)}}>Đăng nhập</a>
+        {!user ? (
+  <a href="#" className="text-dark" onClick={() => setShowLogin(true)}>Đăng nhập</a>
+) : (
+  <div className="position-relative">
+    <FaUser className="fs-3 cursor-pointer" onClick={() => setShowProfile(!showProfile)} />
+    {showProfile && user && (
+  <div className="position-relative">
+    <UserProfile user={user} setUser={setUser} showProfile={showProfile} />
+  </div>
+)}
+
+  </div>
+)}
           <a href="#" className="text-dark ">Liên hệ</a>
           <a href="#" className="text-dark ">Giỏ hàng (1)</a>
+        </div>
+        <div>
+        
+       
+
         </div>
       </header>
       {showLogin && <div className="overlay" onClick={() => setShowLogin(false)}></div>}
 
       {showLogin && (
           <div className="modal-container">
-              <LoginForm setShowLogin={setShowLogin} />
+              <LoginForm setShowLogin={setShowLogin} setUser={setUser}/>
           </div>
       )}
       {showSidebar && <div className="overlay" onClick={() => setShowSidebar(false)}></div>}
