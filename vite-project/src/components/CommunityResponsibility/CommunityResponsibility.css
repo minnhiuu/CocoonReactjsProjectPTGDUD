@@ -21,10 +21,7 @@
     text-align: justify;
     margin-left: 20px;
 }
-.community-responsibility-bold{
-    background-color: #FEFBF4;
-    font-weight: bold;
-}
+
 .community-responsibility-italic{
     background-color: #FEFBF4;
     font-style: italic;
@@ -32,3 +29,68 @@
     text-align: center;
     margin-top: 40px;
 }
+
+
+.earth-section {
+    width: 600px;  /* Tăng kích thước vùng chứa Trái Đất */
+    height: 600px;
+}
+
+.canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.image-plane {
+    width: 150px; /* Tăng kích thước ảnh */
+    height: 150px;
+}
+.community-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    gap: 20px; /* Khoảng cách giữa hai phần */
+  }
+  
+  .content-section {
+    flex: 1;
+    max-width: 50%;
+  }
+  
+  .earth-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+  }
+  
+  .image-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .image-popup img {
+    max-width: 90vw;
+    max-height: 90vh;
+  }
+  .community-title{
+    font-family: serif;
+    font-size: 30px;
+    font-weight: bold;
+    
+    color: #8c6239;
+    margin-bottom: 20px;
+    background-color: #FEFBF4;
+  }
+  .quote{
+    text-align: center;
+    font-style: italic;
+    font-size: 17px;
+  }
