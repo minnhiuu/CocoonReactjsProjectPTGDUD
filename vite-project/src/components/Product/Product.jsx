@@ -39,12 +39,6 @@ const Product = ({ product }) => {
             <p className="text-lg font-semibold text-green-400">{price}</p>
           )}
         </div>
-        <button className="mt-auto py-2 px-4 rounded-lg bg-[#E3D0AC] text-gray-700 hover:bg-[#d1bb8f] transition">
-        <h3 className="text-xl font-bold font-['Vollkorn'] text-gray-800 line-clamp-2">
-          {title}
-        </h3>
-        <p className="text-sm text-gray-500 line-clamp-2">{description}</p>
-        <p className="text-lg font-semibold text-green-600">{price}</p>
         <button
           className="mt-auto py-2 px-4 rounded-lg bg-[#E3D0AC] text-gray-700 hover:bg-[#d1bb8f] transition"
           onClick={() => addToCart(product)}
