@@ -41,12 +41,14 @@ export const CartProvider = ({ children }) => {
     }
   };
 
+
   const removeFromCart = (item) => {
     const newCartItems = cartItems.filter(
       (cartItem) => cartItem.id !== item.id
     );
     setCartItems(newCartItems);
   };
+
 
   const clearCart = () => {
     setCartItems([]);
@@ -61,6 +63,7 @@ export const CartProvider = ({ children }) => {
       .toLocaleString("vi-VN", { style: "currency", currency: "VND" });
   };
 
+
   const updateItemQuantity = (itemId, quantity) => {
     setCartItems((prevItems) =>
       prevItems.map((item) =>
@@ -68,6 +71,7 @@ export const CartProvider = ({ children }) => {
       )
     );
   };
+
 
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
@@ -90,6 +94,7 @@ export const CartProvider = ({ children }) => {
         clearCart,
         getCartTotal,
         updateItemQuantity,
+
       }}
     >
       {children}

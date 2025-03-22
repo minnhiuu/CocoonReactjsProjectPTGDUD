@@ -4,11 +4,12 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./ProductIntro.css";
 import ProductList from "../ProductList/ProductList";
 
+
 function ProductIntro() {
   return (
     <div className="main">
       <section
-        className="intro-carousel carousel slide carousel-fade"
+        className="intro-carousel carousel slide carousel-fade p-4  "
         id="introCarousel"
         data-bs-ride="carousel"
       >

@@ -12,13 +12,22 @@ import Article2 from "../components/ArticleExtra/Article2";
 import Article3 from "../components/ArticleExtra/Article3";
 import ProductMenu from "../pages/ProductMenu/ProductMenu";
 import ProductInfo from "../components/ProductInfo/ProductInfo";
+import { CartProvider } from "../context/cart";
+import ContactPage from "../pages/Contact/ContactPage"; // Import ContactPage
+
 
 export default function useRouteElements() {
   let element = useRoutes([
     {
       path: "/",
       element: <MainLayout />,
-
+// =======
+//       element: (
+//         <CartProvider>
+//           <MainLayout />
+//         </CartProvider>
+//       ),
+// >>>>>>> 85531f9497ea4208f22381a11bba655f2cd76518
       children: [
         {
           path: path.cocoon,
@@ -31,6 +40,7 @@ export default function useRouteElements() {
         {
           path: path.coreValue,
           element: <CocoonValues />,
+
         },
         {
           path: path.storyBrand,
@@ -63,7 +73,11 @@ export default function useRouteElements() {
         {
           path: path.productInfo,
           element: <ProductInfo/>
-        }
+        },
+        { // Thêm route cho ContactPage
+          path: "/contact",
+          element: <ContactPage />,
+      },
       ],
     },
   ]);

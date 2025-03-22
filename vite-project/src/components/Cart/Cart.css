@@ -3,14 +3,17 @@
   flex-direction: column;
   align-items: center;
   inset: 0;
+
   /* background-color: #fff; */
   background-color: #f8f5eb;
+
   color: #000;
   text-transform: uppercase;
   font-size: small;
   position: fixed;
   padding: 10px;
   z-index: 1000;
+
   left: calc(1 / 2 * 100%);
   opacity: 0;
   transform: translateX(50%);
@@ -46,11 +49,13 @@
     opacity: 0;
     transform: translateX(100%);
   }
+
 }
 
 .close-cart-btn-wrapper {
   position: absolute;
   top: 10px;
+
   right: 30px;
 }
 
@@ -61,8 +66,10 @@
   width: 100%;
   font-size: 22px;
   font-weight: bold;
-  margin-left: 20px;
-  margin-bottom: 16px;
+  /* margin-left: 20px;
+  margin-bottom: 16px; */
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
 }
 
 .btn-close {
@@ -74,11 +81,11 @@
   transform: rotate(90deg);
 }
 
-/* cart list */
 .cart-list {
   display: flex;
   flex-direction: column;
   gap: 16px;
+
   overflow: auto;
   width: 100%;
   margin-bottom: 100px;
@@ -92,6 +99,11 @@
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.687);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Thêm bóng nhẹ */
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .cart-item-img {
@@ -136,6 +148,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 input[type="number"] {
   -moz-appearance: textfield;
+
 }
 
 .decrease-quantity-btn,
@@ -191,16 +204,20 @@ input[type="number"] {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   align-items: start;
+
 }
 
 .total-price {
   font-size: 24px;
-  text-transform: none;
+text-transform: none;
+
   font-weight: bold;
 }
 
 .clear-cart-btn {
+
   display: flex;
   align-items: baseline;
   gap: 8px;
@@ -208,6 +225,7 @@ input[type="number"] {
   padding-block: 8px;
   background-color: #f3f4f6;
   color: #1e2939;
+
   font-size: 12px;
   font-weight: bold;
   text-transform: uppercase;
@@ -273,3 +291,26 @@ input[type="number"] {
 .continue-shopping-btn:hover {
   background-color: #364153;
 }
+/* Cart.css (Thêm CSS cho nút Pay) */
+.pay-btn {
+  padding-inline: 16px;
+  padding-block: 8px;
+  background-color: #28a745; /* Màu xanh lá cây */
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 4px;
+  border: none; /* Loại bỏ viền mặc định */
+  cursor: pointer; /* Biến con trỏ thành hình bàn tay khi di chuột qua */
+  transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu */
+}
+
+.pay-btn:hover {
+  background-color: #218838; /* Màu xanh lá cây đậm hơn khi di chuột qua */
+}
+
+.pay-btn:focus {
+  outline: none; /* Loại bỏ viền khi được focus */
+}
+

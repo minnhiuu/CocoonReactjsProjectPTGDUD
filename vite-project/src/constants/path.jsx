@@ -1,5 +1,4 @@
 export const path = {
-
     home: "/", 
     cocoon: "/cocoon",
     coreValue:'/cocoon/gia-tri-cot-loi',
