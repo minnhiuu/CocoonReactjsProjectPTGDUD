@@ -1,4 +1,3 @@
-
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
@@ -12,9 +11,14 @@ import "./Cart.css";
 import { CartContext } from "../../context/cart";
 import { Link, Outlet } from "react-router-dom";
 import { path } from "../../constants/path";
-import Pay from "../Pay/Pay"; 
+import Pay from "../Pay/Pay";
 
-export default function Cart({ showCart, toggleCart }) {
+export default function Cart({
+  showCart,
+  toggleCart,
+  togglePaymentModal,
+  setShowPaymentModal,
+}) {
   const {
     cartItems,
     addToCart,
@@ -24,11 +28,6 @@ export default function Cart({ showCart, toggleCart }) {
     getCartTotal,
     updateItemQuantity,
   } = useContext(CartContext);
-  const [showPaymentModal, setShowPaymentModal] = useState(false);
-
-  const togglePaymentModal = () => {
-    setShowPaymentModal(!showPaymentModal);
-  };
 
   const [closing, setClosing] = useState(false);
 
@@ -68,13 +67,16 @@ export default function Cart({ showCart, toggleCart }) {
         </h1>
         <div className="close-cart-btn-wrapper">
           <button className="btn-close" onClick={toggleCart}></button>
-
         </div>
 
         {/* item list*/}
         <div className="cart-list">
           {cartItems.map((item) => (
-            <div className="cart-item" key={item.id}>
+            <div
+              className="cart-item"
+              key={item.id}
+              onClick={() => navigate(`/cocoon/san-pham/${item.id}`)}
+            >
               <div style={{ display: "flex", gap: "16px" }}>
                 <img
                   src={item.img}
@@ -86,7 +88,6 @@ export default function Cart({ showCart, toggleCart }) {
                   className="cart-item-info"
                   onClick={() => handleNavigateProductDetails(item.id)}
                 >
-
                   <h1 className="cart-item-title">{item.title}</h1>
                   <p className="cart-item-price">{item.price}</p>
                 </div>
@@ -141,7 +142,6 @@ export default function Cart({ showCart, toggleCart }) {
                   clearCart();
                 }}
               >
-
                 <FaRegTrashAlt />
                 <span>Clear cart</span>
               </button>
@@ -151,9 +151,6 @@ export default function Cart({ showCart, toggleCart }) {
               <IoBagCheckOutline className="checkout-icon" />
             </button>
             {/* Modal Thanh toán */}
-        {showPaymentModal && (
-          <Pay togglePaymentModal={togglePaymentModal} cartItems={cartItems} />
-        )}
           </div>
         ) : (
           // {/* or empty cart */}
@@ -173,5 +170,3 @@ export default function Cart({ showCart, toggleCart }) {
     )
   );
 }
-
-   

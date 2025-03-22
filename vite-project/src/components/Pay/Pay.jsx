@@ -261,18 +261,7 @@ const Pay = ({ togglePaymentModal, cartItems }) => {
                                     <input type="checkbox" id="createAccount" />
                                     <label htmlFor="createAccount">Lưu thông tin để sử dụng sau</label>
                                 </div>
-                                <div className="form-row">
-                                    <div className="form-group">
-                                        <label htmlFor="password">Mật Khẩu*</label>
-                                        <input type="password" id="password" name="password" value={formData.password} onChange={handleChange} />
-                                        {errors.password && <p className="error-message">{errors.password}</p>}
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="confirmPassword">Xác Nhận Mật Khẩu*</label>
-                                        <input type="password" id="confirmPassword" name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} />
-                                        {errors.confirmPassword && <p className="error-message">{errors.confirmPassword}</p>}
-                                    </div>
-                                </div>
+                                
                                 <div className="form-group">
                                     <input type="checkbox" id="shipSameAddress" defaultChecked />
                                     <label htmlFor="shipSameAddress">Gửi đến cùng một địa chỉ</label>
