@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { fetchApi } from "../../api/fecthAPI";
 import "./ProductInfo.css";
 import { Container, Row, Col } from "react-bootstrap";
+import { CartContext } from "../../context/cart";
 
 const ProductInfo = () => {
   const { id } = useParams();
@@ -11,6 +12,7 @@ const ProductInfo = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [quantity, setQuantity] = useState(1);
+  const {addToCart} = useContext(CartContext);
 
   useEffect(() => {
     const getProduct = async () => {
@@ -55,7 +57,7 @@ const ProductInfo = () => {
   };
 
   const handleAddToCart = () => {
-    console.log(`Đã thêm ${quantity} sản phẩm vào giỏ hàng: ${product.title}`);
+    addToCart(product);
   };
 
   if (loading) {
@@ -117,7 +119,7 @@ const ProductInfo = () => {
             />
           </div>
           <div className="buttons flex gap-4 mb-4">
-            <button onClick={handleAddToCart} className="add-to-cart-btn">
+            <button onClick={handleAddToCart} className="add-to-cart-btn m-0">
               THÊM VÀO GIỎ
             </button>
             <button onClick={() => navigate("/checkout")} className="buy-now-btn">
