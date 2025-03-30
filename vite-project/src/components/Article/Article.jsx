@@ -1,9 +1,17 @@
-import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./Article.css";
-import {Link} from "react-router-dom";
+
 function Article() {
+    const navigate = useNavigate();
+
+    const handleClick = (link) => {
+        if (link && link !== "#") {
+            navigate(link);
+        }
+    };
+
     return (
         <div className="main">
             <div className="content container mt-0">
@@ -21,53 +29,61 @@ function Article() {
                                 quy mô chương trình, Cocoon đã quyết định đưa hoạt động này đến gần hơn với mọi người.
                             </p>
                         </div>
-                        <button className="btn-read-more">
+                        <Link to="/cocoon" className="btn-read-more btn-view-all">
                             Đọc bài viết <span className="arrow">→</span>
-                        </button>
+                        </Link>
                     </div>
                     <div className="col-8 p-3">
                         <img
                             src="/images/Banner_image.jpg"
                             alt="Đây là hình ảnh"
-                            style={{ width: "100%", height: "auto", marginTop: "80px",  }}
+                            style={{ width: "100%", height: "auto", marginTop: "80px" }}
                         />
                     </div>
                 </div>
+
+                {/* Danh mục Làm Đẹp */}
                 <div className="row mt-5">
                     <div className="col-12 d-flex justify-content-between align-items-center">
                         <h5 className="baiviet">LÀM ĐẸP</h5>
-                   
-                            <Link to="/cocoon/bai-viet/lam-dep" className="btn-view-all">
-                                Tất cả bài viết →
-                            </Link>
-                    
+                        <Link to="/cocoon/bai-viet/lam-dep" className="btn-view-all">
+                            Tất cả bài viết →
+                        </Link>
                     </div>
                 </div>
                 <div className="row mt-1">
                     {[
                         {
+                            link: "/cocoon/bai-viet/post1",
                             img: "/images/hinh1.jpg",
                             category: "Làm đẹp",
                             date: "01.10.21",
-                            title: "Vài “tip” giúp bạn tận hưởng trọn vẹn từng giây phút làm sạch da chết trên cơ thể cùng Cà phê Đắk Lắk",
-                            desc: "Hãy thử áp dụng một vài tip sau để gia tăng thêm những trải nghiệm thật “chill” với sản phẩm Cà phê Đắk Lắk làm sạch da chết cơ thể."
+                            title: "Vài “tip” giúp bạn tận hưởng trọn vẹn...",
+                            desc: "Hãy thử áp dụng một vài tip sau để gia tăng thêm những trải nghiệm thật “chill”..."
                         },
                         {
+                            link: "/cocoon/bai-viet/post2",
                             img: "/images/hinh2.jpg",
                             category: "Làm đẹp",
                             date: "22.09.21",
-                            title: "3 bước tẩy da chết hiệu quả dành cho mặt từ cà phê Đắk Lắk",
-                            desc: "Việc tẩy da chết tuy chỉ mất từ 10 – 15s nhưng nó sẽ giúp bạn loại bỏ các tế bào da chết trên bề mặt da một cách dễ dàng, giảm nguy cơ tắc nghẽn lỗ chân lông và..."
+                            title: "3 bước tẩy da chết hiệu quả...",
+                            desc: "Việc tẩy da chết tuy chỉ mất từ 10 – 15s nhưng nó sẽ giúp bạn loại bỏ..."
                         },
                         {
+                            link: "/cocoon/bai-viet/post3",
                             img: "/images/hinh3.jpg",
                             category: "Làm đẹp",
                             date: "22.09.21",
                             title: "Da dầu, mụn sẽ “ăn chay” như thế nào?",
-                            desc: "Giống như các loại da khác, da dầu cũng sẽ đạt được trạng thái khỏe mạnh và mịn màng nếu được làm sạch đúng cách và được bảo vệ với các sản phẩm phù hợp."
+                            desc: "Giống như các loại da khác, da dầu cũng sẽ đạt được trạng thái khỏe mạnh..."
                         }
                     ].map((article, index) => (
-                        <div className="col-4 d-flex flex-column p-3 article-container" key={index}>
+                        <div
+                            className="col-4 d-flex flex-column p-3 article-container"
+                            key={index}
+                            onClick={() => handleClick(article.link)}
+                            style={{ cursor: "pointer" }}
+                        >
                             <div className="image-container">
                                 <img src={article.img} alt={article.title} className="article-image" />
                             </div>
@@ -79,40 +95,49 @@ function Article() {
                         </div>
                     ))}
                 </div>
+
+                {/* Danh mục Cocoon */}
                 <div className="row mt-5">
                     <div className="col-12 d-flex justify-content-between align-items-center">
                         <h5 className="baiviet">COCOON</h5>
                         <Link to="/cocoon/bai-viet/chuong-trinh" className="btn-view-all">
-                                Tất cả bài viết →
-                            </Link>
+                            Tất cả bài viết →
+                        </Link>
                     </div>
                 </div>
-
                 <div className="row mt-1">
                     {[
                         {
+                            link: "/cocoon/bai-viet/post4",
                             img: "/images/hinh4.jpg",
-                            category: "Cocoon ",
+                            category: "Cocoon",
                             date: "01.01.24",
-                            title: "Chương trình 'Ửng hồng Không ửng đỏ' - chung tay chăm sóc trẻ em vùng cao",
-                            desc: "Chương trình 'Ửng Hồng Không Ửng Đỏ' được Cocoon và UNESCO-CEP triển khai nhằm hướng đến một mục tiêu thiết thực là xây dựng sân chơi an toàn, sạch sẽ c..."
+                            title: "Chương trình 'Ửng hồng Không ửng đỏ'...",
+                            desc: "Chương trình 'Ửng Hồng Không Ửng Đỏ' được Cocoon và UNESCO-CEP triển khai..."
                         },
                         {
+                            link: "/cocoon/bai-viet/post5",
                             img: "/images/hinh5.jpg",
-                            category: "Cocoon ",
+                            category: "Cocoon",
                             date: "22.09.21",
-                            title: "Chương trình 'Cùng Cocoon Sống Xanh Mỗi Ngày' năm 2024",
-                            desc: "Từ tháng 9/2024, Cocoon mang lại 115 điểm thu hồi vỏ chai trực tiếp, được triển khai tại 25 tỉnh thành trên khắp Việt Nam để khách hàng dễ dàng tham gia vào việc thu..."
+                            title: "Chương trình 'Cùng Cocoon Sống Xanh Mỗi Ngày'...",
+                            desc: "Từ tháng 9/2024, Cocoon mang lại 115 điểm thu hồi vỏ chai trực tiếp..."
                         },
                         {
+                            link: "/cocoon/bai-viet/post6",
                             img: "/images/hinh6.jpg",
-                            category: "Cocoon ",
+                            category: "Cocoon",
                             date: "15.05.24",
-                            title: "Cocoon x AAF: Chung tay cứu trợ chó mèo lang thang cùng Tổ chức Động vật Châu Á",
-                            desc: "Với mỗi sản phẩm giới hạn được được bán ra, Cocoon sẽ trích 10.000đ để ủng hộ vào quỹ của AAF nhằm san sẻ những khó khăn về lương thực, y tế với các trạm..."
+                            title: "Cocoon x AAF: Chung tay cứu trợ chó mèo lang thang...",
+                            desc: "Với mỗi sản phẩm giới hạn được được bán ra, Cocoon sẽ trích 10.000đ để ủng hộ..."
                         }
                     ].map((article, index) => (
-                        <div className="col-4 d-flex flex-column p-3 article-container" key={index}>
+                        <div
+                            className="col-4 d-flex flex-column p-3 article-container"
+                            key={index}
+                            onClick={() => handleClick(article.link)}
+                            style={{ cursor: "pointer" }}
+                        >
                             <div className="image-container">
                                 <img src={article.img} alt={article.title} className="article-image" />
                             </div>
@@ -123,14 +148,10 @@ function Article() {
                             <p className="text-muted article-text">{article.desc}</p>
                         </div>
                     ))}
-                </div>
-                <div className="row mt-5 d-flex justify-content-center">
-                    <img src="/images/bannerqc.jpg" alt="" />
                 </div>
             </div>
         </div>
     );
 }
-
 
 export default Article;

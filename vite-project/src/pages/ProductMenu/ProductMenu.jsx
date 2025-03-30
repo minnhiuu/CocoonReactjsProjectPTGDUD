@@ -98,7 +98,8 @@ export default function ProductMenu() {
 
   return (
     <>
-        <div className="section-2 mb-3">
+    <div className="p-0.5"></div>
+      <div className="section-2 mb-3 mt-3" >
         <div className="section-2-content text-center">
           <h1 className="mb-4 mt-2 text-font">Triết lý THƯƠNG HIỆU</h1>
           <p className="text-gray-500">

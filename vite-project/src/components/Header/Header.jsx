@@ -43,7 +43,7 @@ function Header() {
             >
               Cocoon
             </Link>
-            <Link className="text-dark text-uppercase font-['Barlow Condensed']">
+            <Link to={path.promotion} className="text-dark text-uppercase font-['Barlow Condensed']">
               Khuyến mãi
             </Link>
             <Link

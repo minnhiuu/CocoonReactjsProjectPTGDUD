@@ -1,0 +1,81 @@
+.custom-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.middle-column {
+    padding-left: 15px;
+    text-align: left;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: #5A3E2B;
+    text-align: left;
+}
+
+.text-left {
+    text-align: left;
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
+}
+
+.highlight-box {
+    background-color: #D2B48C;
+    /* Màu nâu */
+    padding: 15px;
+    border-radius: 8px;
+    font-style: italic;
+    color: #4A2F21;
+    font-family: 'Merriweather', serif;
+}
+
+.img-fluid {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.image-caption {
+    font-size: 14px;
+    font-style: italic;
+    color: #6c757d;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.tip-list {
+    font-family: 'Merriweather', serif;
+    color: #4A2F21;
+    font-size: 16px;
+}
+
+.tip-list li {
+    margin-bottom: 8px;
+}
+/* 
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+} */
+
+.middle-column {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.popular-post img {
+    object-fit: cover;
+    height: 100px;
+}
+
+.text-muted {
+    text-align: justify;
+}

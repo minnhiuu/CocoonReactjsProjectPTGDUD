@@ -22,7 +22,7 @@ const Product = ({ product }) => {
       className="product-card bg-white overflow-hidden rounded-2xl shadow-sm transform transition-transform duration-300 hover:scale-105 cursor-pointer"
       
     >
-      <img src={img} alt={title} className="w-full" onClick={() => navigate(`/cocoon/san-pham/${id}`)}/>
+      <img src={img} alt={title} className="w-100 me-auto ms-auto" onClick={() => navigate(`/cocoon/san-pham/${id}`)}/>
       <div className="p-4 flex flex-col gap-2 flex-grow">
         <h3 className="text-sm font-bold font-['Vollkorn'] text-gray-700 line-clamp-2 mt-0" onClick={() => navigate(`/cocoon/san-pham/${id}`)} style={{fontSize:18, height:40}}>{title}</h3>
         <p className="text-sm text-gray-500 line-clamp-2 onClick={() => navigate(`/cocoon/san-pham/${id}`)}" style={{fontSize:14, height:40}}>{description}</p>
