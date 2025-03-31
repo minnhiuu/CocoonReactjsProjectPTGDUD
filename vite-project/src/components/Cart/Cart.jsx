@@ -43,8 +43,7 @@ export default function Cart({
 
   const handleNavigateProduct = () => {
     toggleCart();
-    // navigate(path.product)
-    navigate(path.cocoon);
+    navigate(path.product);
   };
 
   const handleNavigateCheckout = () => {
@@ -54,8 +53,16 @@ export default function Cart({
 
   const handleNavigateProductDetails = (id) => {
     toggleCart();
-    // navigate(`${path.product}/${id}`);
-    navigate(path.cocoon);
+    navigate(`${path.product}/${id}`);
+  };
+
+  const calculateDiscountedPrice = (price, discount) => {
+    if (!discount || discount == "0%") return price;
+    const priceNum = parseInt(price.replace(/\D/g, ""));
+    const discountPercent = parseInt(discount) / 100;
+    const discountedPrice = priceNum * (1 - discountPercent);
+    const roundedPrice = Math.ceil(discountedPrice / 1000) * 1000;
+    return roundedPrice.toLocaleString("vi-VN") + " đ";
   };
 
   return (
@@ -72,11 +79,7 @@ export default function Cart({
         {/* item list*/}
         <div className="cart-list">
           {cartItems.map((item) => (
-            <div
-              className="cart-item"
-              key={item.id}
-              onClick={() => navigate(`/cocoon/san-pham/${item.id}`)}
-            >
+            <div className="cart-item" key={item.id}>
               <div style={{ display: "flex", gap: "16px" }}>
                 <img
                   src={item.img}
@@ -89,7 +92,16 @@ export default function Cart({
                   onClick={() => handleNavigateProductDetails(item.id)}
                 >
                   <h1 className="cart-item-title">{item.title}</h1>
-                  <p className="cart-item-price">{item.price}</p>
+                  {item.discount != "0%" ? (
+                    <div className="cart-item-price">
+                      <p className="cart-item-price-new">
+                        {calculateDiscountedPrice(item.price, item.discount)}
+                      </p>
+                      <p className="cart-item-price-old">{item.price}</p>
+                    </div>
+                  ) : (
+                    <p className="cart-item-price">{item.price}</p>
+                  )}
                 </div>
               </div>
 

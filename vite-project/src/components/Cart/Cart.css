@@ -49,7 +49,6 @@
     opacity: 0;
     transform: translateX(100%);
   }
-
 }
 
 .close-cart-btn-wrapper {
@@ -121,7 +120,21 @@
 }
 
 .cart-item-price {
-  color: #4a5565;
+  color: #f45353;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-item-price-old {
+  color: #9ca3af;
+  text-decoration: line-through;
+  font-size: 14px;
+}
+
+.cart-item-price-new {
+  color: #f45353;
   font-size: 16px;
 }
 
@@ -148,7 +161,6 @@ input[type="number"]::-webkit-inner-spin-button {
 
 input[type="number"] {
   -moz-appearance: textfield;
-
 }
 
 .decrease-quantity-btn,
@@ -206,18 +218,16 @@ input[type="number"] {
   justify-content: center;
 
   align-items: start;
-
 }
 
 .total-price {
   font-size: 24px;
-text-transform: none;
+  text-transform: none;
 
   font-weight: bold;
 }
 
 .clear-cart-btn {
-
   display: flex;
   align-items: baseline;
   gap: 8px;
@@ -313,4 +323,3 @@ text-transform: none;
 .pay-btn:focus {
   outline: none; /* Loại bỏ viền khi được focus */
 }
-

@@ -41,7 +41,6 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-
   const removeFromCart = (item) => {
     const newCartItems = cartItems.filter(
       (cartItem) => cartItem.id !== item.id
@@ -49,20 +48,39 @@ export const CartProvider = ({ children }) => {
     setCartItems(newCartItems);
   };
 
-
   const clearCart = () => {
     setCartItems([]);
   };
 
-  const getCartTotal = () => {
-    return cartItems
-      .reduce((total, item) => {
-        const price = Number(item.price.replace(/\./g, "").replace(" đ", ""));
-        return total + price * item.quantity;
-      }, 0)
-      .toLocaleString("vi-VN", { style: "currency", currency: "VND" });
+  const calculateDiscountedPrice = (price, discount) => {
+    if (!discount || discount === "0%") return price;
+    const priceNum = parseInt(price.replace(/\D/g, ""));
+    const discountPercent = parseInt(discount) / 100;
+    const discountedPrice = priceNum * (1 - discountPercent);
+    const roundedPrice = Math.ceil(discountedPrice / 1000) * 1000;
+    return roundedPrice;
   };
 
+  const getCartTotal = () => {
+    const total = cartItems.reduce((total, item) => {
+      let itemPrice;
+
+      if (item.discount && item.discount !== "0%") {
+        itemPrice = calculateDiscountedPrice(item.price, item.discount);
+      } else {
+        itemPrice =
+          typeof item.price === "string"
+            ? parseInt(item.price.replace(/\./g, "").replace(" đ", ""))
+            : item.price;
+      }
+      return total + itemPrice * item.quantity;
+    }, 0);
+
+    return total.toLocaleString("vi-VN", {
+      style: "currency",
+      currency: "VND",
+    });
+  };
 
   const updateItemQuantity = (itemId, quantity) => {
     setCartItems((prevItems) =>
@@ -71,7 +89,6 @@ export const CartProvider = ({ children }) => {
       )
     );
   };
-
 
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
@@ -94,7 +111,6 @@ export const CartProvider = ({ children }) => {
         clearCart,
         getCartTotal,
         updateItemQuantity,
-
       }}
     >
       {children}

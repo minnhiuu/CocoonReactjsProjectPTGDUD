@@ -10,10 +10,10 @@ import {
   Carousel,
 } from "react-bootstrap";
 import { fetchApi } from "../../api/fecthAPI";
-import "./ProductMenu.css";
 import Product from "../../components/Product/Product";
+import "./Promotion.css";
 
-export default function ProductMenu() {
+export default function Promotion2() {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -23,6 +23,10 @@ export default function ProductMenu() {
   const [sortOption, setSortOption] = useState("default");
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 6;
+
+  const filteredDiscountedProducts = (products) => {
+    return products.filter((product) => product.discount != "0%");
+  };
 
   useEffect(() => {
     const getData = async () => {
@@ -41,8 +45,8 @@ export default function ProductMenu() {
           setCategories(categoryRes.data);
         }
         if (productRes.data) {
-          setProducts(productRes.data);
-          setFilteredProducts(productRes.data);
+          setProducts(filteredDiscountedProducts(productRes.data));
+          setFilteredProducts(filteredDiscountedProducts(productRes.data));
         }
         setLoading(false);
       }, remainingTime);
@@ -96,18 +100,16 @@ export default function ProductMenu() {
   };
 
   return (
-    <>
-      <div className="p-0.5"></div>
-      <div className="section-2 mb-3 mt-3">
-        <div className="section-2-content text-center">
-          <h1 className="mb-4 mt-2 text-font">Triết lý THƯƠNG HIỆU</h1>
-          <p className="text-gray-500">
-            "Là những người yêu thiên nhiên và đam mê khám phá các nguồn nguyên
-            liệu đặc hữu của Việt Nam, chúng tôi luôn kiên định với những triết
-            lý trên hành trình tìm vẻ đẹp thật sự của làn da."
-          </p>
+    <div className="promotional-page">
+      {/* Promotional Banner */}
+      <div className="promo-banner">
+        <div className="banner-content">
+          <h1>SUMMER SALE</h1>
+          <h2>Giảm giá lên đến 50%</h2>
+          <p>Ưu đãi đặc biệt kéo dài đến hết tháng 4, 2025</p>
         </div>
       </div>
+
       <Container className="my-2 p-1">
         <h2
           className="text-uppercase text-muted mb-3 mt-4 text-center text-dark"
@@ -115,25 +117,6 @@ export default function ProductMenu() {
         ></h2>
 
         {loading ? (
-          //   <Row className="justify-content-center">
-          //     {Array.from({ length: 10 }).map((_, index) => (
-          //       <Col
-          //         key={index}
-          //         xs={6}
-          //         sm={4}
-          //         md={2}
-          //         className="mb-4 text-center"
-          //       >
-          //         <Card className="border shadow-sm p-1">
-          //           <div className="skeleton-image" />
-          //           <Card.Body>
-          //             <div className="skeleton-text"></div>
-          //           </Card.Body>
-          //         </Card>
-          //       </Col>
-          //     ))}
-          //   </Row>
-
           <div className="loading-overlay">
             <div className="loading-logo">
               <img
@@ -321,8 +304,6 @@ export default function ProductMenu() {
             border-color: #007bff;
           }
 
-          
-
           .category-text {
             font-size: 14px;
             font-weight: bold;
@@ -375,6 +356,6 @@ export default function ProductMenu() {
           }
         `}
       </style>
-    </>
+    </div>
   );
 }
