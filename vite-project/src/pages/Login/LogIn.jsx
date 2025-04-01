@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, use } from "react";
 import {
   FaGoogle,
   FaFacebook,
@@ -12,7 +12,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./LogIn.css";
 import SignUpForm from "./SignUp";
-
+import axios from "axios";
+import users from "../../data/users";
 export default function LoginForm({ setShowLogin, setUser }) {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
@@ -21,7 +22,15 @@ export default function LoginForm({ setShowLogin, setUser }) {
   const [errors, setErrors] = useState({ phone: "", password: "" });
   const [showSignUp, setShowSignUp] = useState(false);
  
-
+useEffect(() => {
+  axios.get("F:\\CocoonReactjsProjectPTGDUD\\vite-project\\src\\data\\users.json")
+  .then(response => {
+    setUser(response.data);
+  })
+  .catch(error => {
+    console.error("Error fetching users:", error);
+  });
+})
   const validatePhone = (phone) => {
     return /^\d{10,11}$/.test(phone); // Chỉ nhận số, từ 10-11 chữ số
   };
@@ -51,12 +60,6 @@ export default function LoginForm({ setShowLogin, setUser }) {
     // Nếu có lỗi thì dừng lại
     if (newErrors.phone || newErrors.password) return;
   
-    // Danh sách người dùng giả lập
-    const users = [
-      { phone: "0338858196", name: "Nguyễn Văn A", email: "a@example.com", password: "123456" },
-      { phone: "0987654321", name: "Trần Thị B", email: "b@example.com", password: "abcdef" },
-      { phone: "0912345678", name: "Lê Văn C", email: "c@example.com", password: "qwerty" },
-    ];
   
     const foundUser = users.find((u) => u.phone === phone);
   
