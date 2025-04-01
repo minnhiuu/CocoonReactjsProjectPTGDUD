@@ -42,108 +42,101 @@
   font-size: 1rem;
 }
 
-/* Filter and Sort Section */
-.filter-sort-container {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 30px;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.category-filter,
-.sort-options {
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.category-filter {
-  flex: 2;
-  min-width: 300px;
-}
-
-.sort-options {
-  flex: 1;
-  min-width: 200px;
-}
-
-.filter-header,
-.sort-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-  gap: 10px;
-}
-
-.filter-header svg,
-.sort-header svg {
-  color: #ff6b6b;
-}
-
-.category-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.category-buttons button {
-  background-color: white;
-  border: 1px solid #e0e0e0;
-  padding: 8px 16px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.category-buttons button:hover {
-  border-color: #ff6b6b;
-  color: #ff6b6b;
-}
-
-.category-buttons button.active {
-  background-color: #ff6b6b;
-  color: white;
-  border-color: #ff6b6b;
-}
-
-.sort-options select {
+.custom-select {
   width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #e0e0e0;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
   background-color: white;
-  font-size: 1rem;
+  appearance: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
-/* Products Section */
-.products-section h2 {
+.custom-select:hover {
+  border-color: #c3a15c;
+}
+
+.custom-select:focus {
+  border-color: #c3a15c;
+  box-shadow: 0 0 5px #c3a15cab;
+  outline: none;
+}
+
+.custom-select option:checked {
+  background-color: #c3a15c;
+  color: white;
+}
+
+.custom-range::-webkit-slider-runnable-track {
+  background: linear-gradient(to right, #c3a15c, #e4c090); /* Gradient màu */
+  height: 8px;
+  border-radius: 5px;
+}
+
+.custom-range::-webkit-slider-thumb {
+  background-color: #f0b851; /* Màu của nút kéo */
+  border: 2px solid #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.custom-range::-moz-range-track {
+  background: #ff5733;
+  height: 8px;
+}
+
+.custom-range::-moz-range-thumb {
+  background-color: #ff5733;
+}
+
+.pagination {
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-radius: 8px;
   display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #f0f0f0;
-  color: #333;
+  gap: 5px;
 }
 
-.products-section h2 svg {
-  color: #ff6b6b;
+.pagination .page-item .page-link {
+  color: #c3a15c;
+  background-color: #fff;
+  border: 1px solid #c3a15c;
+  transition: all 0.3s ease-in-out;
 }
 
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 30px;
-  margin-bottom: 50px;
+.pagination .page-item .page-link:hover {
+  background-color: #d4ab5a;
+  color: white;
 }
 
-.no-products {
-  grid-column: 1 / -1;
-  text-align: center;
-  padding: 50px 0;
-  color: #666;
+.pagination .page-item.active .page-link {
+  background-color: #d4ab5a;
+  border-color: #d4ab5a;
+  color: white;
+  font-weight: bold;
+}
+
+.pagination .page-item:first-child .page-link,
+.pagination .page-item:last-child .page-link {
+  background-color: #bfb593;
+  border-color: #767560;
+  color: white;
+}
+
+.pagination .page-item:first-child .page-link:hover,
+.pagination .page-item:last-child .page-link:hover {
+  background-color: #866c39;
+}
+
+/* Nếu Prev hoặc Next bị vô hiệu hóa */
+.page-item.disabled .page-link {
+  background-color: #ddd !important;
+  color: #888 !important;
+  border-color: #ccc !important;
+  cursor: not-allowed !important;
 }
 
 /* Responsive Design */

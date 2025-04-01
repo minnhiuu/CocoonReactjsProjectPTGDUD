@@ -3,7 +3,7 @@ import MainLayout from "../layouts/MainLayout";
 import { path } from "../constants/path";
 import Home from "../pages/Home/Home";
 import CocoonValues from "../pages/Cocoon/CocoonValues";
-import Promotion from "../pages/Promotion/Promotion2";
+import Promotion from "../pages/Promotion/Promotion";
 import { useRoutes } from "react-router-dom";
 import CocoonStory from "../pages/Cocoon/CocoonStory";
 import CocoonResponsibility from "../pages/Cocoon/CocoonResponsibility";

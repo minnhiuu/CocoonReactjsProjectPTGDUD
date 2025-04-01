@@ -59,8 +59,8 @@ const ProductInfo = () => {
     return stats;
   };
 
-  const handleAddToCart = () => {
-    addToCart(product);
+  const handleAddToCart = (quantity) => {
+    addToCart(product, quantity);
   };
 
   if (loading) {
@@ -99,7 +99,7 @@ const ProductInfo = () => {
           <h1 className="product-title">{product.title}</h1>
           <p className="category text-gray-500 mb-2">{product.category}</p>
           <div className="price-section flex items-center gap-3 mb-4">
-            {product.discount ? (
+            {product.discount != "0%" ? (
               <>
                 <span className="text-2xl font-bold text-red-600">
                   {calculateDiscountedPrice(product.price, product.discount)}
@@ -122,18 +122,37 @@ const ProductInfo = () => {
           </p>
           <div className="quantity flex items-center gap-3 mb-4">
             <label className="text-gray-700 font-medium">Số lượng:</label>
-            <input
-              type="number"
-              min="1"
-              value={quantity}
-              onChange={(e) =>
-                setQuantity(Math.max(1, parseInt(e.target.value)))
-              }
-              className="quantity-input"
-            />
+            <div className="quantity-control">
+              <button
+                type="button"
+                className="quantity-btn"
+                onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}
+              >
+                −
+              </button>
+              <input
+                type="number"
+                min="1"
+                value={quantity}
+                onChange={(e) =>
+                  setQuantity(Math.max(1, parseInt(e.target.value) || 1))
+                }
+                className="quantity-input"
+              />
+              <button
+                type="button"
+                className="quantity-btn"
+                onClick={() => setQuantity((prev) => prev + 1)}
+              >
+                +
+              </button>
+            </div>
           </div>
           <div className="buttons flex gap-4 mb-4">
-            <button onClick={handleAddToCart} className="add-to-cart-btn m-0">
+            <button
+              onClick={() => handleAddToCart(quantity)}
+              className="add-to-cart-btn m-0"
+            >
               THÊM VÀO GIỎ
             </button>
             <button

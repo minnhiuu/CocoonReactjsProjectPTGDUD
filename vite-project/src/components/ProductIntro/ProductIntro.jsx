@@ -4,7 +4,6 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./ProductIntro.css";
 import ProductList from "../ProductList/ProductList";
 
-
 function ProductIntro() {
   return (
     <div className="main">
@@ -85,7 +84,9 @@ function ProductIntro() {
               <div className="intro-info bg-3 p-5">
                 <h4 className="fw-bold mb-3 p-0">CHƯƠNG TRÌNH</h4>
                 <h1 className="fw-bold p-0 mt-2 text-font">Đổi Vỏ Chai Cũ</h1>
-                <h1 className="fw-bold p-0 mb-5 text-font">Nhận Sản Phẩm Mới</h1>
+                <h1 className="fw-bold p-0 mb-5 text-font">
+                  Nhận Sản Phẩm Mới
+                </h1>
                 <p>
                   Cocoon luôn sẵn sàng nhận vỏ chai cũ từ các bạn và trao đi các
                   sản phẩm mới. Cứ 10 vỏ chai lọ rỗng bạn khi gửi về cho chúng

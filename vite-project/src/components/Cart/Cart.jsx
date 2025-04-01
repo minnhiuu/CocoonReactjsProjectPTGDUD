@@ -26,6 +26,7 @@ export default function Cart({
     removeFromCart,
     clearCart,
     getCartTotal,
+    getTotalItems,
     updateItemQuantity,
   } = useContext(CartContext);
 
@@ -70,7 +71,7 @@ export default function Cart({
       <div className={`cart-wrapper ${showCart ? "active" : "inactive"}`}>
         <h1 className="cart-title">
           <FaShoppingCart />
-          Cart ({cartItems.length})
+          Cart ({getTotalItems()})
         </h1>
         <div className="close-cart-btn-wrapper">
           <button className="btn-close" onClick={toggleCart}></button>
@@ -135,7 +136,7 @@ export default function Cart({
                     removeFromCart(item);
                   }}
                 >
-                  remove
+                  xóa
                 </div>
               </div>
             </div>
@@ -155,11 +156,11 @@ export default function Cart({
                 }}
               >
                 <FaRegTrashAlt />
-                <span>Clear cart</span>
+                <span>Xóa tất cả</span>
               </button>
             </div>
             <button className="checkout-btn" onClick={togglePaymentModal}>
-              <span>Checkout</span>
+              <span>Thanh toán</span>
               <IoBagCheckOutline className="checkout-icon" />
             </button>
             {/* Modal Thanh toán */}

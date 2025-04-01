@@ -15,7 +15,7 @@ function Header() {
   const [showPaymentModal, setShowPaymentModal] = useState(false);
 
   const [showCart, setShowCart] = useState(false);
-  const { cartItems } = useContext(CartContext);
+  const { cartItems, animatedItem, getTotalItems } = useContext(CartContext);
 
   const toggleCart = () => {
     setShowCart(!showCart);
@@ -43,7 +43,10 @@ function Header() {
             >
               Cocoon
             </Link>
-            <Link to={path.promotion} className="text-dark text-uppercase font-['Barlow Condensed']">
+            <Link
+              to={path.promotion}
+              className="text-dark text-uppercase font-['Barlow Condensed']"
+            >
               Khuyến mãi
             </Link>
             <Link
@@ -72,8 +75,13 @@ function Header() {
           <Link to="/contact" className="text-dark ">
             Liên hệ
           </Link>
-          <a href="#" className="text-dark " onClick={toggleCart}>
-            Giỏ hàng ({cartItems.length})
+          <a
+            href="#"
+            className={`text-dark ${animatedItem !== null ? "animated" : ""}`}
+            onClick={toggleCart}
+          >
+            Giỏ hàng
+            <span> ({getTotalItems()})</span>
           </a>
         </div>
       </header>

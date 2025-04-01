@@ -1,24 +1,74 @@
 .categories {
-    border: 1px solid #ddd;
-    background-color: white!important;
-    margin-top: 105px!important;
-    margin-left: auto;
-    margin-right: auto;
-   border-radius: 20px;
+  border: 1px solid #ddd;
+  background-color: white !important;
+  margin-top: 105px !important;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
 }
 
 .no-product {
-    background-position: center!important;
-    width: 100%;
-    height: auto;
-    justify-content: center;
-    background-repeat: no-repeat;
+  background-position: center !important;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  background-repeat: no-repeat;
 }
 .box-img {
-    display: flex;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: 500px!important;
-    height: auto;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px !important;
+  height: auto;
+}
+
+.custom-select {
+  width: 100%;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+  appearance: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.custom-select:hover {
+  border-color: #c3a15c;
+}
+
+.custom-select:focus {
+  border-color: #c3a15c;
+  box-shadow: 0 0 5px #c3a15cab;
+  outline: none;
+}
+
+.custom-select option:checked {
+  background-color: #c3a15c;
+  color: white;
+}
+
+.custom-range::-webkit-slider-runnable-track {
+  background: linear-gradient(to right, #c3a15c, #e4c090); /* Gradient màu */
+  height: 8px;
+  border-radius: 5px;
+}
+
+.custom-range::-webkit-slider-thumb {
+  background-color: #f0b851; /* Màu của nút kéo */
+  border: 2px solid #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.custom-range::-moz-range-track {
+  background: #ff5733;
+  height: 8px;
+}
+
+.custom-range::-moz-range-thumb {
+  background-color: #ff5733;
 }

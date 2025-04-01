@@ -9,6 +9,7 @@ import {
   Pagination,
   Carousel,
 } from "react-bootstrap";
+import { IoFilter } from "react-icons/io5";
 import { fetchApi } from "../../api/fecthAPI";
 import "./ProductMenu.css";
 import Product from "../../components/Product/Product";
@@ -67,20 +68,29 @@ export default function ProductMenu() {
     if (sortOption === "price-asc") {
       filtered.sort(
         (a, b) =>
-          parseFloat(a.price.replace(".", "").replace(" đ", "")) -
-          parseFloat(b.price.replace(".", "").replace(" đ", ""))
+          parseFloat(calculateDiscountedPrice(a.price, a.discount)) -
+          parseFloat(calculateDiscountedPrice(b.price, b.discount))
       );
     } else if (sortOption === "price-desc") {
       filtered.sort(
         (a, b) =>
-          parseFloat(b.price.replace(".", "").replace(" đ", "")) -
-          parseFloat(a.price.replace(".", "").replace(" đ", ""))
+          parseFloat(calculateDiscountedPrice(b.price, b.discount)) -
+          parseFloat(calculateDiscountedPrice(a.price, a.discount))
       );
     }
 
     setFilteredProducts(filtered);
     setCurrentPage(1);
   }, [selectedCategory, priceRange, sortOption, products]);
+
+  const calculateDiscountedPrice = (price, discount) => {
+    if (!discount || discount === "0%") return price;
+    const priceNum = parseInt(price.replace(/\D/g, ""));
+    const discountPercent = parseInt(discount.replace("%", "")) / 100;
+    const discountedPrice = priceNum * (1 - discountPercent);
+    const roundedPrice = Math.ceil(discountedPrice / 1000) * 1000;
+    return roundedPrice;
+  };
 
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
@@ -190,10 +200,13 @@ export default function ProductMenu() {
         <Row>
           <Col xs={12} md={3} className="mb-4 h-100">
             <div className="filter-section p-3 border rounded shadow-sm">
-              <h3 className="fs-5 mb-3">Bộ Lọc</h3>
+              <h3 className="fs-5 mb-3 flex align-items-base gap-1">
+                <IoFilter /> Bộ Lọc
+              </h3>
               <div className="mb-4">
                 <h5 className="fs-6 mb-2">Danh Mục</h5>
                 <Form.Select
+                  className="custom-select"
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
                 >
@@ -207,6 +220,7 @@ export default function ProductMenu() {
               <div className="mb-4">
                 <h5 className="fs-6 mb-2">Khoảng Giá</h5>
                 <Form.Range
+                  className="custom-range"
                   min={0}
                   max={500000}
                   step={10000}
@@ -221,6 +235,7 @@ export default function ProductMenu() {
               <div>
                 <h5 className="fs-6 mb-2">Sắp Xếp</h5>
                 <Form.Select
+                  className="custom-select"
                   value={sortOption}
                   onChange={(e) => setSortOption(e.target.value)}
                 >

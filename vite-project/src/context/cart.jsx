@@ -9,19 +9,31 @@ export const CartProvider = ({ children }) => {
       : []
   );
 
-  const addToCart = (item) => {
+  const [animatedItem, setAnimatedItem] = useState(null);
+
+  const addToCart = (item, quantity) => {
+    quantity = quantity ? parseInt(quantity) : 1;
+
     const isItemInCart = cartItems.find((cartItem) => cartItem.id === item.id);
 
+    setAnimatedItem(item.id);
+    setTimeout(() => setAnimatedItem(null), 500);
+
     if (isItemInCart) {
-      setCartItems(
-        cartItems.map((cartItem) =>
+      const updatedCartItems = cartItems
+        .map((cartItem) =>
           cartItem.id === item.id
-            ? { ...cartItem, quantity: cartItem.quantity + 1 }
+            ? { ...cartItem, quantity: cartItem.quantity + quantity }
             : cartItem
         )
-      );
+        .filter((cartItem) => cartItem.id !== item.id); //xóa món cũ trước khi thêm mới
+
+      setCartItems([
+        { ...isItemInCart, quantity: isItemInCart.quantity + quantity },
+        ...updatedCartItems,
+      ]);
     } else {
-      setCartItems([...cartItems, { ...item, quantity: 1 }]);
+      setCartItems([{ ...item, quantity: quantity }, ...cartItems]);
     }
   };
 
@@ -82,6 +94,10 @@ export const CartProvider = ({ children }) => {
     });
   };
 
+  const getTotalItems = () => {
+    return cartItems.reduce((total, item) => total + item.quantity, 0);
+  };
+
   const updateItemQuantity = (itemId, quantity) => {
     setCartItems((prevItems) =>
       prevItems.map((item) =>
@@ -105,11 +121,13 @@ export const CartProvider = ({ children }) => {
     <CartContext.Provider
       value={{
         cartItems,
+        animatedItem,
         addToCart,
         decreaseItem,
         removeFromCart,
         clearCart,
         getCartTotal,
+        getTotalItems,
         updateItemQuantity,
       }}
     >
