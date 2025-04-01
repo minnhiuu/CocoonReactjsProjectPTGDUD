@@ -1,25 +1,25 @@
 import React from "react";
+import { useRoutes } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
-import { path } from "../constants/path";
 import Home from "../pages/Home/Home";
 import CocoonValues from "../pages/Cocoon/CocoonValues";
-import Promotion from "../pages/Promotion/Promotion";
-import { useRoutes } from "react-router-dom";
 import CocoonStory from "../pages/Cocoon/CocoonStory";
 import CocoonResponsibility from "../pages/Cocoon/CocoonResponsibility";
+import Promotion from "../pages/Promotion/Promotion";
 import ProductMenu from "../pages/ProductMenu/ProductMenu";
 import ProductInfo from "../components/ProductInfo/ProductInfo";
-import { CartProvider } from "../context/cart";
-import ContactPage from "../pages/Contact/ContactPage"; 
-import Article from "../components/Article/Article";
-import Article2 from "../components/ArticleExtra/Article2";
-import Article3 from "../components/ArticleExtra/Article3";
+import ContactPage from "../pages/Contact/ContactPage";
+import ArticlePage from "../pages/Article/ArticlePage";
+import ArticleBeauty from "../pages/Article/ArticleBeauty";
+import ArticleCharity from "../pages/Article/ArticleCharity";
 import Post1 from "../components/Post/Post1";
 import Post2 from "../components/Post/Post2";
 import Post3 from "../components/Post/Post3";
 import Post4 from "../components/Post/Post4";
 import Post5 from "../components/Post/Post5";
 import Post6 from "../components/Post/Post6";
+import Pay from "../components/Pay/Pay";
+import { path } from "../constants/path";
 
 
 export default function useRouteElements() {
@@ -27,26 +27,18 @@ export default function useRouteElements() {
     {
       path: "/",
       element: <MainLayout />,
-// =======
-//       element: (
-//         <CartProvider>
-//           <MainLayout />
-//         </CartProvider>
-//       ),
-// >>>>>>> 85531f9497ea4208f22381a11bba655f2cd76518
       children: [
+        {
+          index: true,
+          element: <Home />,
+        },
         {
           path: path.cocoon,
           element: <Home />,
         },
         {
-          path: path.home,
-          element: <Home />,
-        },
-        {
           path: path.coreValue,
           element: <CocoonValues />,
-
         },
         {
           path: path.storyBrand,
@@ -58,58 +50,63 @@ export default function useRouteElements() {
         },
         {
           path: path.article,
-          element: <Article />,
+          element: <ArticlePage />,
         },
         {
           path: path.beauty,
-          element: <Article2 />,
+          element: <ArticleBeauty />,
         },
         {
           path: path.charity,
-          element: <Article3 />,
+          element: <ArticleCharity />,
+        },
+        {
+          path: path.post1,
+          element: <Post1 />,
+        },
+        {
+          path: path.post2,
+          element: <Post2 />,
+        },
+        {
+          path: path.post3,
+          element: <Post3 />,
+        },
+        {
+          path: path.post4,
+          element: <Post4 />,
+        },
+        {
+          path: path.post5,
+          element: <Post5 />,
+        },
+        {
+          path: path.post6,
+          element: <Post6 />,
         },
         {
           path: path.promotion,
           element: <Promotion />,
         },
-        { 
-          path: path.product, 
-          element: <ProductMenu/>
+        {
+          path: path.product,
+          element: <ProductMenu />,
         },
         {
           path: path.productInfo,
-          element: <ProductInfo/>
+          element: <ProductInfo />,
         },
-        { // Thêm route cho ContactPage
-          path: "/contact",
+        {
+          path: path.contact,
           element: <ContactPage />,
-      },
-      {
-        path: path.post1,
-        element: <Post1 />,
-      },
-      {
-        path: path.post2,
-        element: <Post2 />,
-      },
-      {
-        path: path.post3,
-        element: <Post3 />,
-      },
-      {
-        path: path.post4,
-        element: <Post4 />,
-      },
-      {
-        path: path.post5,
-        element: <Post5 />,
-      },
-      {
-        path: path.post6,
-        element: <Post6 />,
-      },
+        },
+        {
+          path: path.checkout,
+          element: <Pay />,
+        },
       ],
     },
+
   ]);
   return element;
 }

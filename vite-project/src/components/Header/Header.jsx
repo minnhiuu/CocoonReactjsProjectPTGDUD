@@ -69,7 +69,7 @@ function Header() {
           >
             Đăng nhập
           </a>
-          <Link to="/contact" className="text-dark ">
+          <Link to="/cocoon/contact" className="text-dark ">
             Liên hệ
           </Link>
           <a href="#" className="text-dark " onClick={toggleCart}>
