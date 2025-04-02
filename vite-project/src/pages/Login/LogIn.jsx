@@ -1,4 +1,4 @@
-import { useState, useEffect, use } from "react";
+import { useState, useEffect } from "react";
 import {
   FaGoogle,
   FaFacebook,
@@ -22,6 +22,7 @@ export default function LoginForm({ setShowLogin, setUser }) {
   const [errors, setErrors] = useState({ phone: "", password: "" });
   const [showSignUp, setShowSignUp] = useState(false);
  
+ 
 useEffect(() => {
   axios.get("F:\\CocoonReactjsProjectPTGDUD\\vite-project\\src\\data\\users.json")
   .then(response => {
@@ -30,7 +31,8 @@ useEffect(() => {
   .catch(error => {
     console.error("Error fetching users:", error);
   });
-})
+}, []);
+
   const validatePhone = (phone) => {
     return /^\d{10,11}$/.test(phone); // Chỉ nhận số, từ 10-11 chữ số
   };
@@ -98,6 +100,7 @@ useEffect(() => {
           <h2 className="m-0">Đăng nhập</h2>
           <button onClick={() => setShowLogin(false)} className="btn-close" />
         </header>
+         
 
         <h2 className="text-center mt-3">Cocoon chào bạn trở lại</h2>
 

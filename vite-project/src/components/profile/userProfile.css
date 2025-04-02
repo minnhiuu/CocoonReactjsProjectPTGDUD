@@ -3,4 +3,5 @@
   z-index: 10;
   top: 10px; /* Kiểm tra vị trí */
   right: 10px;
+  display: block !;
 }

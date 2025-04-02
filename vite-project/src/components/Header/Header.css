@@ -139,3 +139,7 @@
 .user-profile{
     margin-left: 50px;
 }
+img {
+    pointer-events: auto !important;
+  }
+  
