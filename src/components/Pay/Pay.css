@@ -1,0 +1,295 @@
+
+.payment-modal {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* display: flex;
+    justify-content: center;
+    align-items: flex-start; */
+    overflow-y: auto;
+    z-index: 1001;
+    font-family: Arial, sans-serif;
+    
+}
+
+.payment-modal-content {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    width: 95%;
+    max-width: 1400px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.close-payment-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #888;
+}
+
+.close-payment-modal:hover {
+    color: #333;
+}
+
+/* General Styles */
+.h22 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+.p1 {
+    color: #555;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Three-Column Layout */
+.checkout-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.checkout-column {
+    flex: 1;
+}
+
+.checkout-column:nth-child(1),
+.checkout-column:nth-child(2) {
+    flex: 1;
+}
+
+.checkout-column:nth-child(3) {
+    flex: 1.4;
+}
+
+/* Section Styles */
+.section {
+    margin-bottom: 20px;
+    padding: 45px 15px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.h33 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    margin-top: -35px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #555;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+select {
+    height: 40px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Custom Checkbox Styles */
+input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+/* Form Row Layout */
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+/* Radio Button Group */
+.radio-group label {
+    display: block;
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* Place Order Button */
+.place-order-btn {
+    background-color: #f0ad4e;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.place-order-btn:hover {
+    background-color: #eea236;
+}
+
+.order-details {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.order-item p {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 5px;
+    text-align: left;
+    flex-basis: 50%;
+}
+
+.order-item p:nth-child(2),
+.order-item p:nth-child(3) {
+    flex-basis: 25%;
+    text-align: center;
+}
+
+.order-item.header {
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: left;
+    flex-basis: 50%;
+}
+
+.order-item.header p:nth-child(2),
+.order-item.header p:nth-child(3) {
+    flex-basis: 25%;
+    text-align: center;
+}
+
+@media (max-width: 1024px) {
+    .checkout-grid {
+        flex-direction: column;
+    }
+
+    .checkout-column {
+        width: 100%;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .payment-modal-content {
+        padding: 15px;
+    }
+
+    .h22 {
+        font-size: 24px;
+    }
+
+    .h33 {
+        font-size: 18px;
+    }
+}
+
+.error-message {
+    color: red;
+    font-size: 0.8em;
+    margin-top: 4px;
+}
+
+.success-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1002;
+}
+
+.success-modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+}
+
+.success-icon {
+    font-size: 48px;
+    color: green;
+    margin-bottom: 10px;
+}
+
+.success-modal-content p {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}
