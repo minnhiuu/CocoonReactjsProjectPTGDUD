@@ -12,20 +12,20 @@ const ProductInfo = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [quantity, setQuantity] = useState(1);
-  const {addToCart} = useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
 
   useEffect(() => {
     const getProduct = async () => {
-        const startTime = Date.now();
+      const startTime = Date.now();
       const { data, error } = await fetchApi(`/products/${id}`);
       const elapsedTime = Date.now() - startTime;
       const remainingTime = Math.max(0, 700 - elapsedTime);
       setTimeout(() => {
         if (data) {
-            setProduct(data);
-          } else {
-            setError(error);
-          }
+          setProduct(data);
+        } else {
+          setError(error);
+        }
         setLoading(false);
       }, remainingTime);
     };
@@ -34,7 +34,7 @@ const ProductInfo = () => {
   }, [id]);
 
   function calculateDiscountedPrice(price, discount) {
-    if (!discount) return price;
+    if (!discount || discount == "0%") return price;
     const priceNum = parseInt(price.replace(/\D/g, ""));
     const discountPercent = parseInt(discount) / 100;
     const discountedPrice = priceNum * (1 - discountPercent);
@@ -44,7 +44,10 @@ const ProductInfo = () => {
 
   const calculateAverageRating = () => {
     if (product.reviews.length === 0) return 0;
-    const totalStars = product.reviews.reduce((sum, review) => sum + review.stars, 0);
+    const totalStars = product.reviews.reduce(
+      (sum, review) => sum + review.stars,
+      0
+    );
     return (totalStars / product.reviews.length).toFixed(1);
   };
 
@@ -56,8 +59,8 @@ const ProductInfo = () => {
     return stats;
   };
 
-  const handleAddToCart = () => {
-    addToCart(product);
+  const handleAddToCart = (quantity) => {
+    addToCart(product, quantity);
   };
 
   if (loading) {
@@ -72,7 +75,10 @@ const ProductInfo = () => {
   }
 
   if (error) return <p className="text-center text-red-500">{error}</p>;
-  if (!product) return <p className="text-center text-gray-500">Không tìm thấy sản phẩm.</p>;
+  if (!product)
+    return (
+      <p className="text-center text-gray-500">Không tìm thấy sản phẩm.</p>
+    );
 
   const averageRating = calculateAverageRating();
   const stats = ratingStats();
@@ -82,14 +88,18 @@ const ProductInfo = () => {
       <Row className="mb-8">
         <Col md={6} className="box-img mb-4">
           <div className="image-wrapper">
-            <img src={product.img} alt={product.title} className="product-image" />
+            <img
+              src={product.img}
+              alt={product.title}
+              className="product-image"
+            />
           </div>
         </Col>
         <Col md={6} className="product-details">
           <h1 className="product-title">{product.title}</h1>
           <p className="category text-gray-500 mb-2">{product.category}</p>
           <div className="price-section flex items-center gap-3 mb-4">
-            {product.discount ? (
+            {product.discount != "0%" ? (
               <>
                 <span className="text-2xl font-bold text-red-600">
                   {calculateDiscountedPrice(product.price, product.discount)}
@@ -107,22 +117,48 @@ const ProductInfo = () => {
               </span>
             )}
           </div>
-          <p className="description text-gray-600 mb-4">{product.description}</p>
+          <p className="description text-gray-600 mb-4">
+            {product.description}
+          </p>
           <div className="quantity flex items-center gap-3 mb-4">
             <label className="text-gray-700 font-medium">Số lượng:</label>
-            <input
-              type="number"
-              min="1"
-              value={quantity}
-              onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value)))}
-              className="quantity-input"
-            />
+            <div className="quantity-control">
+              <button
+                type="button"
+                className="quantity-btn"
+                onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}
+              >
+                −
+              </button>
+              <input
+                type="number"
+                min="1"
+                value={quantity}
+                onChange={(e) =>
+                  setQuantity(Math.max(1, parseInt(e.target.value) || 1))
+                }
+                className="quantity-input"
+              />
+              <button
+                type="button"
+                className="quantity-btn"
+                onClick={() => setQuantity((prev) => prev + 1)}
+              >
+                +
+              </button>
+            </div>
           </div>
           <div className="buttons flex gap-4 mb-4">
-            <button onClick={handleAddToCart} className="add-to-cart-btn m-0">
+            <button
+              onClick={() => handleAddToCart(quantity)}
+              className="add-to-cart-btn m-0"
+            >
               THÊM VÀO GIỎ
             </button>
-            <button onClick={() => navigate("/checkout")} className="buy-now-btn">
+            <button
+              onClick={() => navigate("/checkout")}
+              className="buy-now-btn"
+            >
               MUA NGAY
             </button>
           </div>
@@ -170,7 +206,9 @@ const ProductInfo = () => {
           </p>
         </Col>
         <Col md={6} className="">
-          <h2 className="section-title text-uppercase">Đánh giá từ khách hàng</h2>
+          <h2 className="section-title text-uppercase">
+            Đánh giá từ khách hàng
+          </h2>
           <div className="rating-stats mb-6">
             <div className="rating-summary flex items-center gap-4 mb-4">
               <div className="average-rating text-5xl font-bold text-gray-800">
@@ -179,7 +217,12 @@ const ProductInfo = () => {
               <div>
                 <div className="hearts flex gap-1">
                   {[...Array(5)].map((_, index) => (
-                    <span key={index} className={index < averageRating ? "heart-filled" : "heart-empty"}>
+                    <span
+                      key={index}
+                      className={
+                        index < averageRating ? "heart-filled" : "heart-empty"
+                      }
+                    >
                       ♥
                     </span>
                   ))}
@@ -191,19 +234,30 @@ const ProductInfo = () => {
             </div>
             <div className="rating-bars">
               {[5, 4, 3, 2, 1].map((star) => (
-                <div key={star} className="rating-bar flex items-center gap-2 mb-2">
+                <div
+                  key={star}
+                  className="rating-bar flex items-center gap-2 mb-2"
+                >
                   <div className="hearts flex gap-1">
                     {[...Array(star)].map((_, index) => (
-                      <span key={index} className="heart-filled">♥</span>
+                      <span key={index} className="heart-filled">
+                        ♥
+                      </span>
                     ))}
                     {[...Array(5 - star)].map((_, index) => (
-                      <span key={index} className="heart-empty">♥</span>
+                      <span key={index} className="heart-empty">
+                        ♥
+                      </span>
                     ))}
                   </div>
                   <div className="bar bg-gray-200 h-2 flex-1 rounded-full overflow-hidden">
                     <div
                       className="fill bg-gray-400 h-full"
-                      style={{ width: `${(stats[star] / product.reviews.length) * 100}%` }}
+                      style={{
+                        width: `${
+                          (stats[star] / product.reviews.length) * 100
+                        }%`,
+                      }}
                     ></div>
                   </div>
                   <span className="count text-gray-600">{stats[star]}</span>
@@ -217,18 +271,20 @@ const ProductInfo = () => {
                 <div className="flex items-center gap-2 mb-2">
                   <div className="hearts flex gap-1">
                     {[...Array(review.stars)].map((_, i) => (
-                      <span key={i} className="heart-filled">♥</span>
+                      <span key={i} className="heart-filled">
+                        ♥
+                      </span>
                     ))}
                     {[...Array(5 - review.stars)].map((_, i) => (
-                      <span key={i} className="heart-empty">♥</span>
+                      <span key={i} className="heart-empty">
+                        ♥
+                      </span>
                     ))}
                   </div>
                   <span className="text-gray-600 text-sm">{review.date}</span>
                 </div>
                 <p className="text-gray-600">{review.comment}</p>
-                <p className="text-gray-500 text-sm mt-1">
-                  - {review.user}
-                </p>
+                <p className="text-gray-500 text-sm mt-1">- {review.user}</p>
               </div>
             ))
           ) : (

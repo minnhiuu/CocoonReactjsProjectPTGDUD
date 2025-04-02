@@ -7,8 +7,9 @@ import {
   Spinner,
   Form,
   Pagination,
-  Carousel
+  Carousel,
 } from "react-bootstrap";
+import { IoFilter } from "react-icons/io5";
 import { fetchApi } from "../../api/fecthAPI";
 import "./ProductMenu.css";
 import Product from "../../components/Product/Product";
@@ -26,7 +27,7 @@ export default function ProductMenu() {
 
   useEffect(() => {
     const getData = async () => {
-        const startTime = Date.now();
+      const startTime = Date.now();
       setLoading(true);
       const [categoryRes, productRes] = await Promise.all([
         fetchApi("/categories"),
@@ -38,15 +39,14 @@ export default function ProductMenu() {
 
       setTimeout(() => {
         if (categoryRes.data) {
-            setCategories(categoryRes.data);
-          }
-          if (productRes.data) {
-            setProducts(productRes.data);
-            setFilteredProducts(productRes.data);
-          }
+          setCategories(categoryRes.data);
+        }
+        if (productRes.data) {
+          setProducts(productRes.data);
+          setFilteredProducts(productRes.data);
+        }
         setLoading(false);
       }, remainingTime);
-    
     };
 
     getData();
@@ -68,20 +68,29 @@ export default function ProductMenu() {
     if (sortOption === "price-asc") {
       filtered.sort(
         (a, b) =>
-          parseFloat(a.price.replace(".", "").replace(" đ", "")) -
-          parseFloat(b.price.replace(".", "").replace(" đ", ""))
+          parseFloat(calculateDiscountedPrice(a.price, a.discount)) -
+          parseFloat(calculateDiscountedPrice(b.price, b.discount))
       );
     } else if (sortOption === "price-desc") {
       filtered.sort(
         (a, b) =>
-          parseFloat(b.price.replace(".", "").replace(" đ", "")) -
-          parseFloat(a.price.replace(".", "").replace(" đ", ""))
+          parseFloat(calculateDiscountedPrice(b.price, b.discount)) -
+          parseFloat(calculateDiscountedPrice(a.price, a.discount))
       );
     }
 
     setFilteredProducts(filtered);
     setCurrentPage(1);
   }, [selectedCategory, priceRange, sortOption, products]);
+
+  const calculateDiscountedPrice = (price, discount) => {
+    if (!discount || discount === "0%") return price;
+    const priceNum = parseInt(price.replace(/\D/g, ""));
+    const discountPercent = parseInt(discount.replace("%", "")) / 100;
+    const discountedPrice = priceNum * (1 - discountPercent);
+    const roundedPrice = Math.ceil(discountedPrice / 1000) * 1000;
+    return roundedPrice;
+  };
 
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
@@ -98,8 +107,8 @@ export default function ProductMenu() {
 
   return (
     <>
-    <div className="p-0.5"></div>
-      <div className="section-2 mb-3 mt-3" >
+      <div className="p-0.5"></div>
+      <div className="section-2 mb-3 mt-3">
         <div className="section-2-content text-center">
           <h1 className="mb-4 mt-2 text-font">Triết lý THƯƠNG HIỆU</h1>
           <p className="text-gray-500">
@@ -113,19 +122,15 @@ export default function ProductMenu() {
         <h2
           className="text-uppercase text-muted mb-3 mt-4 text-center text-dark"
           style={{ fontSize: 20 }}
-        >
-          
-        </h2>
+        ></h2>
 
         {loading ? (
-        
             <div className="loading-overlay">
               <div className="loading-logo">
                 <img src="/images/cocoon1.png" alt="Loading" className="logo-image" />
                 <div className="progress-circle"></div>
               </div>
             </div>
-         
         ) : (
           <>
             {Array.from({ length: Math.ceil(categories.length / 5) }).map(
@@ -170,12 +175,15 @@ export default function ProductMenu() {
       </Container>
       <Container className="p-1">
         <Row>
-          <Col xs={12} md={3} className="mb-4 h-100" >
+          <Col xs={12} md={3} className="mb-4 h-100">
             <div className="filter-section p-3 border rounded shadow-sm">
-              <h3 className="fs-5 mb-3">Bộ Lọc</h3>
+              <h3 className="fs-5 mb-3 flex align-items-base gap-1">
+                <IoFilter /> Bộ Lọc
+              </h3>
               <div className="mb-4">
                 <h5 className="fs-6 mb-2">Danh Mục</h5>
                 <Form.Select
+                  className="custom-select"
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
                 >
@@ -189,6 +197,7 @@ export default function ProductMenu() {
               <div className="mb-4">
                 <h5 className="fs-6 mb-2">Khoảng Giá</h5>
                 <Form.Range
+                  className="custom-range"
                   min={0}
                   max={500000}
                   step={10000}
@@ -203,6 +212,7 @@ export default function ProductMenu() {
               <div>
                 <h5 className="fs-6 mb-2">Sắp Xếp</h5>
                 <Form.Select
+                  className="custom-select"
                   value={sortOption}
                   onChange={(e) => setSortOption(e.target.value)}
                 >
@@ -235,7 +245,11 @@ export default function ProductMenu() {
                   {currentProducts.length === 0 ? (
                     <Col className="alert alert-light">
                       <div className="text-center box-img">
-                        <img className="no-product" src="/images/no-products.png" alt="" />
+                        <img
+                          className="no-product"
+                          src="/images/no-products.png"
+                          alt=""
+                        />
                       </div>
                     </Col>
                   ) : (

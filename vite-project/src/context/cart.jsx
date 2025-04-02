@@ -17,19 +17,31 @@ export const CartProvider = ({ children }) => {
     
   },[cartItems])
 
-  const addToCart = (item) => {
+  const [animatedItem, setAnimatedItem] = useState(null);
+
+  const addToCart = (item, quantity) => {
+    quantity = quantity ? parseInt(quantity) : 1;
+
     const isItemInCart = cartItems.find((cartItem) => cartItem.id === item.id);
 
+    setAnimatedItem(item.id);
+    setTimeout(() => setAnimatedItem(null), 500);
+
     if (isItemInCart) {
-      setCartItems(
-        cartItems.map((cartItem) =>
+      const updatedCartItems = cartItems
+        .map((cartItem) =>
           cartItem.id === item.id
-            ? { ...cartItem, quantity: cartItem.quantity + 1 }
+            ? { ...cartItem, quantity: cartItem.quantity + quantity }
             : cartItem
         )
-      );
+        .filter((cartItem) => cartItem.id !== item.id); //xóa món cũ trước khi thêm mới
+
+      setCartItems([
+        { ...isItemInCart, quantity: isItemInCart.quantity + quantity },
+        ...updatedCartItems,
+      ]);
     } else {
-      setCartItems([...cartItems, { ...item, quantity: 1 }]);
+      setCartItems([{ ...item, quantity: quantity }, ...cartItems]);
     }
   };
 
@@ -74,18 +86,20 @@ export const CartProvider = ({ children }) => {
   }
 
 
+
   const clearCart = () => {
     setCartItems([]);
   };
 
-  const getCartTotal = () => {
-    return cartItems
-      .reduce((total, item) => {
-        const price = Number(item.price.replace(/\./g, "").replace(" đ", ""));
-        return total + price * item.quantity;
-      }, 0)
-      .toLocaleString("vi-VN", { style: "currency", currency: "VND" });
+  const calculateDiscountedPrice = (price, discount) => {
+    if (!discount || discount === "0%") return price;
+    const priceNum = parseInt(price.replace(/\D/g, ""));
+    const discountPercent = parseInt(discount) / 100;
+    const discountedPrice = priceNum * (1 - discountPercent);
+    const roundedPrice = Math.ceil(discountedPrice / 1000) * 1000;
+    return roundedPrice;
   };
+
 
   const getTotalProduct = () => {
     let total = 0;
@@ -96,6 +110,32 @@ export const CartProvider = ({ children }) => {
   }
 
 
+  const getCartTotal = () => {
+    const total = cartItems.reduce((total, item) => {
+      let itemPrice;
+
+      if (item.discount && item.discount !== "0%") {
+        itemPrice = calculateDiscountedPrice(item.price, item.discount);
+      } else {
+        itemPrice =
+          typeof item.price === "string"
+            ? parseInt(item.price.replace(/\./g, "").replace(" đ", ""))
+            : item.price;
+      }
+      return total + itemPrice * item.quantity;
+    }, 0);
+
+    return total.toLocaleString("vi-VN", {
+      style: "currency",
+      currency: "VND",
+    });
+  };
+
+  const getTotalItems = () => {
+    return cartItems.reduce((total, item) => total + item.quantity, 0);
+  };
+
+
   const updateItemQuantity = (itemId, quantity) => {
     setCartItems((prevItems) =>
       prevItems.map((item) =>
@@ -104,22 +144,20 @@ export const CartProvider = ({ children }) => {
     );
   };
 
-
-  
-
   return (
     <CartContext.Provider
       value={{
         cartItems,
+        animatedItem,
         addToCart,
         increaseItem,
         decreaseItem,
         removeFromCart,
         clearCart,
         getCartTotal,
+        getTotalItems,
         updateItemQuantity,
         getTotalProduct
-
       }}
     >
       {children}
