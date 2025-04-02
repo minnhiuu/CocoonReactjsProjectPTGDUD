@@ -1,3 +1,13 @@
+.brand-introduction {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Căn giữa nội dung */
+    gap: 30px; /* Giảm khoảng cách */
+    padding: 20px 0;
+}
+
+
 .title{
     text-align: center;
     font-weight: bold;
@@ -14,10 +24,91 @@
     font-style: italic;
     font-size: 17px;
   }
-.large-text{
+.large-text {
+    text-align: center !important;
+    font-weight: bold;
+    font-size: 30px;
+    color: #8c6239;
+    margin-bottom: 10px; 
+    font-family: serif;
+}
+.large-bold{
     font-weight: bold;
 }
 .story-brand{
-    margin-left: 20px;
-    text-align: justify;
+    margin-left: 60px;
+    
+}
+.brand-meaning {
+    margin-top: 80px;
+    align-items: center;
+    justify-content: center; /* Giữ nội dung gần nhau */
+    width: 80%; /* Giảm chiều rộng để tránh kéo dài */
+    text-align: center;
+}
+
+.text-content{
+    width:90%;
+}
+.image-content {
+ width: 90%;
+ height:570px;
+}
+
+.image-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Bo tròn nhẹ */
+    margin-top: 17px;
+    margin-bottom: 20px;
+}
+.philosophy{
+    width: 50%;
+    max-width: 50%;
+    text-align: center;
+}
+.image-slider {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.image-slider img {
+    width: 45%;
+    height: 500px;
+    margin-top: 10px;
+    object-fit: cover; /* Ảnh sẽ lấp đầy nhưng có thể bị cắt một chút */
+    aspect-ratio: 16 / 9; /* Đảm bảo tất cả ảnh theo cùng một tỷ lệ */
+    border-radius: 10px;
+}
+
+.image-slider2 {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.image-slider2 img {
+    width: 95%;
+    height: 600px;
+    margin-top: 10px;
+    object-fit: cover; /* Ảnh sẽ lấp đầy nhưng có thể bị cắt một chút */
+    aspect-ratio: 16 / 9; /* Đảm bảo tất cả ảnh theo cùng một tỷ lệ */
+    border-radius: 10px;
+}
+.image-full img{
+    margin-left: 500px;
+    margin-top: 10px;
+    object-fit: cover; /* Ảnh sẽ lấp đày nhưng có thể bị cắt một chút */
+}
+.brand-section{
+    text-align: center;
+}
+.brand-value{
+    text-align: center;
+    margin-top: 100px;
 }

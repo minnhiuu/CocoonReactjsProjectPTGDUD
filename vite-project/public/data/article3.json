@@ -1,0 +1,47 @@
+[
+    {
+        "img": "/images/hinh4.jpg",
+        "category": "Cocoon",
+        "date": "01.01.24",
+        "link": "/cocoon/bai-viet/post4",
+        "title": "Chương trình 'Ửng hồng Không ửng đỏ' - chung tay chăm sóc trẻ em vùng cao",
+        "desc": "Chương trình 'Ửng Hồng Không Ửng Đỏ' được Cocoon và UNESCO-CEP triển khai nhằm hướng đến một mục tiêu thiết thực là xây dựng sân chơi an toàn, sạch sẽ, giúp nâng cao nhận thức cộng đồng về việc chăm sóc sức khỏe trẻ em vùng cao và góp phần giảm thiểu tỉ lệ trẻ em mắc bệnh tật do điều kiện sống nghèo nàn."
+    },
+    {
+        "img": "/images/hinh5.jpg",
+        "category": "Cocoon",
+        "date": "22.09.21",
+        "link": "/cocoon/bai-viet/post5",
+        "title": "Chương trình 'Cùng Cocoon Sống Xanh Mỗi Ngày' năm 2024",
+        "desc": "Từ tháng 9/2024, Cocoon mang lại 115 điểm thu hồi vỏ chai trực tiếp, được triển khai tại 25 tỉnh thành trên khắp Việt Nam để khách hàng dễ dàng tham gia vào việc thu hồi vỏ chai nhựa cũ, góp phần bảo vệ môi trường và hướng tới một nền kinh tế tuần hoàn bền vững cho tương lai."
+    },
+    {
+        "img": "/images/hinh6.jpg",
+        "category": "Cocoon",
+        "date": "15.05.24",
+        "link": "/cocoon/bai-viet/post6",
+        "title": "Cocoon x AAF: Chung tay cứu trợ chó mèo lang thang cùng Tổ chức Động vật Châu Á",
+        "desc": "Với mỗi sản phẩm giới hạn được bán ra, Cocoon sẽ trích 10.000đ để ủng hộ vào quỹ của AAF nhằm san sẻ những khó khăn về lương thực, y tế với các trạm cứu hộ động vật, giúp cải thiện đời sống và chăm sóc các loài động vật hoang dã, đặc biệt là chó mèo lang thang trên đường phố."
+    },
+    {
+        "img": "/images/hinh8.jpg",
+        "category": "Cocoon",
+        "date": "15.05.24",
+        "title": "Cocoon x Guardian Vietnam: ra mắt 20 trạm refill tại TP.HCM",
+        "desc": "Trạm Refill là chương trình nhằm giúp giảm tải số lượng vỏ chai nhựa cũ thải ra ngoài môi trường của Cocoon và Guardian Vietnam. Hiện tại, chương trình đang triển khai tại TP.HCM và sẽ sớm được mở rộng ra các tỉnh thành khác, góp phần tích cực vào chiến dịch bảo vệ môi trường và giảm thiểu ô nhiễm nhựa."
+    },
+    {
+        "img": "/images/hinh9.jpg",
+        "category": "Cocoon",
+        "date": "15.05.24",
+        "title": "Chương trình 'Thu hồi pin cũ - Bảo vệ trái đất xanh' năm 2024",
+        "desc": "Cocoon và Trường Đại học Sư phạm TP.HCM kết hợp phát động chương trình “Thu hồi pin cũ - Bảo vệ trái đất xanh” 2024 với hơn 96 điểm thu hồi pin trải rộng trên toàn quốc. Chương trình không chỉ bảo vệ môi trường mà còn khuyến khích cộng đồng chung tay giảm thiểu rác thải điện tử."
+    },
+    {
+        "img": "/images/hinh10.jpg",
+        "category": "Cocoon",
+        "date": "14.09.23",
+        "title": "Cocoon x Suboi: Love Your Nature - Cứ tự nhiên đi",
+        "desc": "Chúng tôi tôn trọng sự đa dạng và trân trọng sự khác biệt vì bản chất tự nhiên của mỗi người là điều vô cùng độc đáo và quý giá. Cocoon & Suboi rất tự hào khi đặt ra thông điệp yêu thương thiên nhiên, khuyến khích mọi người hãy sống tự nhiên, yêu thương và bảo vệ hành tinh của chúng ta."
+    }
+]
