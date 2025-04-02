@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import SearchButton from "../SearchButton/SearchButton";
 import LoginForm from "../../pages/Login/LogIn";
 import SidebarCocoon from "../Sidebar/SidebarCocoon";
@@ -7,10 +7,6 @@ import { path } from "../../constants/path";
 import { CartContext } from "../../context/cart";
 import "./Header.css";
 import Pay from "../Pay/Pay";
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import LoginForm from "../../pages/Login/LogIn";
-import SidebarCocoon from "../Sidebar/SidebarCocoon";
 import UserProfile from '../profile/userProfile';
 
 function Header() {
@@ -125,7 +121,7 @@ function Header() {
           <LoginForm setShowLogin={setShowLogin} setUser={setUser} />
         </div>
       )}
-      
+
       <SidebarCocoon show={showSidebar} onClose={() => setShowSidebar(false)} />
       <div className="content-placeholder"></div>
 

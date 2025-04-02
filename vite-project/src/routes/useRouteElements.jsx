@@ -21,6 +21,7 @@ import Post4 from "../components/Post/Post4";
 import Post5 from "../components/Post/Post5";
 import Post6 from "../components/Post/Post6";
 import Cart from "../pages/Cart/Cart";
+import Profile from "../pages/Profile/Profile";
 
 
 export default function useRouteElements() {
