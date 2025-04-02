@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "../Article/Article.css";
+import useClampText from "./useClampText";
 
 function Article2() {
+    const [articles, setArticles] = useState([]);
+
+    useEffect(() => {
+        fetch("/data/article2.json")
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error("Lỗi khi fetch dữ liệu");
+                }
+                return response.json();
+            })
+            .then((data) => setArticles(data))
+            .catch((error) => console.error("Lỗi khi load dữ liệu:", error));
+    }, []);
+
+    
     return (
         <div className="main">
             <div className="container mt-0">
@@ -13,68 +30,70 @@ function Article2() {
                         <h5 className="baiviet">BÀI VIẾT / LÀM ĐẸP</h5>
                     </div>
                 </div>
+
                 <div className="row mt-1">
-                    {[
-                        {
-                            img: "/images/hinh1.jpg",
-                            category: "Làm đẹp",
-                            date: "01.10.21",
-                            title: "Vài “tip” giúp bạn tận hưởng trọn vẹn từng giây phút làm sạch da chết trên cơ thể cùng Cà phê Đắk Lắk",
-                            desc: "Hãy thử áp dụng một vài tip sau để gia tăng thêm những trải nghiệm thật “chill” với sản phẩm Cà phê Đắk Lắk làm sạch da chết cơ thể."
-                        },
-                        {
-                            img: "/images/hinh2.jpg",
-                            category: "Làm đẹp",
-                            date: "22.09.21",
-                            title: "3 bước tẩy da chết hiệu quả dành cho mặt từ cà phê Đắk Lắk",
-                            desc: "Việc tẩy da chết tuy chỉ mất từ 10 – 15s nhưng nó sẽ giúp bạn loại bỏ các tế bào da chết trên bề mặt da một cách dễ dàng, giảm nguy cơ tắc nghẽn lỗ chân lông và..."
-                        },
-                        {
-                            img: "/images/hinh3.jpg",
-                            category: "Làm đẹp",
-                            date: "22.09.21",
-                            title: "Da dầu, mụn sẽ “ăn chay” như thế nào?",
-                            desc: "Giống như các loại da khác, da dầu cũng sẽ đạt được trạng thái khỏe mạnh và mịn màng nếu được làm sạch đúng cách và được bảo vệ với các sản phẩm phù hợp."
-                        }
-                    ].map((article, index) => (
-                        <div className="col-4 d-flex flex-column p-3 article-container" key={index}>
-                            <div className="image-container">
-                                <img src={article.img} alt={article.title} className="article-image" />
-                            </div>
-                            <p className="text-muted mt-2 article-text">
-                                <strong>{article.category}</strong> | {article.date}
-                            </p>
-                            <h6 className="mt-1 article-title">{article.title}</h6>
-                            <p className="text-muted article-text">{article.desc}</p>
-                        </div>
-                    ))}
-                </div>
-                <div className="row mt-1">
-                    {[
-                        {
-                            img: "/images/hinh7.jpg",
-                            category: "Làm đẹp",
-                            date: "14.09.21",
-                            title: "Thực hành sống xanh cùng túi refill cà phê Đắk Lắk",
-                            desc: "Mỗi túi refill dung tích 600ml sẽ giúp bạn tiết kiệm ngay 15% chi phí và còn giảm đến 86% nhựa so với dạng hũ. Đặc biệt, với sản phẩm này sẵn trong nhà, bạn sẽ dễ..."
-                        },
-                    ].map((article, index) => (
-                        <div className="col-4 d-flex flex-column p-3 article-container" key={index}>
-                            <div className="image-container">
-                                <img src={article.img} alt={article.title} className="article-image" />
-                            </div>
-                            <p className="text-muted mt-2 article-text">
-                                <strong>{article.category}</strong> | {article.date}
-                            </p>
-                            <h6 className="mt-1 article-title">{article.title}</h6>
-                            <p className="text-muted article-text">{article.desc}</p>
-                        </div>
-                    ))}
+                    {articles.length > 0 ? (
+                        articles.map((article, index) => (
+                            <ArticleItem key={index} article={article} />
+                        ))
+                    ) : (
+                        <p className="text-center">Đang tải dữ liệu...</p>
+                    )}
                 </div>
             </div>
         </div>
     );
 }
 
+const ArticleItem = ({ article }) => {
+    const [titleText, titleRef] = useClampText(article.title, 2);
+    const [descText, descRef] = useClampText(article.desc, 3);
+
+    return (
+        <div className="col-4 d-flex flex-column p-3 article-container">
+            {/* Link bọc ảnh */}
+            <Link to={article.link} className="text-decoration-none">
+                <div className="image-container">
+                    <img src={article.img} alt={article.title} className="article-image" />
+                </div>
+            </Link>
+            
+            <p className="text-muted mt-2 article-text">
+                <strong>{article.category}</strong> | {article.date}
+            </p>
+
+            {/* Link bọc tiêu đề */}
+            <Link to={article.link} className="text-decoration-none text-dark fw-bold">
+                <h6
+                    className="mt-1 article-title"
+                    ref={titleRef}
+                    style={{
+                        display: "-webkit-box",
+                        WebkitBoxOrient: "vertical",
+                        WebkitLineClamp: 2,
+                        overflow: "hidden",
+                        textOverflow: "ellipsis"
+                    }}
+                >
+                    {article.title}
+                </h6>
+            </Link>
+
+            <p
+                className="text-muted article-text"
+                ref={descRef}
+                style={{
+                    display: "-webkit-box",
+                    WebkitBoxOrient: "vertical",
+                    WebkitLineClamp: 3,
+                    overflow: "hidden",
+                    textOverflow: "ellipsis"
+                }}
+            >
+                {descText}
+            </p>
+        </div>
+    );
+};
 
 export default Article2;

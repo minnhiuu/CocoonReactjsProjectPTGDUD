@@ -1,0 +1,57 @@
+{
+    "articles": [
+      {
+        "category": "lam-dep",
+        "data": [
+          {
+            "link": "/cocoon/bai-viet/post1",
+            "img": "/images/hinh1.jpg",
+            "date": "01.10.21",
+            "title": "Vài “tip” giúp bạn tận hưởng trọn vẹn...",
+            "desc": "Hãy thử áp dụng một vài tip sau để gia tăng thêm những trải nghiệm thật “chill”..."
+          },
+          {
+            "link": "/cocoon/bai-viet/post2",
+            "img": "/images/hinh2.jpg",
+            "date": "22.09.21",
+            "title": "3 bước tẩy da chết hiệu quả...",
+            "desc": "Việc tẩy da chết tuy chỉ mất từ 10 – 15s nhưng nó sẽ giúp bạn loại bỏ..."
+          },
+          {
+            "link": "/cocoon/bai-viet/post3",
+            "img": "/images/hinh3.jpg",
+            "date": "22.09.21",
+            "title": "Da dầu, mụn sẽ “ăn chay” như thế nào?",
+            "desc": "Giống như các loại da khác, da dầu cũng sẽ đạt được trạng thái khỏe mạnh..."
+          }
+        ]
+      },
+      {
+        "category": "chuong-trinh",
+        "data": [
+          {
+            "link": "/cocoon/bai-viet/post4",
+            "img": "/images/hinh4.jpg",
+            "date": "01.01.24",
+            "title": "Chương trình 'Ửng hồng Không ửng đỏ'...",
+            "desc": "Chương trình 'Ửng Hồng Không Ửng Đỏ' được Cocoon và UNESCO-CEP triển khai..."
+          },
+          {
+            "link": "/cocoon/bai-viet/post5",
+            "img": "/images/hinh5.jpg",
+            "date": "22.09.21",
+            "title": "Chương trình 'Cùng Cocoon Sống Xanh Mỗi Ngày'...",
+            "desc": "Từ tháng 9/2024, Cocoon mang lại 115 điểm thu hồi vỏ chai trực tiếp..."
+          },
+          {
+            "link": "/cocoon/bai-viet/post6",
+            "img": "/images/hinh6.jpg",
+            "date": "15.05.24",
+            "title": "Cocoon x AAF: Chung tay cứu trợ chó mèo lang thang...",
+            "desc": "Với mỗi sản phẩm giới hạn được được bán ra, Cocoon sẽ trích 10.000đ để ủng hộ..."
+          }
+        ]
+      }
+    ]
+  }
+  
