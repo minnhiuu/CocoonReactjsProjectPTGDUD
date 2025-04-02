@@ -118,25 +118,7 @@ export default function ProductMenu() {
         </h2>
 
         {loading ? (
-        //   <Row className="justify-content-center">
-        //     {Array.from({ length: 10 }).map((_, index) => (
-        //       <Col
-        //         key={index}
-        //         xs={6}
-        //         sm={4}
-        //         md={2}
-        //         className="mb-4 text-center"
-        //       >
-        //         <Card className="border shadow-sm p-1">
-        //           <div className="skeleton-image" />
-        //           <Card.Body>
-        //             <div className="skeleton-text"></div>
-        //           </Card.Body>
-        //         </Card>
-        //       </Col>
-        //     ))}
-        //   </Row>
-       
+        
             <div className="loading-overlay">
               <div className="loading-logo">
                 <img src="/images/cocoon1.png" alt="Loading" className="logo-image" />

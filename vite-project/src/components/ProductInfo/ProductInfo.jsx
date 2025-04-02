@@ -132,7 +132,8 @@ const ProductInfo = () => {
           </div>
         </Col>
       </Row>
-      <Row className="product-details-section mb-8">
+      <Container className="p-3">
+      <Row className="product-details-section mb-8 ">
         <Col md={6}>
           <h2 className="section-title">MÔ TẢ SẢN PHẨM</h2>
           <p className="text-gray-600 mb-4">{product.description}</p>
@@ -235,6 +236,7 @@ const ProductInfo = () => {
           )}
         </Col>
       </Row>
+      </Container>
     </Container>
   );
 };

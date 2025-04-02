@@ -4,6 +4,7 @@ export const path = {
     coreValue:'/cocoon/gia-tri-cot-loi',
     storyBrand:'/cocoon/cau-chuyen-thuong-hieu',
     communityResponsibility:'/cocoon/trach-nhiem-cong-dong',
+    cart: '/cocoon/cart',
     article:'/cocoon/bai-viet',
     beauty:"/cocoon/bai-viet/lam-dep",
     charity:"/cocoon/bai-viet/chuong-trinh",

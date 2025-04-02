@@ -1,0 +1,142 @@
+
+
+.cart-item {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: start;
+    position: relative;
+    /* margin-right: 30px; */
+   
+}
+
+.cardImg {
+    width: 20%;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+
+.cardImg img {
+    object-fit: contain; 
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+
+}
+.cardContent {
+    width: 60%;
+    padding: 10px;
+}
+.cardContent h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.cardContent h5 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.cardContent p {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.cardActions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quantity button {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f8f8f8;
+}
+
+.quantity span {
+    margin: 0 10px;
+}
+
+.cardActions button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+   background: #ddd;
+    color: black;
+    cursor: pointer;
+}
+.cardActions button:hover {
+    background: gray;
+}
+
+.cardActions .totalPrice {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+.btn-closeCart {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: black;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-closeCart:hover {
+    color: #d32f2f;
+}
+
+@media (max-width: 768px) {
+    .cart-item {
+        flex-direction: column;
+        align-items: center;
+    }
+    .cardImg {
+        width: 100%;
+        height: auto;
+    }
+    .cardContent {
+        width: 100%;
+        padding: 10px;
+    }
+    .cardActions {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media (max-width: 480px) {
+    .cart-item {
+        flex-direction: column;
+        align-items: center;
+    }
+    .cardImg {
+        width: 100%;
+        height: auto;
+    }
+    .cardContent {
+        width: 100%;
+        padding: 10px;
+    }
+    .cardActions {
+        flex-direction: column;
+        align-items: center;
+    }
+}

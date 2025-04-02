@@ -4,7 +4,6 @@ import LoginForm from "../../pages/Login/LogIn";
 import SidebarCocoon from "../Sidebar/SidebarCocoon";
 import { Link } from "react-router-dom";
 import { path } from "../../constants/path";
-import Cart from "../Cart/Cart";
 import { CartContext } from "../../context/cart";
 import "./Header.css";
 import Pay from "../Pay/Pay";
@@ -72,9 +71,10 @@ function Header() {
           <Link to="/contact" className="text-dark ">
             Liên hệ
           </Link>
-          <a href="#" className="text-dark " onClick={toggleCart}>
-            Giỏ hàng ({cartItems.length})
-          </a>
+          <Link to={path.cart} className="text-dark " >
+          Giỏ hàng ({cartItems.length})
+          </Link>
+          
         </div>
       </header>
       {showLogin && (
@@ -86,13 +86,7 @@ function Header() {
           <LoginForm setShowLogin={setShowLogin} />
         </div>
       )}
-      {showCart && <div className="overlay" onClick={toggleCart}></div>}
-      <Cart
-        showCart={showCart}
-        toggleCart={toggleCart}
-        togglePaymentModal={togglePaymentModal}
-        setShowPaymentModal={setShowPaymentModal}
-      ></Cart>
+      
 
       {showSidebar && (
         <div className="overlay" onClick={() => setShowSidebar(false)}></div>

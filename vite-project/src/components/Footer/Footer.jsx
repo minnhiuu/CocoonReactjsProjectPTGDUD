@@ -105,18 +105,21 @@ function Footer() {
             </div>
 
             <div className="row footer-bottom p-3 m-0">
-              <p className="text-center ">
-                WEBSITE THUỘC QUYỀN CÔNG TY CỔ PHẦN Y&B
-                <br />
+              <p className="text-left">
+                <b className="mt-2">WEBSITE THUỘC QUYỀN CÔNG TY CỔ PHẦN Y&B</b>
+                <br/>
+                <br/>
                 Địa chỉ: 140I, KDC Đào Duy Từ, Quận 10, TP. Hồ Chí Minh
                 <br />
                 Email: web@cocoonvietnam.com
                 <br />
                 <br />
-                SẢN XUẤT VÀ CHỊU TRÁCH NHIỆM VỀ HÀNG HÓA
+                <b>SẢN XUẤT VÀ CHỊU TRÁCH NHIỆM VỀ HÀNG HÓA</b>
                 <br />
-                CÔNG TY TNHH NATURE STORY
+                <b className="mb-3">CÔNG TY TNHH NATURE STORY</b>
                 <br />
+                <br />
+              
                 Địa chỉ: Lô 1F2A-1F2B, KCN Xuyên Á, Long An
                 <br />
                 Điện thoại: 1900 633 307 - Email: web@cocoonvietnam.com
@@ -126,20 +129,8 @@ function Footer() {
                 <img
                   src="/images/daThongBao.png"
                   alt="Đã thông báo Bộ Công Thương"
-                  className="me-3"
+                  className="me-3 "
                 />
-                {/* <a href="/" className="btn btn-icon">
-                  <i className="fas fa-phone"></i>
-                </a>
-                <a href="/" className="btn btn-icon">
-                  <i className="fas fa-comments"></i>
-                </a>
-                <a href="/" className="btn btn-icon">
-                  <i className="fab fa-facebook-messenger"></i>
-                </a>
-                <a href="/" className="btn btn-icon">
-                  <i className="fas fa-times"></i>
-                </a> */}
               </div>
 
               <p className="text-center mt-2 small">

@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Vollkorn:wght@400;600;700&display=swap");
 
 .footer {
     background-color: #fff9ed;
+    font-family: "Vollkorn", serif;
 }
 
 .footer h6 {
@@ -18,8 +20,8 @@
 }
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    filter: invert(100%);  /* Đổi màu thành trắng/đen */
-    background-color: rgba(0, 0, 0, 0.5); /* Tùy chỉnh màu nền */
+    filter: invert(100%);  
+    background-color: rgba(0, 0, 0, 0.5); 
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -31,7 +33,7 @@
 
 .footer-bottom {
     background-color: #2f2f2f;
-    color: #fff;
+    color: #C5A25D;
     font-size: 13px;
     line-height: 1.5;
     height: 50%;
@@ -80,7 +82,7 @@
 
 .custom-carousel img {
     object-fit: cover;
-    height: 400px; /* Chiều cao cố định hoặc tuỳ chỉnh */
+    height: 400px; 
 }
 
 .centered-caption {
@@ -90,13 +92,11 @@
     transform: translate(-50%, -50%);
     text-align: center;
     color: white;
-    /* padding: 20px 30px; */
     border-radius: 8px;
     max-width: 80%;
 }
 
 .custom-carousel h2 {
-    /* width: 500px; */
     color: #CCB48F;
     font-family: "Vollkorn", serif;
     font-optical-sizing: auto;

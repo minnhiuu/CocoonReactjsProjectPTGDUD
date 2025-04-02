@@ -9,7 +9,6 @@ import CocoonStory from "../pages/Cocoon/CocoonStory";
 import CocoonResponsibility from "../pages/Cocoon/CocoonResponsibility";
 import ProductMenu from "../pages/ProductMenu/ProductMenu";
 import ProductInfo from "../components/ProductInfo/ProductInfo";
-import { CartProvider } from "../context/cart";
 import ContactPage from "../pages/Contact/ContactPage"; 
 import Article from "../components/Article/Article";
 import Article2 from "../components/ArticleExtra/Article2";
@@ -20,6 +19,8 @@ import Post3 from "../components/Post/Post3";
 import Post4 from "../components/Post/Post4";
 import Post5 from "../components/Post/Post5";
 import Post6 from "../components/Post/Post6";
+import CartProduct from "../components/Cart/CartProduct";
+import Cart from "../pages/Cart/Cart";
 
 
 export default function useRouteElements() {
@@ -27,13 +28,6 @@ export default function useRouteElements() {
     {
       path: "/",
       element: <MainLayout />,
-// =======
-//       element: (
-//         <CartProvider>
-//           <MainLayout />
-//         </CartProvider>
-//       ),
-// >>>>>>> 85531f9497ea4208f22381a11bba655f2cd76518
       children: [
         {
           path: path.cocoon,
@@ -43,6 +37,11 @@ export default function useRouteElements() {
           path: path.home,
           element: <Home />,
         },
+        {
+          path: path.cart,
+          element: <Cart />,
+        },
+
         {
           path: path.coreValue,
           element: <CocoonValues />,
@@ -80,7 +79,7 @@ export default function useRouteElements() {
           path: path.productInfo,
           element: <ProductInfo/>
         },
-        { // Thêm route cho ContactPage
+        { 
           path: "/contact",
           element: <ContactPage />,
       },
