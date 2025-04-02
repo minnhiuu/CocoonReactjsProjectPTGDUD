@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./Article.css";
+import useClampText from "../ArticleExtra/useClampText"; 
 
 function Article() {
     const navigate = useNavigate();
@@ -23,10 +24,7 @@ function Article() {
                             <h1 className="tieude">Chương trình "Cùng Cocoon Sống Xanh Mỗi Ngày" năm 2024</h1>
                             <p className="noidung">
                                 Chương trình Thu Hồi Vỏ Chai Cũ được Cocoon khởi xướng từ tháng 4/2021 đã thu hút
-                                được sự tham gia nhiệt tình từ khách hàng, đặc biệt qua hình thức online. Đây không chỉ
-                                là nỗ lực của Cocoon trong việc giảm thiểu rác thải nhựa mà còn là lời cam kết mạnh mẽ
-                                hướng đến một môi trường bền vững. Để tăng cường tính thuận tiện cho khách hàng và mở rộng
-                                quy mô chương trình, Cocoon đã quyết định đưa hoạt động này đến gần hơn với mọi người.
+                                được sự tham gia nhiệt tình từ khách hàng, đặc biệt qua hình thức online...
                             </p>
                         </div>
                         <Link to="/cocoon" className="btn-read-more btn-view-all">
@@ -43,115 +41,97 @@ function Article() {
                 </div>
 
                 {/* Danh mục Làm Đẹp */}
-                <div className="row mt-5">
-                    <div className="col-12 d-flex justify-content-between align-items-center">
-                        <h5 className="baiviet">LÀM ĐẸP</h5>
-                        <Link to="/cocoon/bai-viet/lam-dep" className="btn-view-all">
-                            Tất cả bài viết →
-                        </Link>
-                    </div>
-                </div>
-                <div className="row mt-1">
-                    {[
-                        {
-                            link: "/cocoon/bai-viet/post1",
-                            img: "/images/hinh1.jpg",
-                            category: "Làm đẹp",
-                            date: "01.10.21",
-                            title: "Vài “tip” giúp bạn tận hưởng trọn vẹn...",
-                            desc: "Hãy thử áp dụng một vài tip sau để gia tăng thêm những trải nghiệm thật “chill”..."
-                        },
-                        {
-                            link: "/cocoon/bai-viet/post2",
-                            img: "/images/hinh2.jpg",
-                            category: "Làm đẹp",
-                            date: "22.09.21",
-                            title: "3 bước tẩy da chết hiệu quả...",
-                            desc: "Việc tẩy da chết tuy chỉ mất từ 10 – 15s nhưng nó sẽ giúp bạn loại bỏ..."
-                        },
-                        {
-                            link: "/cocoon/bai-viet/post3",
-                            img: "/images/hinh3.jpg",
-                            category: "Làm đẹp",
-                            date: "22.09.21",
-                            title: "Da dầu, mụn sẽ “ăn chay” như thế nào?",
-                            desc: "Giống như các loại da khác, da dầu cũng sẽ đạt được trạng thái khỏe mạnh..."
-                        }
-                    ].map((article, index) => (
-                        <div
-                            className="col-4 d-flex flex-column p-3 article-container"
-                            key={index}
-                            onClick={() => handleClick(article.link)}
-                            style={{ cursor: "pointer" }}
-                        >
-                            <div className="image-container">
-                                <img src={article.img} alt={article.title} className="article-image" />
-                            </div>
-                            <p className="text-muted mt-2 article-text">
-                                <strong>{article.category}</strong> | {article.date}
-                            </p>
-                            <h6 className="mt-1 article-title">{article.title}</h6>
-                            <p className="text-muted article-text">{article.desc}</p>
-                        </div>
-                    ))}
-                </div>
+                <CategorySection title="LÀM ĐẸP" link="/cocoon/bai-viet/lam-dep" articles={[
+                    {
+                        link: "/cocoon/bai-viet/post1",
+                        img: "/images/hinh1.jpg",
+                        category: "Làm đẹp",
+                        date: "01.10.21",
+                        title: "Vài “tip” giúp bạn tận hưởng trọn vẹn...",
+                        desc: "Hãy thử áp dụng một vài tip sau để gia tăng thêm những trải nghiệm thật “chill”..."
+                    },
+                    {
+                        link: "/cocoon/bai-viet/post2",
+                        img: "/images/hinh2.jpg",
+                        category: "Làm đẹp",
+                        date: "22.09.21",
+                        title: "3 bước tẩy da chết hiệu quả...",
+                        desc: "Việc tẩy da chết tuy chỉ mất từ 10 – 15s nhưng nó sẽ giúp bạn loại bỏ..."
+                    },
+                    {
+                        link: "/cocoon/bai-viet/post3",
+                        img: "/images/hinh3.jpg",
+                        category: "Làm đẹp",
+                        date: "22.09.21",
+                        title: "Da dầu, mụn sẽ “ăn chay” như thế nào?",
+                        desc: "Giống như các loại da khác, da dầu cũng sẽ đạt được trạng thái khỏe mạnh..."
+                    }
+                ]} handleClick={handleClick} />
 
                 {/* Danh mục Cocoon */}
-                <div className="row mt-5">
-                    <div className="col-12 d-flex justify-content-between align-items-center">
-                        <h5 className="baiviet">COCOON</h5>
-                        <Link to="/cocoon/bai-viet/chuong-trinh" className="btn-view-all">
-                            Tất cả bài viết →
-                        </Link>
-                    </div>
-                </div>
-                <div className="row mt-1">
-                    {[
-                        {
-                            link: "/cocoon/bai-viet/post4",
-                            img: "/images/hinh4.jpg",
-                            category: "Cocoon",
-                            date: "01.01.24",
-                            title: "Chương trình 'Ửng hồng Không ửng đỏ'...",
-                            desc: "Chương trình 'Ửng Hồng Không Ửng Đỏ' được Cocoon và UNESCO-CEP triển khai..."
-                        },
-                        {
-                            link: "/cocoon/bai-viet/post5",
-                            img: "/images/hinh5.jpg",
-                            category: "Cocoon",
-                            date: "22.09.21",
-                            title: "Chương trình 'Cùng Cocoon Sống Xanh Mỗi Ngày'...",
-                            desc: "Từ tháng 9/2024, Cocoon mang lại 115 điểm thu hồi vỏ chai trực tiếp..."
-                        },
-                        {
-                            link: "/cocoon/bai-viet/post6",
-                            img: "/images/hinh6.jpg",
-                            category: "Cocoon",
-                            date: "15.05.24",
-                            title: "Cocoon x AAF: Chung tay cứu trợ chó mèo lang thang...",
-                            desc: "Với mỗi sản phẩm giới hạn được được bán ra, Cocoon sẽ trích 10.000đ để ủng hộ..."
-                        }
-                    ].map((article, index) => (
-                        <div
-                            className="col-4 d-flex flex-column p-3 article-container"
-                            key={index}
-                            onClick={() => handleClick(article.link)}
-                            style={{ cursor: "pointer" }}
-                        >
-                            <div className="image-container">
-                                <img src={article.img} alt={article.title} className="article-image" />
-                            </div>
-                            <p className="text-muted mt-2 article-text">
-                                <strong>{article.category}</strong> | {article.date}
-                            </p>
-                            <h6 className="mt-1 article-title">{article.title}</h6>
-                            <p className="text-muted article-text">{article.desc}</p>
-                        </div>
-                    ))}
-                </div>
+                <CategorySection title="COCOON" link="/cocoon/bai-viet/chuong-trinh" articles={[
+                    {
+                        link: "/cocoon/bai-viet/post4",
+                        img: "/images/hinh4.jpg",
+                        category: "Cocoon",
+                        date: "01.01.24",
+                        title: "Chương trình 'Ửng hồng Không ửng đỏ'...",
+                        desc: "Chương trình 'Ửng Hồng Không Ửng Đỏ' được Cocoon và UNESCO-CEP triển khai..."
+                    },
+                    {
+                        link: "/cocoon/bai-viet/post5",
+                        img: "/images/hinh5.jpg",
+                        category: "Cocoon",
+                        date: "22.09.21",
+                        title: "Chương trình 'Cùng Cocoon Sống Xanh Mỗi Ngày'...",
+                        desc: "Từ tháng 9/2024, Cocoon mang lại 115 điểm thu hồi vỏ chai trực tiếp..."
+                    },
+                    {
+                        link: "/cocoon/bai-viet/post6",
+                        img: "/images/hinh6.jpg",
+                        category: "Cocoon",
+                        date: "15.05.24",
+                        title: "Cocoon x AAF: Chung tay cứu trợ chó mèo lang thang...",
+                        desc: "Với mỗi sản phẩm giới hạn được được bán ra, Cocoon sẽ trích 10.000đ để ủng hộ..."
+                    }
+                ]} handleClick={handleClick} />
             </div>
         </div>
     );
 }
+
+const CategorySection = ({ title, link, articles, handleClick }) => (
+    <div>
+        <div className="row mt-5">
+            <div className="col-12 d-flex justify-content-between align-items-center">
+                <h5 className="baiviet">{title}</h5>
+                <Link to={link} className="btn-view-all">Tất cả bài viết →</Link>
+            </div>
+        </div>
+        <div className="row mt-1">
+            {articles.map((article, index) => (
+                <ArticleItem key={index} article={article} handleClick={handleClick} />
+            ))}
+        </div>
+    </div>
+);
+
+const ArticleItem = ({ article, handleClick }) => {
+    const [titleText, titleRef] = useClampText(article.title, 2); // Giới hạn tiêu đề 2 dòng
+    const [descText, descRef] = useClampText(article.desc, 3); // Giới hạn mô tả 3 dòng
+
+    return (
+        <div className="col-4 d-flex flex-column p-3 article-container" onClick={() => handleClick(article.link)} style={{ cursor: "pointer" }}>
+            <div className="image-container">
+                <img src={article.img} alt={article.title} className="article-image" />
+            </div>
+            <p className="text-muted mt-2 article-text">
+                <strong>{article.category}</strong> | {article.date}
+            </p>
+            <h6 className="mt-1 article-title" ref={titleRef}>{titleText}</h6>
+            <p className="text-muted article-text" ref={descRef}>{descText}</p>
+        </div>
+    );
+};
 
 export default Article;
