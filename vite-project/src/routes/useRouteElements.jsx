@@ -20,6 +20,7 @@ import Post3 from "../components/Post/Post3";
 import Post4 from "../components/Post/Post4";
 import Post5 from "../components/Post/Post5";
 import Post6 from "../components/Post/Post6";
+import Cart from "../pages/Cart/Cart";
 
 
 export default function useRouteElements() {
@@ -27,13 +28,6 @@ export default function useRouteElements() {
     {
       path: "/",
       element: <MainLayout />,
-// =======
-//       element: (
-//         <CartProvider>
-//           <MainLayout />
-//         </CartProvider>
-//       ),
-// >>>>>>> 85531f9497ea4208f22381a11bba655f2cd76518
       children: [
         {
           path: path.cocoon,
