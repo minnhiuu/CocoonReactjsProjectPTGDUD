@@ -1,14 +1,89 @@
-import React from "react";
+import React, { useRef } from "react";
+import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./ProductIntro.css";
 import ProductList from "../ProductList/ProductList";
+import { FaArrowRightLong } from "react-icons/fa6";
+import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
+import { OrbitControls, Plane } from "@react-three/drei";
+import * as THREE from "three";
+
+// Danh sách hình ảnh
+const images = [
+  "https://image.cocoonvietnam.com/uploads/Bo_Ket_Trai_113f8d9833.png",
+  "https://image.cocoonvietnam.com/uploads/Chanh_Day_293ff496c0.png",
+  "https://image.cocoonvietnam.com/uploads/Bo_Ket_Phai_cc60e7569a.png",
+  "https://image.cocoonvietnam.com/uploads/Chanh_Day_293ff496c0.png",
+];
+
+const ProductPlane = () => {
+  const texture = useLoader(
+    THREE.TextureLoader,
+    "https://image.cocoonvietnam.com/uploads/San_Pham_6c8d021d63.png"
+  );
+
+  const meshRef = useRef();
+  const { camera } = useThree();
+
+  useFrame(() => {
+    // Luôn quay mặt về camera
+    if (meshRef.current) {
+      meshRef.current.lookAt(camera.position);
+    }
+  });
+
+  return (
+    <mesh ref={meshRef} position={[0, 0, 0]}>
+      <Plane args={[2.8 * 3, 3.6 * 3]}>
+        <meshBasicMaterial
+          map={texture}
+          transparent={true}
+          side={THREE.DoubleSide}
+        />
+      </Plane>
+    </mesh>
+  );
+};
+
+// Component ảnh quay quanh sản phẩm
+const ImagePlane = ({ img, index, total }) => {
+  const texture = useLoader(THREE.TextureLoader, img);
+  const meshRef = useRef();
+
+  // Tính toán vị trí ban đầu theo hình tròn
+  const radius = 3;
+  const angle = (index / total) * Math.PI * 2;
+  const initialX = Math.cos(angle) * radius;
+  const initialZ = Math.sin(angle) * radius;
+
+  // Làm ảnh xoay quanh sản phẩm
+  useFrame(({ clock }) => {
+    const t = clock.getElapsedTime() * 0.5;
+    meshRef.current.position.x = Math.cos(angle + t) * radius;
+    meshRef.current.position.z = Math.sin(angle + t) * radius;
+    meshRef.current.lookAt(0, 0, 0);
+  });
+
+  return (
+    <mesh ref={meshRef} position={[initialX, 0, initialZ]}>
+      <Plane args={[3.6, 3.6]}>
+        <meshBasicMaterial
+          attach="material"
+          map={texture}
+          side={THREE.DoubleSide}
+          transparent={true}
+        />
+      </Plane>
+    </mesh>
+  );
+};
 
 function ProductIntro() {
   return (
     <div className="main">
       <section
-        className="intro-carousel carousel slide carousel-fade p-4  "
+        className="intro-carousel carousel slide carousel-fade p-4 mb-0"
         id="introCarousel"
         data-bs-ride="carousel"
       >
@@ -113,7 +188,183 @@ function ProductIntro() {
           <span className="carousel-control-next-icon intro-control-next-icon"></span>
         </button>
       </section>
-      <div className="container-fluid section-2 mb-3">
+
+      <div
+        className="features-block hidden lg:block relative w-full overflow-hidden"
+        id="2"
+        style={{
+          height: "56.0938vw",
+          maxHeight: "calc(100vh - 2.0625rem + 3.8125rem)",
+        }}
+      >
+        <div
+          className="absolute text-6xl animate-on-scroll"
+          style={{
+            fontSize: "45px",
+            transform: "translate3d(0, 20.27px, 0)",
+            fontFamily: "Vollkorn",
+            width: "21.5625rem",
+            left: "6.23%",
+            top: "6.43%",
+            fontSize: "45px",
+            transform: "translate3d(0px, 20.2653px, 0px)",
+            color: "rgba(31, 28, 23, 1)",
+            lineHeight: "1",
+          }}
+        >
+          Nước dưỡng da đầu bồ kết
+        </div>
+
+        <img
+          src="https://image.cocoonvietnam.com/uploads/Text_4bcacc4ebf.png"
+          alt="Text"
+          className="abs-image absolute h-full w-full object-contain animate-on-scroll"
+        />
+
+        {/* Hiệu ứng 3D */}
+        <div className="flex justify-center items-base h-[600px]">
+          <Canvas camera={{ position: [0, 0, 7] }}>
+            <OrbitControls
+              enableZoom={false}
+              enablePan={false}
+              minPolarAngle={Math.PI / 2}
+              maxPolarAngle={Math.PI / 2}
+            />
+            <ambientLight intensity={0.5} />
+            <directionalLight position={[2, 2, 2]} />
+
+            <ProductPlane />
+
+            {/* Hình ảnh quay quanh sản phẩm */}
+            {images.map((img, index) => (
+              <ImagePlane
+                className="abs-image absolute h-full w-full object-contain animate-on-scroll"
+                key={index}
+                img={img}
+                index={index}
+                total={images.length}
+              />
+            ))}
+          </Canvas>
+        </div>
+
+        <div
+          className="right-text-box animate-on-scroll absolute"
+          style={{
+            transform: "translate3d(0, 40.53px, 0)",
+            width: "18rem",
+            right: "6.67%",
+            bottom: "25.81%",
+          }}
+        >
+          <p className="text-lg leading-6 text-gray-500">
+            Da đầu – giống như da mặt – là nơi cư trú của hàng tỉ vi sinh vật.
+            Việc cân bằng hệ vi sinh giúp giảm gàu lâu dài, kiểm soát dầu và
+            phục hồi vùng da đầu tổn thương.
+          </p>
+          <Link
+            to="/cocoon/san-pham/50"
+            className="flex items-center justify-center mt-[2.125rem] rounded-sm hover:opacity-70 hover:shadow-md hover:shadow-gray-400 transition-all duration-300 ease-in-out"
+            style={{
+              width: "200px",
+              fontSize: "1.125rem",
+              padding: "10px 20px",
+              fontSize: "1.125rem",
+              whiteSpace: "nowrap",
+              fontFamily: "Vollkorn",
+              fontWeight: "500",
+              textTransform: "uppercase",
+              textDecoration: "none",
+              backgroundColor: "#c3a15c",
+              color: "#fff",
+              lineHeight: "1.75rem",
+              transitionProperty:
+                "background-color, border-color, color, fill, stroke",
+              transitionDuration: "300ms",
+              transitionTimingFunction: "cubic-bezier(0.4, 0, 1, 1)",
+              cursor: "pointer",
+            }}
+          >
+            <span className="button__text with-icon flex items-center gap-4">
+              Mua ngay
+              <FaArrowRightLong />
+            </span>
+            <span className="button__icon icon-arrow-right text-[20px]"></span>
+          </Link>
+        </div>
+      </div>
+
+      {/* Mobile */}
+      <div>
+        <div className="features-block-mobile block lg:hidden" id="2">
+          <div
+            className="relative mx-auto"
+            style={{ height: "29.875rem", maxWidth: "23.4375rem" }}
+          >
+            <Link to="/cocoon/san-pham/50">
+              <img
+                src="https://image.cocoonvietnam.com/uploads/TEXT_c24107cb32.png"
+                alt="TEXT"
+                className="animate-on-scroll absolute left-1/2 h-full max-w-none"
+              />
+            </Link>
+            {/* Hiệu ứng 3D */}
+            <div className="flex justify-center items-base h-[600px]">
+              <Canvas camera={{ position: [0, 0, 7] }}>
+                <OrbitControls
+                  enableZoom={false}
+                  enablePan={false}
+                  minPolarAngle={Math.PI / 2}
+                  maxPolarAngle={Math.PI / 2}
+                />
+                <ambientLight intensity={0.5} />
+                <directionalLight position={[2, 2, 2]} />
+
+                <ProductPlane />
+
+                {/* Hình ảnh quay quanh sản phẩm */}
+                {images.map((img, index) => (
+                  <ImagePlane
+                    className="abs-image absolute h-full w-full object-contain animate-on-scroll"
+                    key={index}
+                    img={img}
+                    index={index}
+                    total={images.length}
+                  />
+                ))}
+              </Canvas>
+            </div>
+          </div>
+
+          <div className="flex flex-col items-center text-center">
+            <div className="font-vollkorn text-primary-dark mt-5 leading-none text-[30px] max-w-[18.125rem]">
+              Nước dưỡng da đầu bồ kết
+            </div>
+            <p className="mt-2 text-sm text-gray-500 max-w-[18.125rem]">
+              Da đầu – giống như làn da mặt – là nơi cư trú của hàng tỉ vi sinh
+              vật có lợi và có hại. Cân bằng hệ vi sinh là giúp tái lập môi
+              trường sống lý tưởng cho hệ vi sinh có lợi, kiềm hãm vi sinh vật
+              gây hại – từ đó hỗ trợ giảm gàu lâu dài, hạn chế tiết dầu quá mức
+              và phục hồi vùng da đầu tổn thương.
+            </p>
+            <Link
+              to="/cocoon/san-pham/50"
+              className="button button-large button-transparent mt-[2.125rem] mb-[3.625rem]"
+              style={{
+                padding: 0,
+                width: "5.625rem",
+                height: "1.25rem",
+                fontSize: "1.125rem",
+              }}
+            >
+              <span className="button__text ">Mua ngay</span>
+              <span className="button__icon icon-arrow-right text-[20px]"></span>
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <div className="container-fluid section-2 mb-3 mt-0">
         <div className="section-2-content text-center">
           <h1 className="mb-4 mt-2 text-font">Triết lý THƯƠNG HIỆU</h1>
           <p className="text-gray-500">
