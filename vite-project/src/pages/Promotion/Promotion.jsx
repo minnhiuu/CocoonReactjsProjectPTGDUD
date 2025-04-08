@@ -120,7 +120,7 @@ export default function Promotion() {
   };
 
   return (
-    <div className="promotional-page">
+    <div className="promotional-page pt-2">
       <div className="marquee-container !mt-4">
         <div className="marquee-text">
           🚀 ƯU ĐÃI CỰC LỚN 🔥 - GIẢM GIÁ ĐẾN 50% 💥 - MUA NGAY KẺO LỠ 🛒 – CHỈ
