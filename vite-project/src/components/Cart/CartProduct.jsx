@@ -21,32 +21,13 @@ const CartProduct = () => {
       const onCartUpdate = () => {
         setCarts([...cartItems]);
       }
-          
-    
-      const handleNavigateProduct = () => {
-        toggleCart();
-        // navigate(path.product)
-        navigate(path.cocoon);
-      };
-    
-      const handleNavigateCheckout = () => {
-        toggleCart();
-        navigate(path.cocoon);
-      };
-    
-      const handleNavigateProductDetails = (id) => {
-        toggleCart();
-        // navigate(`${path.product}/${id}`);
-        navigate(path.cocoon);
-      };
-
     
   return (
     <div className="container mx-auto p-4">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 bg-white p-6 rounded-lg shadow-md">
           <h2 className="font-semibold mb-4" style={{ fontSize: "22px" }}>
-            GIỎ HÀNG <span className="text-gray-500"> - {getTotalProduct()} sản phẩm</span>
+            GIỎ HÀNG <span className="text-gray-500"> - {cartItems.length} sản phẩm</span>
           </h2>
           {cartItems.map((item, index) => (
             <CartItem key={item.id} cart={item} onCartUpdate = {onCartUpdate}/>
@@ -58,7 +39,7 @@ const CartProduct = () => {
           
           <div className="border-t pt-4">
             <p>
-              Tổng sản phẩm: <span className="float-right">{getTotalProduct()}</span>
+              Tổng sản phẩm: <span className="float-right">{cartItems.length}</span>
             </p>
             <p>
               Tạm tính:{" "}

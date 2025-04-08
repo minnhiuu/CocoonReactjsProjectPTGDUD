@@ -56,26 +56,26 @@ function Header() {
           {/* <SearchButton/> */}
           <nav className="d-flex gap-3">
             <Link
-              className="text-dark text-uppercase font-['Barlow Condensed']"
+              className="text-dark  font-['Barlow Condensed']"
               to={path.product}
             >
               Sản phẩm
             </Link>
             <Link
-              className="text-dark text-uppercase font-['Barlow Condensed']"
+              className="text-dark  font-['Barlow Condensed']"
               onClick={() => setShowSidebar(true)}
             >
               Cocoon
             </Link>
             <Link
               to={path.promotion}
-              className="text-dark text-uppercase font-['Barlow Condensed']"
+              className="text-dark  font-['Barlow Condensed']"
             >
               Khuyến mãi
             </Link>
             <Link
               to={path.article}
-              className="text-dark text-uppercase font-['Barlow Condensed']"
+              className="text-dark font-['Barlow Condensed']"
             >
               Bài viết
             </Link>
@@ -106,10 +106,10 @@ function Header() {
               )}
             </div>
           )}
-          <Link to="/contact" className="text-dark ">
+          <Link to="/contact" className="text-dark font-['Barlow Condensed']">
             Liên hệ
           </Link>
-          <Link to={path.cart} className="text-dark " >
+          <Link to={path.cart} className="text-dark font-['Barlow Condensed']" >
           Giỏ hàng ({cartItems.length})
           </Link>
         </div>

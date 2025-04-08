@@ -268,7 +268,7 @@ export default function ProductMenu() {
                 </Row>
 
                 {totalPages > 1 && (
-                  <Pagination className="justify-content-center">
+                  <Pagination className="pag justify-content-center">
                     <Pagination.Prev
                       onClick={() => handlePageChange(currentPage - 1)}
                       disabled={currentPage === 1}

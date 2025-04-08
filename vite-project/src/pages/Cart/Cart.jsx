@@ -41,7 +41,7 @@ const Cart = () => {
               </div>
             </div>
           ) : (
-            <div className="container mx-auto p-5">
+            <div className="container mx-auto p-3">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 <div className="lg:col-span-2 bg-white p-6 rounded-lg shadow-md">
                   <h2 className="font-semibold mb-4" style={{ fontSize: "22px" }}>
