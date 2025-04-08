@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, use } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { fetchApi } from "../../api/fecthAPI";
 import "./ProductInfo.css";
 import { Container, Row, Col } from "react-bootstrap";
 import { CartContext } from "../../context/cart";
+import Product from "../Product/Product";
 
 const ProductInfo = () => {
   const { id } = useParams();
@@ -13,6 +14,8 @@ const ProductInfo = () => {
   const [error, setError] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const { addToCart } = useContext(CartContext);
+  const [products, setProducts] = useState([]);
+  const [viewedProducts, setViewedProducts] = useState([]);
 
   useEffect(() => {
     const getProduct = async () => {
@@ -32,6 +35,17 @@ const ProductInfo = () => {
 
     getProduct();
   }, [id]);
+
+  useEffect(() => {
+    const getProducts = async () => {
+      setLoading(true);
+      const { data, error } = await fetchApi("/products");
+      if (data) setProducts(data);
+      setLoading(false);
+    };
+
+    getProducts();
+  }, []);
 
   function calculateDiscountedPrice(price, discount) {
     if (!discount || discount == "0%") return price;
@@ -62,6 +76,40 @@ const ProductInfo = () => {
   const handleAddToCart = (quantity) => {
     addToCart(product, quantity);
   };
+
+  const findRelatedProducts = () => {
+    const relatedProducts = [];
+    const category = product.category;
+    products.forEach((item) => {
+      if (item.category === category && item.id !== product.id) {
+        relatedProducts.push(item);
+      }
+    });
+    return relatedProducts.slice(0, 4);
+  };
+
+  useEffect(() => {
+    if (!product) return;
+
+    const jsonData = localStorage.getItem("viewedProducts");
+    let stored = jsonData ? JSON.parse(jsonData) : [];
+
+    const isAlreadyViewed = stored.some((p) => p.id === product.id);
+    if (!isAlreadyViewed) {
+      const newViewed = [product, ...stored].slice(0, 10);
+      setViewedProducts(newViewed);
+      localStorage.setItem("viewedProducts", JSON.stringify(newViewed));
+    } else {
+      setViewedProducts(stored);
+    }
+  }, [product]);
+
+  useEffect(() => {
+    const jsonData = localStorage.getItem("viewedProducts");
+    if (jsonData) {
+      setViewedProducts(JSON.parse(jsonData));
+    }
+  }, []);
 
   if (loading) {
     return (
@@ -169,130 +217,156 @@ const ProductInfo = () => {
         </Col>
       </Row>
       <Container className="p-3">
-      <Row className="product-details-section mb-8 ">
-        <Col md={6}>
-          <h2 className="section-title">MÔ TẢ SẢN PHẨM</h2>
-          <p className="text-gray-600 mb-4">{product.description}</p>
-          <ul className="list-disc pl-5 text-gray-600">
-            {product.details.map((detail, index) => (
-              <li key={index}>{detail}</li>
-            ))}
-          </ul>
-          <h2 className="section-title">THÀNH PHẦN</h2>
-          <p className="text-gray-600">{product.ingredients.join(", ")}</p>
-          <h2 className="section-title">CÁCH SỬ DỤNG</h2>
-          <ul className="list-disc pl-5 text-gray-600">
-            {product.usage.map((step, index) => (
-              <li key={index}>{step}</li>
-            ))}
-          </ul>
-          <h2 className="section-title">PHÙ HỢP VỚI</h2>
-          <p className="text-gray-600">{product.suitableFor.join(", ")}</p>
-          <h2 className="section-title">THÔNG TIN BỔ SUNG</h2>
-          <p className="text-gray-600">
-            <strong>Kết cấu:</strong> {product.texture}
-          </p>
-          <p className="text-gray-600">
-            <strong>Mùi hương:</strong> {product.fragrance}
-          </p>
-          <p className="text-gray-600">
-            <strong>Liều lượng:</strong> {product.dosage}
-          </p>
-          <p className="text-gray-600">
-            <strong>Lưu ý:</strong> {product.caution}
-          </p>
-          <p className="text-gray-600">
-            <strong>Xuất xứ:</strong> {product.origin}
-          </p>
-        </Col>
-        <Col md={6} className="">
-          <h2 className="section-title text-uppercase">
-            Đánh giá từ khách hàng
-          </h2>
-          <div className="rating-stats mb-6">
-            <div className="rating-summary flex items-center gap-4 mb-4">
-              <div className="average-rating text-5xl font-bold text-gray-800">
-                {averageRating}
-              </div>
-              <div>
-                <div className="hearts flex gap-1">
-                  {[...Array(5)].map((_, index) => (
-                    <span
-                      key={index}
-                      className={
-                        index < averageRating ? "heart-filled" : "heart-empty"
-                      }
-                    >
-                      ♥
-                    </span>
-                  ))}
-                </div>
-                <p className="text-gray-600 text-sm">
-                  ({product.reviews.length} Đánh giá)
-                </p>
-              </div>
-            </div>
-            <div className="rating-bars">
-              {[5, 4, 3, 2, 1].map((star) => (
-                <div
-                  key={star}
-                  className="rating-bar flex items-center gap-2 mb-2"
-                >
-                  <div className="hearts flex gap-1">
-                    {[...Array(star)].map((_, index) => (
-                      <span key={index} className="heart-filled">
-                        ♥
-                      </span>
-                    ))}
-                    {[...Array(5 - star)].map((_, index) => (
-                      <span key={index} className="heart-empty">
-                        ♥
-                      </span>
-                    ))}
-                  </div>
-                  <div className="bar bg-gray-200 h-2 flex-1 rounded-full overflow-hidden">
-                    <div
-                      className="fill bg-gray-400 h-full"
-                      style={{
-                        width: `${
-                          (stats[star] / product.reviews.length) * 100
-                        }%`,
-                      }}
-                    ></div>
-                  </div>
-                  <span className="count text-gray-600">{stats[star]}</span>
-                </div>
+        <Row className="product-details-section mb-8 ">
+          <Col md={6}>
+            <h2 className="section-title">MÔ TẢ SẢN PHẨM</h2>
+            <p className="text-gray-600 mb-4">{product.description}</p>
+            <ul className="list-disc pl-5 text-gray-600">
+              {product.details.map((detail, index) => (
+                <li key={index}>{detail}</li>
               ))}
-            </div>
-          </div>
-          {product.reviews.length > 0 ? (
-            product.reviews.map((review, index) => (
-              <div key={index} className="review border-b py-4">
-                <div className="flex items-center gap-2 mb-2">
+            </ul>
+            <h2 className="section-title">THÀNH PHẦN</h2>
+            <p className="text-gray-600">{product.ingredients.join(", ")}</p>
+            <h2 className="section-title">CÁCH SỬ DỤNG</h2>
+            <ul className="list-disc pl-5 text-gray-600">
+              {product.usage.map((step, index) => (
+                <li key={index}>{step}</li>
+              ))}
+            </ul>
+            <h2 className="section-title">PHÙ HỢP VỚI</h2>
+            <p className="text-gray-600">{product.suitableFor.join(", ")}</p>
+            <h2 className="section-title">THÔNG TIN BỔ SUNG</h2>
+            <p className="text-gray-600">
+              <strong>Kết cấu:</strong> {product.texture}
+            </p>
+            <p className="text-gray-600">
+              <strong>Mùi hương:</strong> {product.fragrance}
+            </p>
+            <p className="text-gray-600">
+              <strong>Liều lượng:</strong> {product.dosage}
+            </p>
+            <p className="text-gray-600">
+              <strong>Lưu ý:</strong> {product.caution}
+            </p>
+            <p className="text-gray-600">
+              <strong>Xuất xứ:</strong> {product.origin}
+            </p>
+          </Col>
+          <Col md={6} className="">
+            <h2 className="section-title text-uppercase">
+              Đánh giá từ khách hàng
+            </h2>
+            <div className="rating-stats mb-6">
+              <div className="rating-summary flex items-center gap-4 mb-4">
+                <div className="average-rating text-5xl font-bold text-gray-800">
+                  {averageRating}
+                </div>
+                <div>
                   <div className="hearts flex gap-1">
-                    {[...Array(review.stars)].map((_, i) => (
-                      <span key={i} className="heart-filled">
-                        ♥
-                      </span>
-                    ))}
-                    {[...Array(5 - review.stars)].map((_, i) => (
-                      <span key={i} className="heart-empty">
+                    {[...Array(5)].map((_, index) => (
+                      <span
+                        key={index}
+                        className={
+                          index < averageRating ? "heart-filled" : "heart-empty"
+                        }
+                      >
                         ♥
                       </span>
                     ))}
                   </div>
-                  <span className="text-gray-600 text-sm">{review.date}</span>
+                  <p className="text-gray-600 text-sm">
+                    ({product.reviews.length} Đánh giá)
+                  </p>
                 </div>
-                <p className="text-gray-600">{review.comment}</p>
-                <p className="text-gray-500 text-sm mt-1">- {review.user}</p>
               </div>
-            ))
-          ) : (
-            <p className="text-gray-600">Chưa có đánh giá nào.</p>
-          )}
-        </Col>
-      </Row>
+              <div className="rating-bars">
+                {[5, 4, 3, 2, 1].map((star) => (
+                  <div
+                    key={star}
+                    className="rating-bar flex items-center gap-2 mb-2"
+                  >
+                    <div className="hearts flex gap-1">
+                      {[...Array(star)].map((_, index) => (
+                        <span key={index} className="heart-filled">
+                          ♥
+                        </span>
+                      ))}
+                      {[...Array(5 - star)].map((_, index) => (
+                        <span key={index} className="heart-empty">
+                          ♥
+                        </span>
+                      ))}
+                    </div>
+                    <div className="bar bg-gray-200 h-2 flex-1 rounded-full overflow-hidden">
+                      <div
+                        className="fill bg-gray-400 h-full"
+                        style={{
+                          width: `${
+                            (stats[star] / product.reviews.length) * 100
+                          }%`,
+                        }}
+                      ></div>
+                    </div>
+                    <span className="count text-gray-600">{stats[star]}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {product.reviews.length > 0 ? (
+              product.reviews.map((review, index) => (
+                <div key={index} className="review border-b py-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="hearts flex gap-1">
+                      {[...Array(review.stars)].map((_, i) => (
+                        <span key={i} className="heart-filled">
+                          ♥
+                        </span>
+                      ))}
+                      {[...Array(5 - review.stars)].map((_, i) => (
+                        <span key={i} className="heart-empty">
+                          ♥
+                        </span>
+                      ))}
+                    </div>
+                    <span className="text-gray-600 text-sm">{review.date}</span>
+                  </div>
+                  <p className="text-gray-600">{review.comment}</p>
+                  <p className="text-gray-500 text-sm mt-1">- {review.user}</p>
+                </div>
+              ))
+            ) : (
+              <p className="text-gray-600">Chưa có đánh giá nào.</p>
+            )}
+          </Col>
+        </Row>
       </Container>
+
+      {/* danh sách sản phẩm liên quan */}
+      <Container className="related-products">
+        <h2 className="section-title">SẢN PHẨM LIÊN QUAN</h2>
+        <Row>
+          {findRelatedProducts().map((relatedProduct) => (
+            <Col key={relatedProduct.id}>
+              <Product product={relatedProduct} />
+            </Col>
+          ))}
+        </Row>
+      </Container>
+
+      {/* danh sách sản phẩm đã xem */}
+      {viewedProducts.length > 0 && (
+        <Container className="viewed-products-section mt-5">
+          <h2 className="section-title">SẢN PHẨM BẠN ĐÃ XEM</h2>
+          <Row>
+            {viewedProducts.map((item) => (
+              <Col key={item.id} md={3} className="mb-4">
+                <Product product={item} />
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      )}
     </Container>
   );
 };
