@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
@@ -9,7 +9,6 @@ import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
 import { OrbitControls, Plane } from "@react-three/drei";
 import * as THREE from "three";
 
-// Danh sách hình ảnh
 const images = [
   "https://image.cocoonvietnam.com/uploads/Bo_Ket_Trai_113f8d9833.png",
   "https://image.cocoonvietnam.com/uploads/Chanh_Day_293ff496c0.png",
@@ -27,7 +26,6 @@ const ProductPlane = () => {
   const { camera } = useThree();
 
   useFrame(() => {
-    // Luôn quay mặt về camera
     if (meshRef.current) {
       meshRef.current.lookAt(camera.position);
     }
@@ -46,18 +44,14 @@ const ProductPlane = () => {
   );
 };
 
-// Component ảnh quay quanh sản phẩm
 const ImagePlane = ({ img, index, total }) => {
   const texture = useLoader(THREE.TextureLoader, img);
   const meshRef = useRef();
-
-  // Tính toán vị trí ban đầu theo hình tròn
   const radius = 3;
   const angle = (index / total) * Math.PI * 2;
   const initialX = Math.cos(angle) * radius;
   const initialZ = Math.sin(angle) * radius;
 
-  // Làm ảnh xoay quanh sản phẩm
   useFrame(({ clock }) => {
     const t = clock.getElapsedTime() * 0.5;
     meshRef.current.position.x = Math.cos(angle + t) * radius;
@@ -86,6 +80,7 @@ function ProductIntro() {
         className="intro-carousel carousel slide carousel-fade p-4 mb-0"
         id="introCarousel"
         data-bs-ride="carousel"
+        data-bs-interval="3000"
       >
         <div className="carousel-indicators intro-indicators">
           <button
@@ -110,7 +105,7 @@ function ProductIntro() {
           ></button>
         </div>
         <div className="carousel-inner">
-          <div className="carousel-item active">
+          <div className="carousel-item active ">
             <div className="d-flex w-100 h-100">
               <div className="intro-image">
                 <img
@@ -151,7 +146,7 @@ function ProductIntro() {
               </div>
             </div>
           </div>
-          <div className="carousel-item">
+          <div className="carousel-item ">
             <div className="d-flex w-100 h-100">
               <div className="intro-image">
                 <img src="/images/Main_banner_3.jpg" alt="Gel dưỡng Bí Đao" />
@@ -171,7 +166,7 @@ function ProductIntro() {
             </div>
           </div>
         </div>
-        <button
+        {/* <button
           className="carousel-control-prev intro-control-prev"
           type="button"
           data-bs-target="#introCarousel"
@@ -186,7 +181,7 @@ function ProductIntro() {
           data-bs-slide="next"
         >
           <span className="carousel-control-next-icon intro-control-next-icon"></span>
-        </button>
+        </button> */}
       </section>
 
       <div
@@ -201,7 +196,6 @@ function ProductIntro() {
           className="absolute text-6xl animate-on-scroll"
           style={{
             fontSize: "45px",
-            transform: "translate3d(0, 20.27px, 0)",
             fontFamily: "Vollkorn",
             width: "21.5625rem",
             left: "6.23%",
@@ -267,7 +261,6 @@ function ProductIntro() {
             className="flex items-center justify-center mt-[2.125rem] rounded-sm hover:opacity-70 hover:shadow-md hover:shadow-gray-400 transition-all duration-300 ease-in-out"
             style={{
               width: "200px",
-              fontSize: "1.125rem",
               padding: "10px 20px",
               fontSize: "1.125rem",
               whiteSpace: "nowrap",
@@ -294,7 +287,6 @@ function ProductIntro() {
         </div>
       </div>
 
-      {/* Mobile */}
       <div>
         <div className="features-block-mobile block lg:hidden" id="2">
           <div
@@ -308,7 +300,7 @@ function ProductIntro() {
                 className="animate-on-scroll absolute left-1/2 h-full max-w-none"
               />
             </Link>
-            {/* Hiệu ứng 3D */}
+
             <div className="flex justify-center items-base h-[600px]">
               <Canvas camera={{ position: [0, 0, 7] }}>
                 <OrbitControls
@@ -322,7 +314,6 @@ function ProductIntro() {
 
                 <ProductPlane />
 
-                {/* Hình ảnh quay quanh sản phẩm */}
                 {images.map((img, index) => (
                   <ImagePlane
                     className="abs-image absolute h-full w-full object-contain animate-on-scroll"
@@ -366,7 +357,7 @@ function ProductIntro() {
 
       <div className="container-fluid section-2 mb-3 mt-0">
         <div className="section-2-content text-center">
-          <h1 className="mb-4 mt-2 text-font">Triết lý THƯƠNG HIỆU</h1>
+          <h1 className="mb-4 mt-2 text-font">Triết Lý Thương Hiệu</h1>
           <p className="text-gray-500">
             "Là những người yêu thiên nhiên và đam mê khám phá các nguồn nguyên
             liệu đặc hữu của Việt Nam, chúng tôi luôn kiên định với những triết

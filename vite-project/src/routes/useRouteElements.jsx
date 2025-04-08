@@ -9,7 +9,6 @@ import Promotion from "../pages/Promotion/Promotion";
 import ProductMenu from "../pages/ProductMenu/ProductMenu";
 import ProductInfo from "../components/ProductInfo/ProductInfo";
 import { CartProvider } from "../context/cart";
-import ContactPage from "../pages/Contact/ContactPage";
 import Article from "../components/Article/Article";
 import Article2 from "../components/ArticleExtra/Article2";
 import Article3 from "../components/ArticleExtra/Article3";
@@ -22,6 +21,9 @@ import Post6 from "../components/Post/Post6";
 import Cart from "../pages/Cart/Cart";
 import SearchPage from "../pages/SearchPage/SearchPage";
 import Profile from "../pages/Profile/Profile";
+import Pay from "../components/Pay/Pay";
+import { path } from "../constants/path";
+import ContactPage from "../pages/Contact/ContactPage";
 
 export default function useRouteElements() {
   let element = useRoutes([
@@ -63,11 +65,11 @@ export default function useRouteElements() {
         },
         {
           path: path.article,
-          element: <ArticlePage />,
+          element: <Article />,
         },
         {
           path: path.beauty,
-          element: <ArticleBeauty />,
+          element: <Article2 />,
         },
         {
           path: path.charity,
@@ -84,11 +86,6 @@ export default function useRouteElements() {
         {
           path: path.productInfo,
           element: <ProductInfo />,
-        },
-        {
-          // Thêm route cho ContactPage
-          path: "/contact",
-          element: <ContactPage />,
         },
         {
           path: path.post1,
@@ -113,6 +110,14 @@ export default function useRouteElements() {
         {
           path: path.post6,
           element: <Post6 />,
+        },
+        {
+          path: path.contact,
+          element: <ContactPage />,
+        },
+        {
+          path: path.checkout,
+          element: <Pay />,
         },
       ],
     },

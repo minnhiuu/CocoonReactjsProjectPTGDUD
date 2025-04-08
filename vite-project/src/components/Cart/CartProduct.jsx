@@ -22,6 +22,13 @@ const CartProduct = () => {
         setCarts([...cartItems]);
       }
     
+      const handleBookNow = () => {
+        if (cartItems.length == 0) {
+          alert("Giỏ hàng trống, vui lòng thêm sản phẩm!");
+          return;
+        }
+        navigate("/cocoon/checkout");
+      }
   return (
     <div className="container mx-auto p-4">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -57,7 +64,7 @@ const CartProduct = () => {
             <p className="text-sm text-gray-500 mt-2">Đã bao gồm VAT</p>
           </div>
           <div className="mt-4">
-            <button className="w-full bg-orange-500 text-white py-2 rounded">
+            <button className="w-full bg-orange-500 text-white py-2 rounded" onClick={() => handleBookNow()}>
               ĐẶT HÀNG
             </button>
             <p className="text-sm text-gray-500 mt-2 text-center">

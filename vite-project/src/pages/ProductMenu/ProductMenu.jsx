@@ -110,7 +110,7 @@ export default function ProductMenu() {
       <div className="p-0.5"></div>
       <div className="section-2 mb-3 mt-3">
         <div className="section-2-content text-center">
-          <h1 className="mb-4 mt-2 text-font">Triết lý THƯƠNG HIỆU</h1>
+          <h1 className="mb-4 mt-2 text-font">Triết Lý Thương Hiệu</h1>
           <p className="text-gray-500">
             "Là những người yêu thiên nhiên và đam mê khám phá các nguồn nguyên
             liệu đặc hữu của Việt Nam, chúng tôi luôn kiên định với những triết

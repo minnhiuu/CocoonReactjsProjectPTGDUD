@@ -9,13 +9,15 @@ import "./Header.css";
 import Pay from "../Pay/Pay";
 import UserProfile from "../profile/userProfile";
 import Search from "../Search/Search";
+import { useAuth } from "../../context/auth";
 
 function Header() {
-  const [showLogin, setShowLogin] = useState(false);
+  // const [showLogin, setShowLogin] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
-  const [user, setUser] = useState(null);
+  // const [user, setUser] = useState(null);
   const [showProfile, setShowProfile] = useState(false);
 
+  const { showLogin, setShowLogin, user, setUser } = useAuth();
   useEffect(() => {
     const savedUser = localStorage.getItem("user");
     if (savedUser) {
@@ -44,14 +46,6 @@ function Header() {
 
   const [showCart, setShowCart] = useState(false);
   const { cartItems, animatedItem, getTotalItems } = useContext(CartContext);
-
-  const toggleCart = () => {
-    setShowCart(!showCart);
-  };
-
-  const togglePaymentModal = () => {
-    setShowPaymentModal(!showPaymentModal);
-  };
 
   return (
     <>
@@ -137,10 +131,6 @@ function Header() {
 
       <SidebarCocoon show={showSidebar} onClose={() => setShowSidebar(false)} />
       <div className="content-placeholder"></div>
-
-      {showPaymentModal && (
-        <Pay togglePaymentModal={togglePaymentModal} cartItems={cartItems} />
-      )}
     </>
   );
 }

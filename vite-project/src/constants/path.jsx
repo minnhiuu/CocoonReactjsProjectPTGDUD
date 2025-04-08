@@ -12,6 +12,8 @@ export const path = {
   promotion: "/cocoon/khuyen-mai",
   product: "/cocoon/san-pham",
   productInfo: "/cocoon/san-pham/:id",
+  contact: "/cocoon/contact",
+  checkout: '/cocoon/checkout',
   post1: "/cocoon/bai-viet/post1",
   post2: "/cocoon/bai-viet/post2",
   post3: "/cocoon/bai-viet/post3",
