@@ -10,7 +10,7 @@ import CocoonResponsibility from "../pages/Cocoon/CocoonResponsibility";
 import ProductMenu from "../pages/ProductMenu/ProductMenu";
 import ProductInfo from "../components/ProductInfo/ProductInfo";
 import { CartProvider } from "../context/cart";
-import ContactPage from "../pages/Contact/ContactPage"; 
+import ContactPage from "../pages/Contact/ContactPage";
 import Article from "../components/Article/Article";
 import Article2 from "../components/ArticleExtra/Article2";
 import Article3 from "../components/ArticleExtra/Article3";
@@ -21,8 +21,8 @@ import Post4 from "../components/Post/Post4";
 import Post5 from "../components/Post/Post5";
 import Post6 from "../components/Post/Post6";
 import Cart from "../pages/Cart/Cart";
+import SearchPage from "../pages/SearchPage/SearchPage";
 import Profile from "../pages/Profile/Profile";
-
 
 export default function useRouteElements() {
   let element = useRoutes([
@@ -42,7 +42,10 @@ export default function useRouteElements() {
           path: path.cart,
           element: <Cart />,
         },
-
+        {
+          path: path.search,
+          element: <SearchPage />,
+        },
         {
           path: path.coreValue,
           element: <CocoonValues />,
@@ -79,7 +82,8 @@ export default function useRouteElements() {
           path: path.productInfo,
           element: <ProductInfo />,
         },
-        { // Thêm route cho ContactPage
+        {
+          // Thêm route cho ContactPage
           path: "/contact",
           element: <ContactPage />,
         },

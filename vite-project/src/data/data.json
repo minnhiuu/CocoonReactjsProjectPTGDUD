@@ -1655,6 +1655,42 @@
           "date": "2025-03-02"
         }
       ]
+    },
+    {
+      "id": 50,
+      "title": "Nước dưỡng da đầu bồ kết 140ml",
+      "category": "Tinh Chất",
+      "description": "Cân bằng hệ vi sinh và củng cố hàng rào bảo vệ trên da đầu.",
+      "img": "https://image.cocoonvietnam.com/uploads/Hair_BK_Nuoc_duong_da_dau_bo_ket_140ml_front_05520b4595.jpg",
+      "details": [
+        "Không Sulfate.",
+        "Không Paraben.",
+        "Không dầu khoáng",
+        "Không chứa cồn"
+      ],
+      "ingredients": ["Chiết xuất bồ kết", "chiết xuất chanh dây", " Crinipan PMC Green", "Fluidipure 8G"],
+      "usage": [
+        "Da đầu dễ tiết bã nhờn, dầu thừa, dễ bết.",
+        "Thực hiện đều đặn 1-2 lần mỗi ngày"
+      ],
+      "suitableFor": ["Da đầu gàu, ngứa và dễ tái lại.",
+        "Da đầu nhạy cảm, mẩn đỏ, châm chích.",
+        "Da đầu dễ tiết bã nhờn, dầu thừa, dễ bết."],
+      "texture": "Lỏng nhẹ, thấm nhanh",
+      "fragrance": "Hương bồ kết dịu nhẹ",
+      "dosage": "Dùng 1-2 lần/ngày",
+      "caution": "Bảo quản nơi thoáng mát",
+      "origin": "Việt Nam",
+      "price": "239.000 đ",
+      "discount": "30%",
+      "reviews": [
+        {
+          "stars": 5,
+          "comment": "Tóc mềm, ẩm mịn, mùi dễ chịu! Okela!",
+          "user": "Trần Minh Hiếu",
+          "date": "2025-03-02"
+        }
+      ]
     }
   ],
   "categories": [

@@ -7,7 +7,8 @@ import { path } from "../../constants/path";
 import { CartContext } from "../../context/cart";
 import "./Header.css";
 import Pay from "../Pay/Pay";
-import UserProfile from '../profile/userProfile';
+import UserProfile from "../profile/userProfile";
+import Search from "../Search/Search";
 
 function Header() {
   const [showLogin, setShowLogin] = useState(false);
@@ -28,7 +29,10 @@ function Header() {
 
   useEffect(() => {
     function handleClickOutside(event) {
-      if (!event.target.closest(".profile-menu") && !event.target.closest(".avatar-container")) {
+      if (
+        !event.target.closest(".profile-menu") &&
+        !event.target.closest(".avatar-container")
+      ) {
         setShowProfile(false);
       }
     }
@@ -53,7 +57,7 @@ function Header() {
     <>
       <header className="header d-flex justify-content-between align-items-center p-3 ">
         <div className="header-left d-flex align-items-center gap-3">
-          {/* <SearchButton/> */}
+          {/* <SearchButton /> */}
           <nav className="d-flex gap-3">
             <Link
               className="text-dark  font-['Barlow Condensed']"
@@ -87,8 +91,15 @@ function Header() {
           </Link>
         </div>
         <div className="header-right d-flex align-items-center gap-3">
+          <Search />
           {!user ? (
-            <a href="#" className="text-dark" onClick={() => setShowLogin(true)}>Đăng nhập</a>
+            <a
+              href="#"
+              className="text-dark"
+              onClick={() => setShowLogin(true)}
+            >
+              Đăng nhập
+            </a>
           ) : (
             <div className="position-relative avatar-container">
               <img
@@ -115,7 +126,9 @@ function Header() {
         </div>
       </header>
 
-      {showLogin && <div className="overlay" onClick={() => setShowLogin(false)}></div>}
+      {showLogin && (
+        <div className="overlay" onClick={() => setShowLogin(false)}></div>
+      )}
       {showLogin && (
         <div className="modal-container">
           <LoginForm setShowLogin={setShowLogin} setUser={setUser} />
