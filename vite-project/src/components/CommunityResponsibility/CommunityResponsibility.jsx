@@ -1,12 +1,7 @@
 // CommunityResponsibility.jsx
 import React, { useState, useRef } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import {
-  OrbitControls,
-  Sphere,
-  MeshDistortMaterial,
-  Plane,
-} from "@react-three/drei";
+import { OrbitControls, Sphere, MeshDistortMaterial, Plane } from "@react-three/drei";
 import * as THREE from "three";
 import "./CommunityResponsibility.css";
 
@@ -46,17 +41,9 @@ const ImagePlane = ({ img, index, total, onClick }) => {
   });
 
   return (
-    <mesh
-      ref={meshRef}
-      position={[initialX, 0, initialZ]}
-      onClick={() => onClick(img)}
-    >
+    <mesh ref={meshRef} position={[initialX, 0, initialZ]} onClick={() => onClick(img)}>
       <Plane args={[1.2, 1.2]}>
-        <meshBasicMaterial
-          attach="material"
-          map={texture}
-          side={THREE.DoubleSide}
-        />
+        <meshBasicMaterial attach="material" map={texture} side={THREE.DoubleSide} />
       </Plane>
     </mesh>
   );
@@ -66,8 +53,8 @@ const CommunityResponsibility = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <>
-      <h2 className="title" style={{ marginTop: "200px" }}>Trách nhiệm cộng đồng của Cocoon 🤝</h2>
+    <div className="community-responsibility pt-3">
+      <h2 className="title-community" style={{ marginTop: "0px" }}>Trách nhiệm cộng đồng của Cocoon 🤝</h2>
       <div className="community-container">
         <div className="content-section">
           <div className="community-content">
@@ -120,7 +107,7 @@ const CommunityResponsibility = () => {
       <p className="quote">
         💖 Cocoon tin rằng kinh doanh không chỉ là lợi nhuận, mà còn là sự sẻ chia và trách nhiệm với xã hội!
       </p>
-    </>
+    </div>
   );
 };
 

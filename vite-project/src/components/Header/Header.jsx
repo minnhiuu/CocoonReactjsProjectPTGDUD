@@ -12,23 +12,10 @@ import Search from "../Search/Search";
 import { useAuth } from "../../context/auth";
 
 function Header() {
-  // const [showLogin, setShowLogin] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
-  // const [user, setUser] = useState(null);
   const [showProfile, setShowProfile] = useState(false);
-
   const { showLogin, setShowLogin, user, setUser } = useAuth();
-  useEffect(() => {
-    const savedUser = localStorage.getItem("user");
-    if (savedUser) {
-      setUser(JSON.parse(savedUser));
-    }
-  }, []);
-
-  useEffect(() => {
-    console.log("User updated:", user);
-  }, [user]);
-
+  
   useEffect(() => {
     function handleClickOutside(event) {
       if (
@@ -41,12 +28,7 @@ function Header() {
     document.addEventListener("click", handleClickOutside);
     return () => document.removeEventListener("click", handleClickOutside);
   }, [showProfile]);
-
-  const [showPaymentModal, setShowPaymentModal] = useState(false);
-
-  const [showCart, setShowCart] = useState(false);
   const { cartItems, animatedItem, getTotalItems } = useContext(CartContext);
-
   return (
     <>
       <header className="header d-flex justify-content-between align-items-center p-3 ">
@@ -95,13 +77,13 @@ function Header() {
               Đăng nhập
             </a>
           ) : (
-            <div className="position-relative avatar-container">
+            <div className="position-relative avatar-container me-3 ms-3">
               <img
                 src={user.avatar || "/images/default-avatar.png"}
                 alt="Avatar"
                 className="rounded-circle cursor-pointer"
-                width="40"
-                height="40"
+                width="25"
+                height="25"
                 onClick={() => setShowProfile(!showProfile)}
               />
               {showProfile && (

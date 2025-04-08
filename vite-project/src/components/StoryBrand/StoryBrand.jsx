@@ -37,7 +37,7 @@ function StoryBrand() {
     const valueInView = useInView(valueRef, { once: true, margin: '-5px' });
 
     return (
-        <div className="story-brand">
+        <div className="story-brand p-3 justify-center align-items-center">
             <p className="title">Câu chuyện thương hiệu</p>
             <div className="story">
 

@@ -76,9 +76,6 @@ useEffect(() => {
       setErrors({ ...newErrors, password: "Mật khẩu không đúng!" });
       return;
     }
-  
-    console.log("Đăng nhập thành công!"); // Kiểm tra xem có chạy đến đây không
-    alert("Đăng nhập thành công!");
     setUser(foundUser);
     localStorage.setItem("user", JSON.stringify(foundUser));
     setShowLogin(false);
@@ -191,6 +188,7 @@ useEffect(() => {
           </div>
         </footer>
       </div>
+
     </div>
   );
 }

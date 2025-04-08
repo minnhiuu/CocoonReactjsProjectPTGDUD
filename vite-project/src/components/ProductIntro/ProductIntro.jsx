@@ -200,7 +200,6 @@ function ProductIntro() {
             width: "21.5625rem",
             left: "6.23%",
             top: "6.43%",
-            fontSize: "45px",
             transform: "translate3d(0px, 20.2653px, 0px)",
             color: "rgba(31, 28, 23, 1)",
             lineHeight: "1",

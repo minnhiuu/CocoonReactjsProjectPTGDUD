@@ -23,8 +23,8 @@ function CoreValues() {
   });
 
   return (
-    <div className="core-values" ref={coreValuesRef}>
-      <h2 className="core-values-title">Giá trị cốt lõi của Cocoon 🌱</h2>
+    <div className="core-values p-3" ref={coreValuesRef}>
+      <h2 className="core-values-title-1">Giá trị cốt lõi của Cocoon 🌱</h2>
 
       <motion.div
         className="core-values-content"

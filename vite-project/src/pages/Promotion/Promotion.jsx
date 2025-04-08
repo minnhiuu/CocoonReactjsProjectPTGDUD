@@ -275,7 +275,7 @@ export default function Promotion2() {
                 </Row>
 
                 {totalPages > 1 && (
-                  <Pagination className="justify-content-center pagination">
+                  <Pagination className="justify-content-center pag pagination">
                     <Pagination.Prev
                       onClick={() => handlePageChange(currentPage - 1)}
                       disabled={currentPage === 1}

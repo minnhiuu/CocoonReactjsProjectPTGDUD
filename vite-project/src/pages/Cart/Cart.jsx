@@ -17,19 +17,13 @@ const Cart = () => {
         getTotalProduct
     } = useContext(CartContext);
 
-   
-
     const navigate = useNavigate();
     const [loading, setLoading] = useState(true);
     const { showLogin, setShowLogin, user, setUser } = useAuth();
+
     const onCartUpdate = () => {
         setCarts([...cartItems]);
     };
-
-    // useEffect(() => {
-    //     const storedUser = JSON.parse(localStorage.getItem("user"));
-    //     setUser(storedUser); 
-    // }, []);
 
     useEffect(() => {
         const timer = setTimeout(() => {
