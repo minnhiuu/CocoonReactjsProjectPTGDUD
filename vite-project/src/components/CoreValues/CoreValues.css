@@ -2,16 +2,17 @@
     padding: 40px 20px;
     max-width: 1200px;
     margin: 0 auto;
-   
+    background-color: #fefbf4;
   }
   
-  .core-values-title {
+  .core-values-title-1 {
     font-size: 48px;
     font-weight: bold;
     font-family: sans-serif;
     text-align: center;
     color: #8c6239;
     margin-bottom: 40px;
+    background-color: #fefbf4 !important;
   }
   
   .core-values-content {

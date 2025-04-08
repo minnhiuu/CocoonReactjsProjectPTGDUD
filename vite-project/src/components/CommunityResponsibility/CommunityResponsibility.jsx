@@ -53,8 +53,8 @@ const CommunityResponsibility = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <>
-      <h2 className="title" style={{ marginTop: "200px" }}>Trách nhiệm cộng đồng của Cocoon 🤝</h2>
+    <div className="community-responsibility">
+      <h2 className="title-community" style={{ marginTop: "140px" }}>Trách nhiệm cộng đồng của Cocoon 🤝</h2>
       <div className="community-container">
         <div className="content-section">
           <div className="community-content">
@@ -107,7 +107,7 @@ const CommunityResponsibility = () => {
       <p className="quote">
         💖 Cocoon tin rằng kinh doanh không chỉ là lợi nhuận, mà còn là sự sẻ chia và trách nhiệm với xã hội!
       </p>
-    </>
+    </div>
   );
 };
 

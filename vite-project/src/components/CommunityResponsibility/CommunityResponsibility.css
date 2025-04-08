@@ -1,17 +1,19 @@
 /* CommunityResponsibility.css */
-
+.community-responsibility {
+  background-color: #fefbf4 !important;
+}
 .community-container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 40px;
   padding: 40px 80px;
-  background: linear-gradient(to bottom right, #fefefe, #f0f0f0);
+  background: linear-gradient(to bottom right, #fefbf4, #fefbf4);
   border-radius: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
-.title {
+.title-community {
   font-size: 2.5rem;
   font-weight: 700;
   text-align: center;
@@ -19,6 +21,7 @@
   margin-bottom: 20px;
   font-family: sans-serif;
   font-size: 48px;
+  background-color: #fefbf4 !important;
 }
 
 .content-section {
