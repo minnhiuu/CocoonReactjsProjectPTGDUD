@@ -1,12 +1,11 @@
 import React from "react";
+import { useRoutes } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
-import { path } from "../constants/path";
 import Home from "../pages/Home/Home";
 import CocoonValues from "../pages/Cocoon/CocoonValues";
-import Promotion from "../pages/Promotion/Promotion";
-import { useRoutes } from "react-router-dom";
 import CocoonStory from "../pages/Cocoon/CocoonStory";
 import CocoonResponsibility from "../pages/Cocoon/CocoonResponsibility";
+import Promotion from "../pages/Promotion/Promotion";
 import ProductMenu from "../pages/ProductMenu/ProductMenu";
 import ProductInfo from "../components/ProductInfo/ProductInfo";
 import { CartProvider } from "../context/cart";
@@ -30,6 +29,10 @@ export default function useRouteElements() {
       path: "/",
       element: <MainLayout />,
       children: [
+        {
+          index: true,
+          element: <Home />,
+        },
         {
           path: path.cocoon,
           element: <Home />,
@@ -60,11 +63,11 @@ export default function useRouteElements() {
         },
         {
           path: path.article,
-          element: <Article />,
+          element: <ArticlePage />,
         },
         {
           path: path.beauty,
-          element: <Article2 />,
+          element: <ArticleBeauty />,
         },
         {
           path: path.charity,
@@ -113,6 +116,7 @@ export default function useRouteElements() {
         },
       ],
     },
+
   ]);
   return element;
 }
