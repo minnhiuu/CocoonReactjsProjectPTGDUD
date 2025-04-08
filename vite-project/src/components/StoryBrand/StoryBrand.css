@@ -1,114 +1,176 @@
 .brand-introduction {
     width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center; /* Căn giữa nội dung */
-    gap: 30px; /* Giảm khoảng cách */
-    padding: 20px 0;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 20px;
+    background-color: #fffaf5;
+    border-radius: 16px;
 }
 
-
-.title{
+.title {
     text-align: center;
     font-weight: bold;
-    font-size: 50px;
+    font-size: 48px;
     color: #8c6239;
-    margin-bottom: 10px; 
-    font-family: serif;
+    margin-bottom: 40px;
+    font-family: sans-serif;
 }
-.story{
-    font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
+
+.story {
+    font-size: 17px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+    line-height: 1.8;
 }
+
 .italic-text {
     font-style: italic;
     font-size: 17px;
-  }
+    color: #555;
+}
+
 .large-text {
-    text-align: center !important;
+    text-align: center;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 32px;
     color: #8c6239;
-    margin-bottom: 10px; 
-    font-family: serif;
-}
-.large-bold{
-    font-weight: bold;
-}
-.story-brand{
-    margin-left: 60px;
-    
-}
-.brand-meaning {
-    margin-top: 80px;
-    align-items: center;
-    justify-content: center; /* Giữ nội dung gần nhau */
-    width: 80%; /* Giảm chiều rộng để tránh kéo dài */
-    text-align: center;
-}
-
-.text-content{
-    width:90%;
-}
-.image-content {
- width: 90%;
- height:570px;
-}
-
-.image-content img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px; /* Bo tròn nhẹ */
-    margin-top: 17px;
     margin-bottom: 20px;
+    font-family: sans-serif;
 }
-.philosophy{
-    width: 50%;
-    max-width: 50%;
-    text-align: center;
+
+.large-bold {
+    font-weight: bold;
+    color: #6e4f27;
 }
-.image-slider {
-    width: 100vw;
-    display: flex;
+
+.story-brand {
+    padding: 60px 0;
+    background-color: #fffefc;
+}
+
+.brand-meaning,
+.philosophy,
+.brand-mission,
+.brand-value {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    gap: 40px;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: auto;
+    text-align: left;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
 }
 
-.image-slider img {
-    width: 45%;
-    height: 500px;
-    margin-top: 10px;
-    object-fit: cover; /* Ảnh sẽ lấp đầy nhưng có thể bị cắt một chút */
-    aspect-ratio: 16 / 9; /* Đảm bảo tất cả ảnh theo cùng một tỷ lệ */
-    border-radius: 10px;
+.text-content {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #444;
 }
 
+.image-content,
+.image-slider,
+.image-slider2,
+.image-full {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-content img,
+.image-slider img,
+.image-slider2 img,
+.image-full img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-content img:hover,
+.image-slider img:hover,
+.image-slider2 img:hover,
+.image-full img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.brand-section {
+    background-color: #fffaf5;
+    padding: 60px 0;
+}
+
+@media (max-width:800px) {
+    .title {
+        font-size: 36px;
+    }
+
+    .large-text {
+        font-size: 26px;
+    }
+
+    .text-content {
+        font-size: 16px;
+    }
+
+    .brand-meaning,
+    .philosophy,
+    .brand-mission,
+    .brand-value {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .image-slider img,
+    .image-full img {
+        height: auto;
+    }
+    .image-slider2 {
+        min-height: 300px;
+    }
+
+    .image-slider2 img {
+        aspect-ratio: 4 / 3;
+    }
+   
+}
 .image-slider2 {
-    width: 100vw;
+    width:120vh;
+    max-width: 1200px;
+    margin: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+    aspect-ratio: 22 / 9; 
+    background-color: #fffefc;
 }
 
 .image-slider2 img {
-    width: 95%;
-    height: 600px;
-    margin-top: 10px;
-    object-fit: cover; /* Ảnh sẽ lấp đầy nhưng có thể bị cắt một chút */
-    aspect-ratio: 16 / 9; /* Đảm bảo tất cả ảnh theo cùng một tỷ lệ */
-    border-radius: 10px;
+    width: 100%; /* full chiều ngang container */
+    max-width: 1200px; /* hoặc bạn có thể tăng lên */
+    height: auto; /* chiều cao tự điều chỉnh theo ảnh */
+    aspect-ratio: 21 / 9; /* làm hình rộng ra, như banner */
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+    margin: auto;
 }
-.image-full img{
-    margin-left: 500px;
-    margin-top: 10px;
-    object-fit: cover; /* Ảnh sẽ lấp đày nhưng có thể bị cắt một chút */
-}
-.brand-section{
-    text-align: center;
-}
-.brand-value{
-    text-align: center;
-    margin-top: 100px;
-}
+
+
