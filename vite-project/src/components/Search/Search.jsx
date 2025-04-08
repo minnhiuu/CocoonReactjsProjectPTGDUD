@@ -4,6 +4,7 @@ import { Drawer } from "antd";
 import { Link, useNavigate } from "react-router";
 import { fetchApi } from "../../api/fecthAPI";
 import Loading from "../Loading/Loading";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 function Search() {
   const [open, setOpen] = useState(false);
@@ -150,7 +151,19 @@ function Search() {
                 </div>
               ))
             ) : (
-              <h4>Không có sản phẩm nào...</h4>
+              <div className="flex flex-col items-center">
+                <h4 className="!text-md text-center font-normal">
+                  Không có sản phẩm nào...
+                </h4>
+                <button
+                  className="!rounded-md border-1 border-[#c3a15c] bg-white text-[#c3a15c] 
+                  !w-40 !mt-4 !px-4 !py-2 hover:!bg-[#e4c090] hover:text-white transition-all duration-300
+                  flex items-center justify-center gap-4"
+                >
+                  Xem tất cả
+                  <FaArrowRightLong />
+                </button>
+              </div>
             )}
             {productsSearch && totalItems > 5 && (
               <div
