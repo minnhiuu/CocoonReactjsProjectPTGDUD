@@ -21,8 +21,10 @@ const ProductInfo = () => {
     const getProduct = async () => {
       const startTime = Date.now();
       const { data, error } = await fetchApi(`/products/${id}`);
+      getProducts()
       const elapsedTime = Date.now() - startTime;
-      const remainingTime = Math.max(0, 700 - elapsedTime);
+      const remainingTime = Math.max(0, 1000 - elapsedTime);
+      
       setTimeout(() => {
         if (data) {
           setProduct(data);
@@ -37,12 +39,7 @@ const ProductInfo = () => {
   }, [id]);
 
   useEffect(() => {
-    const getProducts = async () => {
-      setLoading(true);
-      const { data, error } = await fetchApi("/products");
-      if (data) setProducts(data);
-      setLoading(false);
-    };
+    
 
     getProducts();
   }, []);
@@ -71,6 +68,13 @@ const ProductInfo = () => {
       stats[review.stars] += 1;
     });
     return stats;
+  };
+
+  const getProducts = async () => {
+    
+    const { data, error } = await fetchApi("/products");
+    if (data) setProducts(data);
+    
   };
 
   const handleAddToCart = (quantity) => {
@@ -125,7 +129,7 @@ const ProductInfo = () => {
   if (error) return <p className="text-center text-red-500">{error}</p>;
   if (!product)
     return (
-      <p className="text-center text-gray-500">Không tìm thấy sản phẩm.</p>
+      <p className="text-center text-gray-500">Đang tải sản phẩm.</p>
     );
 
   const averageRating = calculateAverageRating();
@@ -170,7 +174,7 @@ const ProductInfo = () => {
           </p>
           <div className="quantity flex items-center gap-3 mb-4">
             <label className="text-gray-700 font-medium">Số lượng:</label>
-            <div className="quantity-control">
+            <div className="quantity-control" style={{display: "flex", alignItems: "center"}}>
               <button
                 type="button"
                 className="quantity-btn"
@@ -179,13 +183,14 @@ const ProductInfo = () => {
                 −
               </button>
               <input
-                type="number"
+                type="text"
                 min="1"
                 value={quantity}
                 onChange={(e) =>
                   setQuantity(Math.max(1, parseInt(e.target.value) || 1))
                 }
                 className="quantity-input"
+                style={{width: "40px",height:"40px", textAlign: "center", margin:"0px"}}
               />
               <button
                 type="button"

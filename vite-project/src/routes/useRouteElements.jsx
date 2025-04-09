@@ -24,6 +24,7 @@ import Profile from "../pages/Profile/Profile";
 import Pay from "../components/Pay/Pay";
 import { path } from "../constants/path";
 import ContactPage from "../pages/Contact/ContactPage";
+import Checkout from "../pages/Checkout/Checkout";
 
 export default function useRouteElements() {
   let element = useRoutes([
@@ -117,7 +118,7 @@ export default function useRouteElements() {
         },
         {
           path: path.checkout,
-          element: <Pay />,
+          element: <Checkout />,
         },
       ],
     },

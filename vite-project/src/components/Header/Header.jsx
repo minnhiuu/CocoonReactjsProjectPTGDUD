@@ -93,7 +93,7 @@ function Header() {
               )}
             </div>
           )}
-          <Link to="/contact" className="text-dark font-['Barlow Condensed']">
+          <Link to={path.contact} className="text-dark font-['Barlow Condensed']">
             Liên hệ
           </Link>
           <Link to={path.cart} className="text-dark font-['Barlow Condensed']" >
