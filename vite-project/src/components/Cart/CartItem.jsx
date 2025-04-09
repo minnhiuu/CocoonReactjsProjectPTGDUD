@@ -1,20 +1,18 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { BsDisplay } from "react-icons/bs";
 import { Card, Button } from "react-bootstrap";
-import { useContext, useState } from "react";
 import { CartContext } from "../../context/cart";
 import { Link, useNavigate } from "react-router-dom";
 import "./CartItem.css";
 
 export default function CartItem(props) {
   const {
-    addToCart,
     removeFromCart,
     decreaseItem,
     increaseItem,
     calculateDiscountedPrice,
-  } = useContext(CartContext);
+  } = useContext(CartContext); 
   const { cart, onCartUpdate } = props;
   const [quantity, setQuantity] = useState(cart.quantity);
 

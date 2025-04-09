@@ -8,12 +8,15 @@ import { BrowserRouter } from "react-router-dom";
 import { CartProvider } from "./context/cart";
 import "react-toastify/dist/ReactToastify.css";
 import { AuthProvider } from "./context/auth.jsx";
+import { ToastContainer } from "react-toastify";
 
 createRoot(document.getElementById("root")).render(
   <>
+
     <BrowserRouter>
     <AuthProvider>
       <CartProvider>
+      <ToastContainer/>
         <App />
       </CartProvider>
       </AuthProvider>

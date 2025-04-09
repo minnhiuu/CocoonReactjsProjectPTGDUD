@@ -137,6 +137,26 @@ export const CartProvider = ({ children }) => {
     );
   };
 
+  const getTotalCheckout = () => {
+    const total = cartItems.reduce((total, item) => {
+      let itemPrice;
+
+      if (item.discount && item.discount !== "0%") {
+        itemPrice = calculateDiscountedPrice(item.price, item.discount);
+      } else {
+        itemPrice =
+          typeof item.price === "string"
+            ? parseInt(item.price.replace(/\./g, "").replace(" đ", ""))
+            : item.price;
+      }
+      return total + itemPrice * item.quantity;
+    }, 0);
+
+    if (cartItems.length === 0) return "0 đ";
+    const finalTotal = total + 51000 - 2000;
+    return finalTotal.toLocaleString("vi-VN") + " đ"; 
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -152,6 +172,7 @@ export const CartProvider = ({ children }) => {
         updateItemQuantity,
         getTotalProduct,
         calculateDiscountedPrice,
+        getTotalCheckout
       }}
     >
       {children}
