@@ -159,6 +159,10 @@ function Search() {
                   className="!rounded-md border-1 border-[#c3a15c] bg-white text-[#c3a15c] 
                   !w-40 !mt-4 !px-4 !py-2 hover:!bg-[#e4c090] hover:text-white transition-all duration-300
                   flex items-center justify-center gap-4"
+                  onClick={() => {
+                    navigate("/cocoon/san-pham");
+                    onClose();
+                  }}
                 >
                   Xem tất cả
                   <FaArrowRightLong />

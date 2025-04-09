@@ -5,17 +5,16 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
-  useEffect(()=> {
-      const jsonData = localStorage.getItem("cartItems");
-      if(jsonData) {
-        setCartItems(JSON.parse(jsonData))
-      }
-  } ,[])
+  useEffect(() => {
+    const jsonData = localStorage.getItem("cartItems");
+    if (jsonData) {
+      setCartItems(JSON.parse(jsonData));
+    }
+  }, []);
 
   useEffect(() => {
-    localStorage.setItem("cartItems", JSON.stringify(cartItems))
-    
-  },[cartItems])
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   const [animatedItem, setAnimatedItem] = useState(null);
 
@@ -45,7 +44,6 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-
   const removeFromCart = (item) => {
     const newCartItems = cartItems.filter(
       (cartItem) => cartItem.id !== item.id
@@ -67,7 +65,7 @@ export const CartProvider = ({ children }) => {
     } else {
       setCartItems([...cartItems, { ...item, quantity: 1 }]);
     }
-  }
+  };
 
   const decreaseItem = (item) => {
     const isItemInCart = cartItems.find((cartItem) => cartItem.id == item.id);
@@ -83,9 +81,7 @@ export const CartProvider = ({ children }) => {
     } else {
       setCartItems([...cartItems, { ...item, quantity: 1 }]);
     }
-  }
-
-
+  };
 
   const clearCart = () => {
     setCartItems([]);
@@ -100,15 +96,13 @@ export const CartProvider = ({ children }) => {
     return roundedPrice;
   };
 
-
   const getTotalProduct = () => {
     let total = 0;
     cartItems.forEach((item) => {
       total += item.quantity;
     });
     return total;
-  }
-
+  };
 
   const getCartTotal = () => {
     const total = cartItems.reduce((total, item) => {
@@ -135,7 +129,6 @@ export const CartProvider = ({ children }) => {
     return cartItems.reduce((total, item) => total + item.quantity, 0);
   };
 
-
   const updateItemQuantity = (itemId, quantity) => {
     setCartItems((prevItems) =>
       prevItems.map((item) =>
@@ -157,7 +150,8 @@ export const CartProvider = ({ children }) => {
         getCartTotal,
         getTotalItems,
         updateItemQuantity,
-        getTotalProduct
+        getTotalProduct,
+        calculateDiscountedPrice,
       }}
     >
       {children}

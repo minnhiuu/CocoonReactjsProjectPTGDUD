@@ -9,6 +9,7 @@ import "./Header.css";
 import Pay from "../Pay/Pay";
 import UserProfile from "../profile/userProfile";
 import Search from "../Search/Search";
+import CartModal from "../CartModal/CartModal";
 
 function Header() {
   const [showLogin, setShowLogin] = useState(false);
@@ -120,11 +121,12 @@ function Header() {
           <Link to="/contact" className="text-dark ">
             Liên hệ
           </Link>
-          <Link to={path.cart} className="text-dark ">
+          <Link className="text-dark" onClick={toggleCart}>
             Giỏ hàng ({cartItems.length})
           </Link>
         </div>
       </header>
+      {showCart && <CartModal toggleCart={toggleCart} />}
 
       {showLogin && (
         <div className="overlay" onClick={() => setShowLogin(false)}></div>
