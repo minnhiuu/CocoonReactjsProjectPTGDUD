@@ -1,21 +1,21 @@
 import { useState, useContext, useEffect } from "react";
-import SearchButton from "../SearchButton/SearchButton";
 import LoginForm from "../../pages/Login/LogIn";
 import SidebarCocoon from "../Sidebar/SidebarCocoon";
 import { Link } from "react-router-dom";
 import { path } from "../../constants/path";
 import { CartContext } from "../../context/cart";
 import "./Header.css";
-import Pay from "../Pay/Pay";
 import UserProfile from "../profile/userProfile";
 import Search from "../Search/Search";
 import CartModal from "../CartModal/CartModal";
 import { useAuth } from "../../context/auth";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
   const [showSidebar, setShowSidebar] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
   const { showLogin, setShowLogin, user, setUser } = useAuth();
+  const navigate = useNavigate();
   
   useEffect(() => {
     function handleClickOutside(event) {
@@ -83,18 +83,22 @@ function Header() {
           ) : (
             <div className="position-relative avatar-container me-3 ms-3">
               <img
-                src={user.avatar || "/images/default-avatar.png"}
+                src={user.avatar || "/images/avatar.png"}
                 alt="Avatar"
                 className="rounded-circle cursor-pointer"
                 width="25"
                 height="25"
-                onClick={() => setShowProfile(!showProfile)}
+                onClick={() => {
+                  // setShowProfile(!showProfile)
+                  navigate("/cocoon/account");
+                }}
               />
-              {showProfile && (
+              {/* {showProfile && (
                 <div className="profile-menu position-absolute">
                   <UserProfile user={user} setUser={setUser} />
+                  
                 </div>
-              )}
+              )} */}
             </div>
           )}
           <Link to={path.contact} className="text-dark font-['Barlow Condensed']">

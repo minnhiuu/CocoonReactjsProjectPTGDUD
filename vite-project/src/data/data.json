@@ -2324,5 +2324,40 @@
       "finalPrice": "297.000 đ",
       "orderDate": "2025-04-09T07:28:55.630Z"
     }
-  ]
+  ],
+  "users" : [
+    {
+      "id": 1,
+      "phone": "0338858196",
+      "name": "Nguyễn Thị Lan",
+      "email": "nguyenthilan@example.com",
+      "gender" : 1,
+      "password": "123456",
+      "avatar": "/images/user_a.jpg",
+      "address": "123 Lý Thường Kiệt, Quận 10, TP.HCM",
+      "dob": "15/05/1995"
+    },
+    {
+      "id": 2,
+      "phone": "0987654321",
+      "name": "Trần Thị Mẫn Nhi",
+      "email": "tranthimannhi@example.com",
+      "gender" : 1,
+      "password": "abcdef",
+      "avatar": "/images/user_b.jpg",
+      "address": "456 Nguyễn Huệ, Quận 1, TP.HCM",
+      "dob": "01/01/1998"
+    },
+    {
+      "id": 3,
+      "phone": "0912345678",
+      "name": "Nguyễn Thị Hằng Nga",
+      "email": "nguyenthihangnga@example.com",
+      "gender" : 1,
+      "password": "qwerty",
+      "avatar": "/images/user_c.jpg",
+      "address": "789 Trần Hưng Đạo, Quận 5, TP.HCM",
+      "dob": "03/07/2002"
+    }
+  ]  
 }

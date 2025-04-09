@@ -12,8 +12,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./LogIn.css";
 import SignUpForm from "./SignUp";
-import axios from "axios";
-import users from "../../data/users";
+import api from "../../api/axiosConfig";
 export default function LoginForm({ setShowLogin, setUser }) {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
@@ -21,12 +20,13 @@ export default function LoginForm({ setShowLogin, setUser }) {
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState({ phone: "", password: "" });
   const [showSignUp, setShowSignUp] = useState(false);
+  const [users, setUsers] = useState([]);
  
  
 useEffect(() => {
-  axios.get("F:\\CocoonReactjsProjectPTGDUD\\vite-project\\src\\data\\users.json")
+  api.get("/users")
   .then(response => {
-    setUser(response.data);
+    setUsers(response.data);
   })
   .catch(error => {
     console.error("Error fetching users:", error);
@@ -34,7 +34,7 @@ useEffect(() => {
 }, []);
 
   const validatePhone = (phone) => {
-    return /^\d{10,11}$/.test(phone); // Chỉ nhận số, từ 10-11 chữ số
+    return /^\d{10,11}$/.test(phone); 
   };
 
   const validatePassword = (password) => {

@@ -8,7 +8,6 @@ import CocoonResponsibility from "../pages/Cocoon/CocoonResponsibility";
 import Promotion from "../pages/Promotion/Promotion";
 import ProductMenu from "../pages/ProductMenu/ProductMenu";
 import ProductInfo from "../components/ProductInfo/ProductInfo";
-import { CartProvider } from "../context/cart";
 import Article from "../components/Article/Article";
 import Article2 from "../components/ArticleExtra/Article2";
 import Article3 from "../components/ArticleExtra/Article3";
@@ -20,11 +19,11 @@ import Post5 from "../components/Post/Post5";
 import Post6 from "../components/Post/Post6";
 import Cart from "../pages/Cart/Cart";
 import SearchPage from "../pages/SearchPage/SearchPage";
-import Profile from "../pages/Profile/Profile";
-import Pay from "../components/Pay/Pay";
 import { path } from "../constants/path";
 import ContactPage from "../pages/Contact/ContactPage";
 import Checkout from "../pages/Checkout/Checkout";
+import { AccountProfile } from "../components/AccountProfile/AccountProfile";
+import Account from "../pages/Account/Account";
 
 export default function useRouteElements() {
   let element = useRoutes([
@@ -119,6 +118,21 @@ export default function useRouteElements() {
         {
           path: path.checkout,
           element: <Checkout />,
+        },
+        {
+          path: path.account,
+          element: <Account />,
+          children: [
+            {
+              path: "",
+              element: <AccountProfile />,
+            },
+            // {
+            //   path: path.address,
+            //   element: <AccountAddress />,
+            // },
+            
+          ],
         },
       ],
     },

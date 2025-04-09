@@ -4,3 +4,5 @@
 #root {
     background-color: #FEFBF4;
 }
+@theme {
+    --color-primary: #E30019;}

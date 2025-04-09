@@ -20,4 +20,6 @@ export const path = {
   post4: "/cocoon/bai-viet/post4",
   post5: "/cocoon/bai-viet/post5",
   post6: "/cocoon/bai-viet/post6",
+  account: "/cocoon/account",
+  address: "/cocoon/account/address",
 };
