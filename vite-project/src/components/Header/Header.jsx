@@ -81,25 +81,10 @@ function Header() {
               Đăng nhập
             </a>
           ) : (
-            <div className="position-relative avatar-container me-3 ms-3">
-              <img
-                src={user.avatar || "/images/avatar.png"}
-                alt="Avatar"
-                className="rounded-circle cursor-pointer"
-                width="25"
-                height="25"
-                onClick={() => {
-                  // setShowProfile(!showProfile)
-                  navigate("/cocoon/account");
-                }}
-              />
-              {/* {showProfile && (
-                <div className="profile-menu position-absolute">
-                  <UserProfile user={user} setUser={setUser} />
-                  
-                </div>
-              )} */}
-            </div>
+              <Link to={path.account}
+              className="text-dark font-['Barlow Condensed'] text-center">
+                {user.phone}
+          </Link>
           )}
           <Link to={path.contact} className="text-dark font-['Barlow Condensed']">
             Liên hệ

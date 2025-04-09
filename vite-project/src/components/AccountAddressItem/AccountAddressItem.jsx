@@ -3,9 +3,12 @@ import { Button, Popconfirm } from "antd";
 import { QuestionCircleOutlined } from "@ant-design/icons";
 
 const AccountAddressItem = (props) => {
-  const { isDefault, address, handleDeleteAddress, showEditModal } = props;
+  const { isDefault, addressData, handleDeleteAddress, showEditModal } = props;
+
+  console.log(addressData)
+
   const handleDelete = () => {
-    handleDeleteAddress(address);
+    handleDeleteAddress(addressData);
   };
 
   return (
@@ -17,12 +20,12 @@ const AccountAddressItem = (props) => {
               Mặc định
             </div>
           )}
-          <div className="text-sm font-semibold">{address.name}</div>
-          <div className="text-sm text-gray-600">| {address.phone}</div>
+          <div className="text-sm font-semibold">{addressData.name}</div>
+          <div className="text-sm text-gray-600">| {addressData.phone}</div>
         </div>
         <div className="flex gap-5 text-sm">
           <button
-            type="link"
+            type="button"
             className="!text-sub !font-semibold cursor-pointer"
             onClick={showEditModal}
           >
@@ -51,7 +54,7 @@ const AccountAddressItem = (props) => {
               }}
             >
               <button
-                type="link"
+                type="button"
                 className="!text-sub !font-semibold !text-right cursor-pointer"
               >
                 Xóa
@@ -61,7 +64,7 @@ const AccountAddressItem = (props) => {
         </div>
       </div>
       <div className="flex justify-between items-start">
-        <div className="text-sm text-gray-600">{`${address.street}, ${address.ward}, ${address.district}, ${address.province}`}</div>
+        <div className="text-sm text-gray-600">{addressData.address}</div>
         {!isDefault && (
           <Button className="!font-semibold !border !border-line-border  cursor-pointer">
             Thiết lập mặc định

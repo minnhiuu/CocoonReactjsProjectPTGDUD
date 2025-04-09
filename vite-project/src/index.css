@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Vollkorn:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&display=swap');
+
 #root {
     background-color: #FEFBF4;
 }
-@theme {
-    --color-primary: #E30019;}

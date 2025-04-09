@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import { Button, Modal } from "antd";
-import { AccountAddressModal } from "./AccountAddressModal";
-import AccountAddressItem from "./AccountAddressItem";
 import { useOutletContext } from "react-router-dom";
-import { del, get, patch } from "../services/request";
+import AccountAddressItem from "../AccountAddressItem/AccountAddressItem";
+import { AccountAddressModal } from "../AccountAddressModal/AccountAddressModal";
+import api from "../../api/axiosConfig";
 
 export function AccountAddress() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isAdd, setIsAdd] = useState(true);
   const [addressData, setAddressData] = useState(null);
   const { user } = useOutletContext();
+
+  console.log(user);
 
   const showAddModal = () => {
     setIsAdd(true);
@@ -27,14 +29,6 @@ export function AccountAddress() {
     setIsModalOpen(false);
   };
 
-  const handleDeleteAddress = (address) => {
-    const userClone = { ...user };
-    userClone.address = userClone.address.filter(
-      (a) => a.name !== address.name || a.phone !== address.phone
-    );
-    handleUpdateUser(userClone);
-  };
-
   const handleAddAddress = (address) => {
     const userClone = { ...user };
     userClone.address = [...userClone.address, address];
@@ -43,14 +37,14 @@ export function AccountAddress() {
 
   const handleUpdateAddress = (updatedAddress) => {
     const userClone = { ...user };
-    userClone.address = userClone.address.map((address) =>
-      address.id === updatedAddress.id ? updatedAddress : address
-    );
-    // handleUpdateUser(userClone);
+    userClone.address = updatedAddress;
+    console.log(userClone);
+    handleUpdateUser(userClone);
   };
 
   const handleUpdateUser = async (data) => {
-    await patch(`users/${data.id}`, data);
+    
+    // await api.patch(`users/${data.id}`, data);
   };
 
   return (
@@ -60,7 +54,7 @@ export function AccountAddress() {
           Thông tin tài khoản
         </h2>
         <Button
-          className="!bg-blue-border !text-white !font-semibold border-blue-border"
+          className="!bg-blue-border !text-black !font-semibold border-blue-border"
           onClick={showAddModal}
         >
           + Thêm địa chỉ mới
@@ -68,17 +62,12 @@ export function AccountAddress() {
       </div>
 
       <div>
-        {user.address.map((item) => (
-          <AccountAddressItem
-            key={item.id}
-            isDefault={item.default === 1 ? true : false}
-            name={user.name}
-            phone={user.phone}
-            address={item}
-            handleDeleteAddress={handleDeleteAddress}
-            showEditModal={() => showEditModal(item)}
-          />
-        ))}
+        <AccountAddressItem
+          isDefault={true}
+          addressData={user}
+          handleDeleteAddress={(data) => console.log("Xóa:", data)}
+          showEditModal={() => showEditModal(user)}
+        />
       </div>
 
       <Modal
@@ -89,10 +78,15 @@ export function AccountAddress() {
       >
         <AccountAddressModal
           isAdd={isAdd}
-          addressData={addressData}
-          setAddressData={setAddressData}
-          handleAddAddress={handleAddAddress}
-          handleUpdateAddress={handleUpdateAddress}
+          addressData={user}
+          handleAddAddress={(data) => {
+            console.log("Added:", data);
+            setIsModalOpen(false);
+          }}
+          handleUpdateAddress={(data) => {
+            handleUpdateAddress(data);
+            setIsModalOpen(false);
+          }}
         />
       </Modal>
     </div>

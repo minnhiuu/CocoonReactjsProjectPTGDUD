@@ -8,6 +8,7 @@ import {
   FaEye,
   FaEyeSlash,
 } from "react-icons/fa";
+import api from "../../api/axiosConfig";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./LogIn.css";
@@ -22,7 +23,7 @@ export default function SignUpForm({ setShowSignUp }) {
   const validatePhone = (phone) => /^\d{10,11}$/.test(phone);
   const validatePassword = (password) => password.length >= 6;
 
-  const handleSignUp = (e) => {
+  const handleSignUp = async (e) => {
     e.preventDefault();
     let newErrors = { phone: "", password: "", confirmPassword: "" };
 
@@ -45,9 +46,32 @@ export default function SignUpForm({ setShowSignUp }) {
     setErrors(newErrors);
 
     if (!newErrors.phone && !newErrors.password && !newErrors.confirmPassword) {
-      console.log("Phone:", phone, "Password:", password);
-      alert("Đăng ký thành công!");
-      setShowSignUp(false);
+      try {
+        const response = await api.get("/users");  
+        const users = response.data || [];
+        const userExists = users.some((user) => user.phone === phone);
+        if (userExists) {
+          setErrors({ ...newErrors, phone: "Số điện thoại đã được đăng ký!" });
+          return;
+        }
+        const newUser = { id: users.length + 1, phone, password };
+  
+        await api.post("/users",  newUser );
+
+        toast.success("Đăng ký thành công!", {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          theme: "colored",
+        });
+        setShowSignUp(false);
+      } catch (error) {
+        console.error("Đăng ký thất bại:", error);
+        alert("Đăng ký thất bại, vui lòng thử lại!");
+      }
     }
   };
 

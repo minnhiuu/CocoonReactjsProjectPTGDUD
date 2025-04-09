@@ -24,6 +24,8 @@ import ContactPage from "../pages/Contact/ContactPage";
 import Checkout from "../pages/Checkout/Checkout";
 import { AccountProfile } from "../components/AccountProfile/AccountProfile";
 import Account from "../pages/Account/Account";
+import { AccountAddress } from "../components/AccountAddress/AccountAddress";
+import AccountHistory from "../components/AccountHistory/AccountHistory";
 
 export default function useRouteElements() {
   let element = useRoutes([
@@ -127,16 +129,18 @@ export default function useRouteElements() {
               path: "",
               element: <AccountProfile />,
             },
-            // {
-            //   path: path.address,
-            //   element: <AccountAddress />,
-            // },
-            
+            {
+              path: path.address,
+              element: <AccountAddress />,
+            },
+            {
+              path: path.orderHistory,
+              element: <AccountHistory />,
+            }
           ],
         },
       ],
     },
-
   ]);
   return element;
 }

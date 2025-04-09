@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { UserRound, MapPin, LogOut, Package } from "lucide-react";
 import { path } from "../../constants/path";
+import "./AccountSidebar.css";
 
 export function AccountSidebar({ user }) {
   return (
@@ -20,11 +21,9 @@ export function AccountSidebar({ user }) {
           <NavLink
             to={path.account}
             end
-            className={({ isActive }) =>
-              `flex items-center gap-2 hover:text-primary pb-2 ${
-                isActive ? " text-primary" : "text-title"
-              } `
-            }
+            className=
+              "flex items-center gap-2 text-dark font-bold hover:text-dark-800 pb-2 text-none"
+            
           >
             <UserRound />
             Thông tin tài khoản
@@ -34,13 +33,11 @@ export function AccountSidebar({ user }) {
         <div>
           <NavLink
             to={path.address}
-            className={({ isActive }) =>
-              `flex items-center gap-2 hover:text-primary pb-2 ${
-                isActive ? " text-primary" : ""
-              } `
-            }
+            className=
+              "flex items-center gap-2 text-dark font-bold hover:text-dark-800 pb-2 text-none"
+            
           >
-            <MapPin />
+            <MapPin/>
             Sổ địa chỉ
           </NavLink>
         </div>
@@ -48,11 +45,9 @@ export function AccountSidebar({ user }) {
         <div>
           <NavLink
             to={path.orderHistory}
-            className={({ isActive }) =>
-              `flex items-center gap-2 hover:text-primary pb-2 ${
-                isActive ? " text-primary" : ""
-              } `
-            }
+            className=
+              "flex items-center gap-2 text-dark font-bold hover:text-dark-800 pb-2 text-none"
+            
           >
             <Package />
             Quản lý đơn hàng
@@ -71,11 +66,15 @@ export function AccountSidebar({ user }) {
         <div>
           <NavLink
             to={path.logout}
-            className={({ isActive }) =>
-              `flex items-center gap-2 hover:text-primary pb-2 ${
-                isActive ? " text-primary" : ""
-              } `
-            }
+            className=
+              "flex items-center gap-2 text-dark font-bold hover:text-dark-800 pb-2 text-none"
+            
+            onClick={() => {
+              localStorage.removeItem("user");
+              setUser(null);
+              window.location.reload();
+            }}
+  
           >
             <LogOut />
             Đăng xuất

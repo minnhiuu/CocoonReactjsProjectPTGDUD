@@ -2162,7 +2162,7 @@
   "carts": [],
   "orders": [
     {
-      "id": 1,
+      "id": "1",
       "userName": "Trần Thị Mẫn Nhi",
       "userPhone": "0987654321",
       "userAddress": "456 Nguyễn Huệ, Quận 1, TP.HCM",
@@ -2225,7 +2225,7 @@
       "orderDate": "2025-04-09T07:25:12.051Z"
     },
     {
-      "id": 2,
+      "id": "2",
       "userName": "Trần Thị Mẫn Nhi",
       "userPhone": "0987654321",
       "userAddress": "456 Nguyễn Huệ, Quận 1, TP.HCM",
@@ -2323,41 +2323,294 @@
       "voucherDiscount": 2000,
       "finalPrice": "297.000 đ",
       "orderDate": "2025-04-09T07:28:55.630Z"
+    },
+    {
+      "id": 3,
+      "userId": "6",
+      "userPhone": "0703553341",
+      "items": [
+        {
+          "id": "3",
+          "title": "Mặt Nạ Đất Sét Tràm Trà",
+          "category": "Mặt Nạ",
+          "description": "Thải độc da, làm sạch sâu và kiểm soát dầu thừa.",
+          "img": "https://image.cocoonvietnam.com/uploads/Artboard_39_cb91c1c0cb.jpg",
+          "details": [
+            "Chiết xuất tràm trà tự nhiên",
+            "Làm sạch bã nhờn, se khít lỗ chân lông",
+            "Cân bằng dầu và độ ẩm"
+          ],
+          "ingredients": [
+            "Đất sét",
+            "Tràm trà",
+            "Chiết xuất hoa cúc"
+          ],
+          "usage": [
+            "Thoa lớp mỏng lên da sạch.",
+            "Để khô 10-15 phút rồi rửa sạch.",
+            "Dùng 2-3 lần/tuần."
+          ],
+          "suitableFor": [
+            "Da dầu",
+            "Da mụn",
+            "Da hỗn hợp thiên dầu"
+          ],
+          "texture": "Kem đặc, dễ thoa",
+          "fragrance": "Hương tràm trà tự nhiên",
+          "dosage": "Dùng 2-3 lần/tuần",
+          "caution": "Không để mặt nạ khô hoàn toàn",
+          "origin": "Việt Nam",
+          "price": "129.000 đ",
+          "discount": "10%",
+          "reviews": [
+            {
+              "stars": 4,
+              "comment": "Da sạch tốt nhưng cần rửa kỹ.",
+              "user": "Vũ Hoàng Anh",
+              "date": "2024-03-08"
+            }
+          ],
+          "quantity": 1
+        },
+        {
+          "id": "2",
+          "title": "Kem Chống Nắng Dưỡng Ẩm SPF50+ PA++++",
+          "category": "Chống Nắng",
+          "description": "Bảo vệ da khỏi tia UV, cấp ẩm suốt cả ngày.",
+          "img": "https://image.cocoonvietnam.com/uploads/z4389424986730_1e574bdd58278206885aaafd9cf54665_f04a0b7f9b.jpg",
+          "details": [
+            "Chống nắng phổ rộng SPF50+ PA++++",
+            "Kết cấu mỏng nhẹ, không gây bí",
+            "Dưỡng ẩm với chiết xuất nha đam"
+          ],
+          "ingredients": [
+            "Zinc Oxide",
+            "Vitamin E",
+            "Aloe Vera"
+          ],
+          "usage": [
+            "Thoa đều lượng vừa đủ lên mặt.",
+            "Sử dụng trước khi ra nắng 15-20 phút.",
+            "Thoa lại sau 2 giờ nếu cần."
+          ],
+          "suitableFor": [
+            "Mọi loại da",
+            "Da nhạy cảm"
+          ],
+          "texture": "Kem nhẹ, thấm nhanh",
+          "fragrance": "Hương nha đam dịu nhẹ",
+          "dosage": "Dùng mỗi sáng",
+          "caution": "Thoa lại sau khi đổ mồ hôi hoặc tiếp xúc nước",
+          "origin": "Việt Nam",
+          "price": "189.000 đ",
+          "discount": "15%",
+          "reviews": [
+            {
+              "stars": 5,
+              "comment": "Không nhờn, bảo vệ tốt, giá hợp lý!",
+              "user": "Nguyễn Thảo My",
+              "date": "2024-03-10"
+            }
+          ],
+          "quantity": 1
+        },
+        {
+          "id": "1",
+          "title": "Serum Dưỡng Da Vitamin C",
+          "category": "Tinh Chất",
+          "description": "Dưỡng sáng da, làm đều màu và giảm thâm nám hiệu quả.",
+          "img": "https://image.cocoonvietnam.com/uploads/z4389425025003_c3b68e5737569f01eb630fb0c010951c_47aa72d54d.jpg",
+          "details": [
+            "Chứa 10% Vitamin C tinh khiết",
+            "Cấp ẩm nhanh, làm sáng da",
+            "Hỗ trợ giảm thâm mụn và tàn nhang"
+          ],
+          "ingredients": [
+            "Vitamin C",
+            "Niacinamide",
+            "Hyaluronic Acid"
+          ],
+          "usage": [
+            "Lấy 2-3 giọt sau khi làm sạch da.",
+            "Thoa đều và vỗ nhẹ để thẩm thấu.",
+            "Sử dụng sáng và tối."
+          ],
+          "suitableFor": [
+            "Da xỉn màu",
+            "Da thâm nám",
+            "Da không đều màu"
+          ],
+          "texture": "Dạng lỏng, thẩm thấu nhanh",
+          "fragrance": "Hương cam quýt dịu nhẹ",
+          "dosage": "Dùng 2 lần/ngày",
+          "caution": "Tránh ánh nắng sau khi sử dụng",
+          "origin": "Hàn Quốc",
+          "price": "259.000 đ",
+          "discount": "20%",
+          "reviews": [
+            {
+              "stars": 5,
+              "comment": "Da sáng rõ sau 2 tuần, rất hài lòng!",
+              "user": "Trần Phương Linh",
+              "date": "2024-03-05"
+            },
+            {
+              "stars": 3,
+              "comment": "Hiệu quả ổn nhưng da hơi khô, cần dưỡng thêm.",
+              "user": "Hoàng Tuấn",
+              "date": "2024-02-20"
+            }
+          ],
+          "quantity": 1
+        }
+      ],
+      "totalItems": 3,
+      "totalPrice": "486.000 ₫",
+      "shippingFee": 51100,
+      "voucherDiscount": 2000,
+      "finalPrice": "535.000 đ",
+      "orderDate": "2025-04-09T09:44:41.528Z"
+    },
+    {
+      "id": 4,
+      "userId": "2",
+      "userName": "Trần Thị Mẫn Nhi",
+      "userPhone": "0987654321",
+      "userAddress": "456 Nguyễn Huệ, Quận 1, TP.HCM",
+      "items": [
+        {
+          "id": "10",
+          "title": "Serum Bí Đao Cocoon",
+          "category": "Tinh Chất",
+          "description": "Giảm mụn, làm dịu da và kiểm soát dầu thừa hiệu quả.",
+          "img": "https://image.cocoonvietnam.com/uploads/gz_Ge_T_Yg_A_3a56f5461a.jpeg",
+          "details": [
+            "Chiết xuất bí đao và tràm trà",
+            "Kháng viêm, giảm mụn nhanh",
+            "Làm sáng da nhẹ nhàng"
+          ],
+          "ingredients": [
+            "Bí đao",
+            "Tràm trà",
+            "Niacinamide"
+          ],
+          "usage": [
+            "Lấy 2-3 giọt thoa lên da cần trị.",
+            "Vỗ nhẹ để thẩm thấu.",
+            "Dùng sáng hoặc tối sau toner."
+          ],
+          "suitableFor": [
+            "Da dầu",
+            "Da mụn",
+            "Da nhạy cảm"
+          ],
+          "texture": "Lỏng nhẹ, không nhờn",
+          "fragrance": "Hương tràm trà tự nhiên",
+          "dosage": "Dùng 1-2 lần/ngày",
+          "caution": "Thử trước trên vùng da nhỏ",
+          "origin": "Việt Nam",
+          "price": "229.000 đ",
+          "discount": "20%",
+          "reviews": [
+            {
+              "stars": 5,
+              "comment": "Mụn giảm rõ sau 1 tháng, da bớt dầu!",
+              "user": "Nguyễn Minh Thư",
+              "date": "2025-03-18"
+            }
+          ],
+          "quantity": 1
+        },
+        {
+          "id": "11",
+          "title": "Kem Chống Nắng Rau Má SPF50+ Cocoon",
+          "category": "Chống Nắng",
+          "description": "Bảo vệ da khỏi tia UV, làm dịu da nhạy cảm với rau má.",
+          "img": "https://assets-hebela.cdn.vccloud.vn/dict/1/sgisiniimrnahiiasr20230401111233kem-chong-nang-bi-ao-cocoon-4.jpg",
+          "details": [
+            "SPF50+ PA++++ chống nắng tối ưu",
+            "Chiết xuất rau má làm dịu da",
+            "Không gây kích ứng"
+          ],
+          "ingredients": [
+            "Rau má",
+            "Zinc Oxide",
+            "Hyaluronic Acid"
+          ],
+          "usage": [
+            "Thoa đều trước khi ra nắng 15 phút.",
+            "Dùng lại sau 2-3 giờ nếu cần.",
+            "Lấy lượng đủ cho mặt và cổ."
+          ],
+          "suitableFor": [
+            "Da nhạy cảm",
+            "Da dầu",
+            "Da mụn"
+          ],
+          "texture": "Kem mỏng, thẩm thấu nhanh",
+          "fragrance": "Không mùi",
+          "dosage": "Dùng mỗi sáng",
+          "caution": "Tránh để sản phẩm vào mắt",
+          "origin": "Việt Nam",
+          "price": "179.000 đ",
+          "discount": "10%",
+          "reviews": [
+            {
+              "stars": 4,
+              "comment": "Nhẹ mặt, không kích ứng, rất ổn!",
+              "user": "Trần Ngọc Hân",
+              "date": "2025-03-20"
+            }
+          ],
+          "quantity": 1
+        }
+      ],
+      "totalItems": 2,
+      "totalPrice": "346.000 ₫",
+      "shippingFee": 51100,
+      "voucherDiscount": 2000,
+      "finalPrice": "395.000 đ",
+      "orderDate": "2025-04-09T10:09:52.762Z"
     }
   ],
-  "users" : [
+  "users": [
     {
-      "id": 1,
+      "id": "1",
       "phone": "0338858196",
       "name": "Nguyễn Thị Lan",
       "email": "nguyenthilan@example.com",
-      "gender" : 1,
+      "gender": 1,
       "password": "123456",
       "avatar": "/images/user_a.jpg",
       "address": "123 Lý Thường Kiệt, Quận 10, TP.HCM",
       "dob": "15/05/1995"
     },
     {
-      "id": 2,
+      "id": "2",
       "phone": "0987654321",
       "name": "Trần Thị Mẫn Nhi",
       "email": "tranthimannhi@example.com",
-      "gender" : 1,
+      "gender": 1,
       "password": "abcdef",
       "avatar": "/images/user_b.jpg",
       "address": "456 Nguyễn Huệ, Quận 1, TP.HCM",
       "dob": "01/01/1998"
     },
     {
-      "id": 3,
+      "id": "3",
       "phone": "0912345678",
       "name": "Nguyễn Thị Hằng Nga",
       "email": "nguyenthihangnga@example.com",
-      "gender" : 1,
+      "gender": 1,
       "password": "qwerty",
       "avatar": "/images/user_c.jpg",
       "address": "789 Trần Hưng Đạo, Quận 5, TP.HCM",
       "dob": "03/07/2002"
+    },
+    {
+      "id": "6",
+      "phone": "0703553341",
+      "password": "123456"
     }
-  ]  
+  ]
 }

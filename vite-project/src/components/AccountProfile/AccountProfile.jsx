@@ -141,13 +141,9 @@ export function AccountProfile() {
         </Form.Item>
 
         <Form.Item {...tailLayout}>
-          <Button
-            type="primary"
-            htmlType="submit"
-            className="!bg-primary text-white !font-semibold !px-8"
-          >
-            LƯU THAY ĐỔI
-          </Button>
+          <button className="mt-auto w-100 py-2 px-4 rounded-xl bg-[#E3D0AC] text-gray-700 hover:bg-[#d1bb8f] transition " >
+                                    Lưu thay đổi
+                                </button>
         </Form.Item>
       </Form>
     </div>

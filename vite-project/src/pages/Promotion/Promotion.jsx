@@ -316,7 +316,7 @@ export default function Promotion() {
         </div>
       </div>
 
-      <Container className="my-2 p-1">
+      {/* <Container className="my-2 p-1">
         <h2
           className="text-center text-lg font-semibold text-gray-700 mb-4 "
           style={{ fontFamily: "vollkorn" }}
@@ -376,9 +376,9 @@ export default function Promotion() {
             )}
           </>
         )}
-      </Container>
+      </Container> */}
 
-      <Container className="p-1">
+      {/* <Container className="p-1">
         <Row>
           <Col xs={12} md={3} className="mb-4 h-100">
             <div className="filter-section p-3 border rounded shadow-sm">
@@ -498,7 +498,7 @@ export default function Promotion() {
             )}
           </Col>
         </Row>
-      </Container>
+      </Container> */}
       <style>
         {`
           .category-image {
