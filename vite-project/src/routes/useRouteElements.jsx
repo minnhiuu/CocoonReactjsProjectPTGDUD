@@ -26,6 +26,7 @@ import { AccountProfile } from "../components/AccountProfile/AccountProfile";
 import Account from "../pages/Account/Account";
 import { AccountAddress } from "../components/AccountAddress/AccountAddress";
 import AccountHistory from "../components/AccountHistory/AccountHistory";
+import Page404 from "../pages/Page404/Page404";
 
 export default function useRouteElements() {
   let element = useRoutes([
@@ -141,6 +142,10 @@ export default function useRouteElements() {
         },
       ],
     },
+    {
+      path: "*",
+      element: <Page404/>
+    }
   ]);
   return element;
 }
