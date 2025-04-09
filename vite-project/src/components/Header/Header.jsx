@@ -9,6 +9,7 @@ import "./Header.css";
 import Pay from "../Pay/Pay";
 import UserProfile from "../profile/userProfile";
 import Search from "../Search/Search";
+import CartModal from "../CartModal/CartModal";
 import { useAuth } from "../../context/auth";
 
 function Header() {
@@ -29,11 +30,14 @@ function Header() {
     return () => document.removeEventListener("click", handleClickOutside);
   }, [showProfile]);
   const { cartItems, animatedItem, getTotalItems } = useContext(CartContext);
+  const [showCart, setShowCart] = useState(false);
+  const toggleCart = () => {
+    setShowCart(!showCart);
+  };
   return (
     <>
       <header className="header d-flex justify-content-between align-items-center p-3 ">
         <div className="header-left d-flex align-items-center gap-3">
-          {/* <SearchButton /> */}
           <nav className="d-flex gap-3">
             <Link
               className="text-dark  font-['Barlow Condensed']"
@@ -71,7 +75,7 @@ function Header() {
           {!user ? (
             <a
               href="#"
-              className="text-dark"
+              className="text-dark font-['Barlow Condensed']"
               onClick={() => setShowLogin(true)}
             >
               Đăng nhập
@@ -96,11 +100,12 @@ function Header() {
           <Link to={path.contact} className="text-dark font-['Barlow Condensed']">
             Liên hệ
           </Link>
-          <Link to={path.cart} className="text-dark font-['Barlow Condensed']" >
-          Giỏ hàng ({cartItems.length})
+          <Link className="text-dark font-['Barlow Condensed']" onClick={toggleCart}>
+            Giỏ hàng ({cartItems.length})
           </Link>
         </div>
       </header>
+      {showCart && <CartModal toggleCart={toggleCart} />}
 
       {showLogin && (
         <div className="overlay" onClick={() => setShowLogin(false)}></div>
