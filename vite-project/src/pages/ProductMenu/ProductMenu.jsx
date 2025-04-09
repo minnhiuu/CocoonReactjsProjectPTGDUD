@@ -13,6 +13,7 @@ import { IoFilter } from "react-icons/io5";
 import { fetchApi } from "../../api/fecthAPI";
 import "./ProductMenu.css";
 import Product from "../../components/Product/Product";
+import CarouselProduct from "../../components/CarouselProduct/Carousel";
 
 export default function ProductMenu() {
   const [categories, setCategories] = useState([]);
@@ -108,6 +109,8 @@ export default function ProductMenu() {
   return (
     <>
       <div className="p-0.5"></div>
+
+      <CarouselProduct />
       <div className="section-2 mb-3 mt-3">
         <div className="section-2-content text-center">
           <h1 className="mb-4 mt-2 text-font">Triết lý THƯƠNG HIỆU</h1>
@@ -125,12 +128,16 @@ export default function ProductMenu() {
         ></h2>
 
         {loading ? (
-            <div className="loading-overlay">
-              <div className="loading-logo">
-                <img src="/images/cocoon1.png" alt="Loading" className="logo-image" />
-                <div className="progress-circle"></div>
-              </div>
+          <div className="loading-overlay">
+            <div className="loading-logo">
+              <img
+                src="/images/cocoon1.png"
+                alt="Loading"
+                className="logo-image"
+              />
+              <div className="progress-circle"></div>
             </div>
+          </div>
         ) : (
           <>
             {Array.from({ length: Math.ceil(categories.length / 5) }).map(

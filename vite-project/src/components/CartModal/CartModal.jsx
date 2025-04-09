@@ -23,7 +23,7 @@ function CartModal({ toggleCart }) {
         onClick={toggleCart}
       ></div>
 
-      <div className=" fixed top-27 right-6 p-4 bg-white shadow-lg rounded-md w-full max-w-md mx-auto !z-99999">
+      <div className=" fixed top-27 right-6 p-4 bg-[#fefbf4] shadow-lg rounded-md w-full max-w-md mx-auto !z-99999">
         <h5 className="text-sm text-center font-semibold mb-4">
           GIỎ HÀNG ({cartItems.length})
         </h5>
@@ -98,7 +98,7 @@ function CartModal({ toggleCart }) {
           </span>
         </div>
         <button
-          className="w-full mt-4 bg-black text-white py-2 rounded hover:!bg-gray-800 hover:scale-105 hover:shadow-lg 
+          className="w-full mt-4 bg-[#c3a15c] text-white py-2 rounded hover:!opacity-75 hover:scale-105 hover:shadow-lg 
              transition duration-300 ease-in-out"
           onClick={() => {
             navigate(path.cart);
